@@ -1,0 +1,15 @@
+STRINGS
+enclose in quotation marks or single quotes, exp
+hi = "hello there"
+
+notice " " is defined as space, exp
+name = ABC
+greeting = hi + " " + name
+print(greeting)
+
+Difference in printing , and + between objects
+>>> print("hi","chong")
+hi chong
+>>> print("hi"+"chong")
+hichong
+

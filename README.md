@@ -6,9 +6,11 @@
 -Calculations: built in or defined by the programmer
 -Types of knowledge: Declarative and imperative
 
-## DECLARATIVE: statement of fact, the result
+## DECLARATIVE: 
+statement of fact, the result
 
-## IMPERATIVE: steps to getting the result 
+## IMPERATIVE: 
+steps to getting the result 
 
 
 ## Fixed program: calculator

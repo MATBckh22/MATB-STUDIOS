@@ -69,7 +69,8 @@ Printing to Console
 show output: print command
 ```
 ## Operators: +-*/
-```i%j: remainder (i/j的余数)
+```
+i%j: remainder (i/j的余数)
 i**j: i^j
 ```
 ## Binding Variables and Values

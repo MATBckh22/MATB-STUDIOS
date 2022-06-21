@@ -1,5 +1,5 @@
 ## Branching and Iteration
-#STRINGS
+# String
 enclosed in quotation marks or single quotes, exp
 hi = "hello there"
 
@@ -149,7 +149,7 @@ print(n)
 Each time through the loop, <variable> takes a value, first time, <variable> starts at the smallest value, next time, <variable> gets the prev value + 1
 etc. **range() creates a sequence from 0 to whatever number u set, in this case it's 0-5**
 
-#Controlling range() 
+# Controlling range() 
 range(start, stop, step), default: start = 0, step = 1
 ```
 mysum = 0

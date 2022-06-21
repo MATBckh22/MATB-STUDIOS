@@ -133,7 +133,7 @@ while <condition>:
 <condition> evaluates to a Boolean. If <condition> is True, do all the steps inside the while code block. Check <condition> again, repeat until <condition> is False.
 
 # FOR loops
-act as a n=n+1 loop shortcut, while vs foor below:
+act as a n=n+1 loop shortcut, while vs for below:
 ```
 n = 0
 while n < 5:

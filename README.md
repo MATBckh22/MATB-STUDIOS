@@ -76,5 +76,5 @@ pi = 3.14159
 pi_approx 22/7
 Values are stored in memory where assignment binds value to name, retrieve it by typing the variable name
 
-U can rebind values, in a more detailed explanation, previous value may be stored in memory but we lost the handle for it, u can't get it back
-value of area doesn't change unless u do the calculation again (废话 敲过码的不需要看这一行 只是记录一下)
+*U can rebind values, in a more detailed explanation, previous value may be stored in memory but we lost the handle for it, u can't get it back
+value of area doesn't change unless u do the calculation again (废话 敲过码的不需要看这一行 只是记录一下)*

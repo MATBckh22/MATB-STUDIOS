@@ -1,19 +1,19 @@
-Author's Note: concepts are in the first half of the notes, if u wanna skip these go to line:33.
-前言：有写过程式的人可以选择忽略这一部分的笔记，这边是给完全没有刷过程式科普视频或写代码经验的萌新，跳到第33行。但如果要参考专业用词的也可以扫过一遍。
+*Author's Note: concepts are in the first half of the notes, if u wanna skip these go to line:33.
+前言：有写过程式的人可以选择忽略这一部分的笔记，这边是给完全没有刷过程式科普视频或写代码经验的萌新，跳到第33行。但如果要参考专业用词的也可以扫过一遍。*
 
 
-#Basic Concepts of Computer:
+# Basic Concepts of Computer:
 -Calculations: built in or defined by the programmer
 -Types of knowledge: Declarative and imperative
 
-DECLARATIVE: statement of fact, the result
+## DECLARATIVE: statement of fact, the result
 
-IMPERATIVE: steps to getting the result 
+## IMPERATIVE: steps to getting the result 
 
 
-Fixed program: calculator
+## Fixed program: calculator
 
-stored program: machine stores and executes operations
+## stored program: machine stores and executes operations
 sequence of instructions stored inside computer
 -artihmetic and logic
 -simple tests
@@ -21,7 +21,7 @@ sequence of instructions stored inside computer
 
 special program (interpreter) executes each instruction in order
 
-Basic Machine Architecture notes:
+# Basic Machine Architecture notes:
 ALU: Arithmetic Logic Unit
 Control unit will have a program counter stored
 Memory contains data and sequence of instructions
@@ -30,32 +30,32 @@ ALU comprehends and gets data from the memory, uses some operations and stores i
 When it's done, ALU sends it back to Control Unit, program counter increases by 1
 When sequence of instructions is completed, it will show in output
 
-NOTE: whole process may not be linear, manual control might be involved to skip instructions or resetting it
+*Note: whole process may not be linear, manual control might be involved to skip instructions or resetting it*
 
-basic primitive contructs:
+## basic primitive contructs:
 aspects of languages:
 syntax: string(s) of expressions that is synthatically valid
 static semantics: synthatically valid strings that have meaning
 semantics: have only one meaning but may not be what the programmer intended
 
-PYTHON PROGRAMS:
+## PYTHON PROGRAMS:
 program: sequence of definitions and commands
 definitions evaluated, commands executed in a shell
 
-Objects: (very important)
+# Objects: (very important)
 -scalar
 int: 宣告 integers
 float: represent real numbers
 bool: boolean (true or false)
 NoneType: special value: none
 
-Note: type() can see the type of an object, exp
+*Note: type() can see the type of an object, exp
 >>>type(5) 
-int
+int*
 
-TYPE convergions: convert one object to another,exp
+*TYPE convergions: convert one object to another,exp
 >>>int(3.9)
-3
+3*
 
 -non-scalar
 internal structure that can be accessed
@@ -63,11 +63,11 @@ internal structure that can be accessed
 Printing to Console
 show output: print command
 
-Operators: +-*/
+## Operators: +-*/
 i%j: remainder (i/j的余数)
 i**j: i^j
 
-Binding Variables and Values
+## Binding Variables and Values
 = equal sign: assign value to a variable name
 exp:
 pi = 3.14159

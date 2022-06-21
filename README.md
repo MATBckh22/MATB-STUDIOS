@@ -61,7 +61,7 @@ step as negative number(s)
 `s[::]` same as `s[0:len(s):1]`
 
 ## String Substitution 
-functions in python are *immutable*, which cannot be modified directly. **We cannot replace a character in the index just by indexing another word into the string.**
+Functions in python are *immutable*, which cannot be modified directly. **We cannot replace a character in the index just by indexing another word into the string.**
 
 Though we can do this by replacing the entire string or recreating a string using the `new character + previous string:`
 ```
@@ -81,7 +81,7 @@ For loops have a loop variable that iterates over a set of values
 for var in range(4): 
   <expressions> 
 ```
-`var` iterates over values 0,1,2,3. expressions inside loop executed with **EACH** value for var.
+`var` iterates over values 0,1,2,3. Expressions inside loop executed with **EACH** value for var.
 ```
 for var in range(4,6)
   <expressions>
@@ -120,4 +120,22 @@ for guess in range(cube+1):
 ```
 Though this code is flawed, it doesn't have any output for cube inputs that have cube roots of non-integrals. We can improve this by adding some details.
 ```
+cube = int(input("type a number to begin!"))
+
+for guess in range(abs(cube)+1):
+    if guess**3 >= abs(cube):
+        break
+if guess**3 != cube:
+    print("this number doesn't have a perfect cube root!")
+else:
+    if  cube < 0:
+        guess = -guess
+    print("cube root of" + str(cube) + "is" + str(guess))
+```
+We set `abs` as an absolute value variable so the program is only allowed to handle absolute values. Under first condition if the guess in `range(abs(cute)+1)` to the power of 3 is equal or greater than `cube` input, `break` will stop the for loop and skip to `print("cube root of" + str(cube) + "is" + str(guess))`.
+
+Second condition involves the feedback of an imperfect cube root. Given there are no perfect cube roots of the input, a feedback `print("this number doesn't have a perfect cube root!")` will be sent.
+
+The last condition will be to determine if the input is negative. If the input is smaller than 0, `guess` will be replaced with `-guess`, same output will be given for first condition.
+
 

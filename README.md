@@ -139,7 +139,7 @@ Second condition involves the feedback of an imperfect cube root. Given there ar
 The last condition will be to determine if the input is negative. If the input is smaller than 0, `guess` will be replaced with `-guess`, same output will be given for first condition.
 
 # Approximations
-approximate solutiions can be programmed into the algorithm to provide a *close enough* answer when the input doesn't have a perfect cube root.
+approximate solutions can be programmed into the algorithm to provide a *close enough* answer when the input doesn't have a perfect cube root.
 
 We can start with a guess and increment by small value. Keep guessing `|guess^3-cube| >=epsilon` for a small epsilon.
 

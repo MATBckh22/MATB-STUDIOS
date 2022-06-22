@@ -102,7 +102,7 @@ Function definitions will be stored in the computer **until u call it with the v
 ## No `return` Warning
 If the function definition is missing a return statement, python automatically returns `None` value, a special type of value that represents the absence of the value.
 
-*Note: None is not a string*
+*Note: `None` is not a string*
 
 ## `return` vs `print`
 

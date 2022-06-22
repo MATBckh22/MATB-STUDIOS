@@ -138,4 +138,63 @@ Second condition involves the feedback of an imperfect cube root. Given there ar
 
 The last condition will be to determine if the input is negative. If the input is smaller than 0, `guess` will be replaced with `-guess`, same output will be given for first condition.
 
+# Approximations
+approximate solutiions can be programmed into the algorithm to provide a *close enough* answer when the input doesn't have a perfect cube root.
+
+We can start with a guess and increment by small value. Keep guessing `|guess^3-cube| >=epsilon` for a small epsilon.
+
+However, decreasing increment size leads to **slower program but more accurate answer**, increasing epsilon will lead to **less accuracy but faster program.**
+
+```
+cube = int(input("start with a number!"))
+epsilon = 0.01
+guess = 0.0
+increment = 0.001
+num_guesses = 0
+
+while abs(guess**3-cube) >= epsilon and guess <= cube:
+    guess += increment
+    num_guesses += 1
+print('the number of guesses is',num_guesses)
+if abs(guess**3-cube) >= epsilon:
+    print('failed to solve cube root for',cube)
+else:
+    print('the close guess of the cube root is',guess)
+```
+Starting with `guess = 0.0` and `increment = 0.001`, calculation of `guess**3-cube >= epsilon` will be looped over and over, `num_guesses` act as a counter of how many times the operation is looped and calculated to the closest cube root. When the guess is greater than the input, the while loop will break and print the closest number calculated. **This is to prevent the computer to do countless calculations in which the program doesn't stops.** 
+
+# Bisection Search
+
+This method is to eliminate half of the guesses each iteration, getting closer to the desired number.
+
+An example of this concept below:
+```
+input: 78
+0-100, guess:50, output: higher
+50-100, guess 75, output: higher
+75-100, guess 88, output: lower
+...
+guess:78, output: correct
+```
+We can implement this concept into finding the cube root:
+```
+cube = int(input("type a number to begin!"))
+epsilon = 0.01
+num_guesses = 0
+low = 0
+high = cube
+guess = (high + low)/2.0
+while abs(guess**3-cube) >= epsilon:
+    if guess**3 < cube:
+        low = guess
+    else:
+        high = guess
+    guess = (high + low)/2.0
+    num_guesses += 1
+print('num_guesses',num_guesses)
+print("close cube root of the number is",guess)
+```
+We set the low and high boundaries to be 0-input. Next, similar to approximation, `abs(guess**3-cube) >= epsilon` is used as the condition. If the guess to the power of 3 is lower than the input, the low boundary will be replaced with `guess`, if it's greater, the high boundary will be replaced with `guess`, `guess` will be replaced again with `(high + low)/2.0` to eliminate half of the guessing space. This whole operation is in a while loop. The search space of this program is lessened by a lot using the method, while sacrificing some accuracy. 
+
+*Author will try to combine these algorithms and code a more feature-rich calculator for cube roots later*
 

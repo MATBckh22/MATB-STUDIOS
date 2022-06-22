@@ -52,5 +52,55 @@ def quotient_and_remainder(x,y):
 `x//y` is the product of a division rounded to the nearest whole number.
 
 ## Manipulating Tuples
-Iterating over tuples:
+Iterating over tuples:  
 ```
+def get_data(aTuple):
+    nums = ()    # empty tuple
+    words = ()
+    for t in aTuple:
+        # concatenating with a singleton tuple
+        nums = nums + (t[0],)   
+        # only add words haven't added before
+        if t[1] not in words:   
+            words = words + (t[1],)
+    min_n = min(nums)
+    max_n = max(nums)
+    unique_words = len(words)
+    return (min_n, max_n, unique_words)
+```
+**Multiple data can be collected simultaneously** using tuples. With this example we initially set nums and words as an empty tuple. Inside the for loop **both tuples are replaced with new tuples that corresponds to a certain set of data.** In this case nums always collects the `(t[0],)` position of the input, which is the int; words will always collect `(t[1],)` position, which is the string. 
+
+Do note function `min()` and `max()` select the minimum and maximum value given from the input.
+
+`unique_words` is a variable to collect the total number of **unique** words (defined as `if t[1] not in words:`)
+
+Thus, the function returns three variables.
+
+```
+    def get_data(aTuple):
+        nums = ()    # empty tuple
+        words = ()
+        for t in aTuple:
+            # concatenating with a singleton tuple
+            nums = nums + (t[0],)   
+            # only add words haven't added before
+            if t[1] not in words:   
+                words = words + (t[1],)
+        min_n = min(nums)
+        max_n = max(nums)
+        unique_words = len(words)
+        return (min_n, max_n, unique_words)
+# apply to any data you want!
+tswift = ((2014,"Katy"),
+          (2014, "Harry"),
+          (2012,"Jake"), 
+          (2010,"Taylor"), 
+          (2008,"Joe"))    
+(min_year, max_year, num_people) = get_data(tswift)
+print("From", min_year, "to", max_year, 
+        "Taylor Swift wrote songs about", num_people, "people!")
+```
+This is an example given from the lecture where data can be sorted to count how many people Taylor Swift has written songs about.
+
+## Lists
+

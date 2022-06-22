@@ -104,3 +104,35 @@ This is an example given from the lecture where data can be sorted to count how 
 
 ## Lists
 
+Lists contains elements to create an ordered sequence, accessible by index. similar to tuples, a list is denoted by [ ].
+
+### Lists are mutable objects
+U can change elements in a list **directly**, this is not allowed in strings and tuples.
+```
+>>> L = [2,'a',4,[1,2,3]]
+>>> len(L)
+4
+>>> L[0] = 1
+>>> print(L)
+[1, 'a', 4, [1, 2, 3]]
+```
+Similar operations can be done:
+```
+>>> len(L)
+4
+>>> L[2]
+4
+>>> L[3]
+[1, 2, 3]
+```
+A variable can be given values to subtract from other values in `L[]` to print an element:
+```
+[1, 'a', 4, [1, 2, 3]]
+>>> i = 3
+>>> L[i-1]
+4
+```
+
+
+
+

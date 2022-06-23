@@ -277,6 +277,7 @@ https://docs.python.org/3/tutorial/datastructures.html
 - is an object in memory
 - variable name points to object
 Any variable pointing to that object is **affected**, so working with lists might have **side effects**
+
 Example below:
 ```
 >>> warm = ['red','yellow','orange']
@@ -335,7 +336,7 @@ Nested lists are allowed but side effects may be prevalent after mutation.
 >>> print(brightcolors)
 [['yellow', 'orange'], ['red', 'pink']]
 ```
-This test begins with two variables `warm` and `hot`. We then assign `brightcolors` variable to contain elements in `warm`. so `brightcolors` has `[['yellow','orange']]`.
+This test begins with two variables `warm` and `hot`. We then assign `brightcolors` variable to contain elements in `warm`. So `brightcolors` has `[['yellow','orange']]`.
 Adding `hot` into `brightcolors` makes `brightcolors` a variable containing elements from `warm` and `hot`.
 
 What if we add elements to existing variables like `hot`? Answer: `brightcolors` will be affected as well.

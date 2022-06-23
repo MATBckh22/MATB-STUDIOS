@@ -106,7 +106,7 @@ This is an example given from the lecture where data can be sorted to count how 
 
 Lists contains elements to create an ordered sequence, accessible by index. similar to tuples, a list is denoted by [ ].
 
-### Lists are mutable objects
+### **Lists are mutable objects**
 U can change elements in a list **directly**, this is not allowed in strings and tuples.
 ```
 >>> L = [2,'a',4,[1,2,3]]
@@ -132,7 +132,177 @@ A variable can be given values to subtract from other values in `L[]` to print a
 >>> L[i-1]
 4
 ```
+## Iterating Over a List
 
+This is a common pattern to compute the **sums of elements:**
+```
+total = 0
+L = [1,2,3,4,5]
+for i in range(len(L)):
+    total += L[i]
+print(total)
+```
+`total` will be printed 15 in the terminal.
 
+We can modify this for a slightly more readable code:
+```
+total = 0
+L = [1,2,3,4,5]
+for i in L:
+    total += i
+print(total)
+```
+## Operations On Lists: Add/Remove
 
+Since lists are mutable, we can add and remove elements from it. 
+### Adding Elements
+Here we use `append` to add elements on the end of the list:
+```
+>>> L = [1,2,3]
+>>> L.append(5)
+>>> print(L)
+[1, 2, 3, 5]
+>>>
+```
+Operator `+` can be used to make a new list combining multiple existing lists:
+```
+>>> L1 = [1,2,3]
+>>> L2 = [4,5,6]
+>>> L3 = L1+L2
+>>> print(L3)
+[1, 2, 3, 4, 5, 6]
+
+```
+`extend` can be used to mutate a list:
+```
+>>> L = [1,2,3]
+>>> L.extend([4,5,6])
+>>> print(L)
+[1, 2, 3, 4, 5, 6]
+```
+### Removing Elements
+
+U can use `L.remove()` to remove a specific element, python looks for the element from the parentheses and deletes it from the list, two rules to keep note:
+
+- if element occurs multiple times, removes first occurrence
+- if element is not on list, error feedback is given
+
+```
+>>> L = [1,2,3,4,5,6]
+>>> L.remove(2)
+>>> print(L)
+[1, 3, 4, 5, 6]
+```
+```
+>>> L = [1,2,3,3,4,5]
+>>> L.remove(3)
+>>> print(L)
+[1, 2, 3, 4, 5]
+```
+```
+>>> L = [1,2,3,4,5]
+>>> L.remove(6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+```
+U can also delete a specific index using `del(L[index])`:
+```
+>>> L = [1,2,3,4,5]
+>>> del(L[2])
+>>> print(L)
+[1, 2, 4, 5]
+```
+`L.pop()` deletes the element on the end of the list and returns it:
+```
+>>> L = [1,2,3,4,5]
+>>> L.pop()
+5
+>>> print(L)
+[1, 2, 3, 4]
+```
+*Note: Use it cautiously in functions, it might return* `None`
+
+## Converting Lists - Strings
+
+### Strings to Lists
+
+After setting a string variable, u can convert it to a list using `list()` *including spaces*:
+```
+>>> s = "python cool"
+>>> list(s)
+['p', 'y', 't', 'h', 'o', 'n', ' ', 'c', 'o', 'o', 'l']
+```
+Python returns the list with it's individual elements back after converting it.
+**However, s will remain as a string. Printing s will still display it's string form:**
+```
+>>> s = "python cool"
+>>> list(s)
+['p', 'y', 't', 'h', 'o', 'n', ' ', 'c', 'o', 'o', 'l']
+>>> print(s)
+python cool
+>>> print(list(s))
+['p', 'y', 't', 'h', 'o', 'n', ' ', 'c', 'o', 'o', 'l']
+```
+`s.split` can be used to split a string on a character, splits on spaces if called without a parameter:
+```
+>>> s.split("p")
+['', 'ython cool']
+```
+*note that characters are not individually separated, comparing to* `list()`
+```
+>>> s = "phyton cool"
+>>> s.split()
+['phyton', 'cool']
+```
+
+### Lists to Strings
+
+Use `''.join()` to turn a list of characters into a string:
+```
+>>> L = ["1","2","3"]
+>>> ''.join(L)
+'123'
+```
+adding characters in between quotes will result in the characters be placed between every element:
+```
+>>> L = ["1","2","3"]
+>>> "add".join(L)
+'1add2add3'
+```
+## Other List Operators
+
+### `sort()` vs `sorted()` vs `reverse()`
+
+`sort()` and `sorted()` can be used to sort elements in an ascending order:
+```
+>>> L = [4,2,3,1]
+>>> sorted(L)
+[1, 2, 3, 4]
+>>> print(L)
+[4, 2, 3, 1]
+```
+`sorted()` **returns the sorted list but doesn't mutate it**
+```
+>>> L = [4,2,3,1]
+>>> L.sort()
+>>> print(L)
+[1, 2, 3, 4]
+```
+`sort()` **doesn't return the sorted list but does mutate it**
+
+`reverse()` mutates the lists as well:
+```
+>>> L = [1,4,2,3]
+>>> L.reverse()
+>>> print(L)
+[3, 2, 4, 1]
+```
+*note:* `reverse()` *only reverse the positions of elements,* ***it doesn't sort the elements in a descending order mathematically***
+
+### Other operations can be seen here:
+
+https://docs.python.org/3/tutorial/datastructures.html
+
+## Lists in Memory and Aliases
 

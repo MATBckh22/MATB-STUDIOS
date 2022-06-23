@@ -27,7 +27,7 @@ a programming technique where a **function aclls itself**
 
 ## Multiplication -  Iterative Solution
 
-The concept of limited recursion begins by multiplying two variables, in this case:
+Using an iterative solution to calculate a multiplication will look like this:
 ```
 a*b = a + a + a + ... (up to b-th times)
 ```
@@ -50,4 +50,26 @@ def mult_iter (a,b):
     return result
 
 ```
+## Multiplication - Recursive Solution
 
+Applying basic recursion concepts, we can simplify multiplication by a lot:
+```
+a*b = a + a + a + ... (up to b-th times)
+    = a + a(b-1)
+    = a + a +a(b-2)
+    ...
+```
+- Recursive step: reducing a problem to a smaller version of a same problem
+- Base case: keep reducing it until it can be solved directly   
+
+```
+when b = 1, a*b = a
+```
+Simplified code:
+```
+def mult_recur (a,b):
+    if b == 1:
+        return a
+    else:
+        return a + mult(a,b-1)
+```

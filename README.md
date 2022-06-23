@@ -385,4 +385,4 @@ Adding `hot` into `brightcolors` makes `brightcolors` a variable containing elem
 
 What if we add elements to existing variables like `hot`? Answer: `brightcolors` will be affected as well.
 
-### Be cautious to of adding or removing elements from variables, especially when handling lists in for loops. Use the clone operator when necessary to avoid side effects.
+### Be cautious when adding or removing elements from variables, especially when handling lists in for loops. Use the clone operator when necessary to avoid side effects.

@@ -306,3 +306,83 @@ https://docs.python.org/3/tutorial/datastructures.html
 
 ## Lists in Memory and Aliases
 
+*Minor warning for using lists*
+- lists are mutable
+- behave differently than immutable types
+- is an object in memory
+- variable name points to object
+
+Any variable pointing to that object is **affected**, so working with lists might have **side effects**
+
+Example below:
+```
+>>> warm = ['red','yellow','orange']
+>>> hot = warm
+>>> hot.append('pink')
+>>> print(hot)
+['red', 'yellow', 'orange', 'pink']
+>>> print(warm)
+['red', 'yellow', 'orange', 'pink']
+```
+**Assigning a variable to another variable, changing either one will affect the other.** This is the distinct difference between strings and lists. List is special for it's mutability.
+
+## Cloning Lists
+
+We can use this speciality to clone lists. `[:]` is used to copy a list from a variable to another:
+```
+>>> coding_language = ['python','java','html']
+>>> programming_language = coding_language[:]
+>>> programming_language.append('C')
+>>> print(programming_language)
+['python', 'java', 'html', 'C']
+>>> print(coding_language)
+['python', 'java', 'html']
+```
+`[:]` can be seen as `[0:len()]`. This method is desirable to prevent the side effect. Cloning a list allows python to **create a copy from the existing list onto a new list**, so changing a variable won't affect the other.
+
+## Sorting Lists
+
+example is given at `sort()` vs `sorted()` vs `reverse()`. Here we will be specifically talking about `sort()` vs `sorted()`:
+```
+>>> warm = ['orange','yellow','red']
+>>> sortedwarm = warm.sort()
+>>> print(warm)
+['orange', 'red', 'yellow']
+>>> print(sortedwarm)
+None
+```
+`sort()` returned nothing because it already mutated the list, so `sortedwarm` prints out `None`.
+```
+>>> cool = ['blue','aqua','green']
+>>> sortedcool = sorted(cool)
+>>> print(cool)
+['blue', 'aqua', 'green']
+>>> print(sortedcool)
+['aqua', 'blue', 'green']
+```
+`sorted()` returns the sorted list but doesn't mutate it, so `sortedcool` can be printed out.
+
+## Lists of Lists of Lists of...
+
+Nested lists are allowed but side effects may be prevalent after mutation.
+
+```
+>>> warm = ['yellow','orange']
+>>> hot  = ['red']
+>>> brightcolors = [warm]
+>>> brightcolors.append(hot)
+>>> print(brightcolors)
+[['yellow', 'orange'], ['red']]
+>>> hot.append('pink')
+>>> print(hot)
+['red', 'pink']
+>>> print(brightcolors)
+[['yellow', 'orange'], ['red', 'pink']]
+```
+This test begins with two variables `warm` and `hot`. We then assign `brightcolors` variable to contain elements in `warm`. so `brightcolors` has `[['yellow','orange']]`.
+
+Adding `hot` into `brightcolors` makes `brightcolors` a variable containing elements from `warm` and `hot`.
+
+What if we add elements to existing variables like `hot`? Answer: `brightcolors` will be affected as well.
+
+### Be cautious to of adding or removing elements from variables, especially when handling lists in for loops. Use the clone operator when necessary to avoid side effects.

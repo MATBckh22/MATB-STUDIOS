@@ -324,5 +324,5 @@ dict_values(['A+', 'B+', 'A'])
 | ------------- | ------------- |
 | ordered sequence  | keys to values  |
 | look up elements by an integer index  | look up one item by another item  |
-| indices have an order  | no guaranteed order  |
-| index is an integer  | key can be any immutable type |
+| indices **have an order**  | **no guaranteed order*8  |
+| index is an **integer**  | key can be **any immutable type** |

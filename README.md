@@ -176,3 +176,117 @@ Story:
 | 5  | 4  |
 
 
+## Recursion on Non-numerics
+
+### Palindrome String
+
+Reads the same forwards and backwards, exp: `Able was I, ere I saw Elba`
+
+How do we solve this recursively?
+**Convert the string to just characters and converting upper case to lower case**
+
+- Base case: string of 0-1 is a palindrome
+- Recursive step: first character matches last character, palindrome proved if middle is also a palindrome
+
+```
+def ispalindrome(s):
+    def toChars(s):
+        s = s.lower() #mutates the string and reduces any character to lower case
+        ans = "" #set empty string
+        for c in s: #adds the characters into a string
+            if c in 'abcdefghijklmnopqrstuvwxyz':
+                ans = ans + c
+        return ans
+```
+`toChars(s)` function basically acts as a string manipulator to remove any spaces and turns all chacracters to lower cases.
+```
+def isPal(s):
+        if len(s) <= 1: #base case
+            return True
+        else: 
+            return s[0] == s[-1] and isPal(s[1:-1]) #recursive step
+        return isPal(toChars(s))
+```
+`isPal(s)` function will have two blocks:
+- base case: if the entire string has only one or less than one character, all instances will be returned true
+- recursive step: takes the first and last character from the string and returns true, while reducing the length of the string using `isPal(s[1:-1])`, calls the function again and repeats the process over and over until it reaches base case 
+
+*Revise string manipulation and functions thoroughly to get the idea*
+
+## Divide And Conquer
+
+This is a practice used to solve a hard problem by breaking it into a set of sub-problems:
+
+- sub-problems are easier to solve than the original
+- solutions of sub-problems can be combined to solve the original
+
+## Dictionaries
+
+### Storing Student Info
+
+Here is an example of student info containing names, their grades and cgpa:
+```
+names = ["John","Adam","Morty"]
+grade = ["A+","B+","A"]
+course = [3.0,4.0,3.7]
+```
+For what we've learnt so far, this is the process to store it:
+- separate list for each item
+- each list has the same length 
+- each index refers to info for a different person
+```
+def get_grade(student, name_list, grade_list, course_list):
+ i = name_list.index(student)
+ grade = grade_list[i]
+ course = course_list[i]
+ return (course, grade)
+```
+This will work, but it's messy, not friendly to large amount of data, must maintain each lists and keep track of them, index should also be in integers.
+
+### Cleaner and More Efficient Way - Dictionary
+
+- index item of interest directly
+- one data structure, no separate lists
+
+**List vs Dictionary**
+
+#### List
+| index  | element |
+| ------------- | ------------- |
+| 0  | Elem 1  |
+| 1  | Elem 2  |
+| 2  | Elem 3  |
+| 3  | Elem 4  |
+| 4  | Elem 5  |
+| 5  | Elem 6  |
+
+#### Dictionary
+| custom index by label  | element |
+| ------------- | ------------- |
+| Key 1  | Val 1  |
+| Key 2  | Val 2  |
+| Key 3  | Val 3  |
+| Key 4  | Val 4  |
+| Key 5  | Val 5  |
+| Key 6  | Val 6  |
+
+### Dictionary 
+
+Store pairs of data with it's corresponding **key** and **value**
+```
+my_dict = {}
+grades = {"John":"A+","Adam":"B+","Morty":"A"}
+```
+Similar to indexing, python looks up the key and returns the value associated to the key. If the key isn't found, error output will be printed:
+```
+>>> grades = {"John":"A+","Adam":"B+","Morty":"A"}
+>>> grades["John"]
+'A+'
+>>> grades["Adam"]
+'B+'
+>>> grades["Shaun"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'Shaun'
+```
+## Dictionary Operations

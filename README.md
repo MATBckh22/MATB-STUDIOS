@@ -132,5 +132,47 @@ def mult(a,b):
 
 - `mult` called with b > 1 will initialize the recursive call and makes a smaller version of b, eventually reaching to base case (b = 1)
 
-## Mathematical Induction
+## Mathematical nduction
+	
+To prove a statement indexed on integers is true for all values of n *(learnt in high school, author will skip)*
+
+## Towers of Hanoi
+
+Story:
+*A temple in Hanoi has 3 spikes, one of which has a stack of 64 different sized discs. The stack of discs need to move to another spike. 2 rules:*
+- only move one disc at a time
+- larger disc cannot cover up a smaller disc
+
+**Think Recursively**
+- take a stack of n-1 discs and move it to another spike
+- move the bottom one to another spike
+- stack and repeat
+```
+def printMove(fr, to):
+ print('move from ' + str(fr) + ' to ' + str(to))
+
+def Towers(n, fr, to, spare):
+ if n == 1:
+    printMove(fr, to)
+ else:
+    Towers(n-1, fr, spare, to)
+    Towers(1, fr, to, spare)
+    Towers(n-1, spare, to, fr)
+
+```
+## Fibonacci Numbers
+Story:
+*Newborn pairs of rabbits are put in a pen, they mate at age of one month. They also have one month of gestation period (pregnancy). Assume rabbits never die, female rabbit always produces one new pair of newborn rabbits every month from it's second month on.*
+
+**Q: How many female rabbits are there at the end of one year?**
+
+| Month  | Females |
+| ------------- | ------------- |
+| 0  | 1  |
+| 1  | 1  |
+| 2  | 2  |
+| 3  | 2  |
+| 4  | 4  |
+| 5  | 4  |
+
 

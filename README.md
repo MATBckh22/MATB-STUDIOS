@@ -132,7 +132,7 @@ def mult(a,b):
 
 - `mult` called with b > 1 will initialize the recursive call and makes a smaller version of b, eventually reaching to base case (b = 1)
 
-## Mathematical nduction
+## Mathematical induction
 	
 To prove a statement indexed on integers is true for all values of n *(learnt in high school, author will skip)*
 

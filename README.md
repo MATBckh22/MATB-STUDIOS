@@ -290,3 +290,39 @@ Traceback (most recent call last):
 KeyError: 'Shaun'
 ```
 ## Dictionary Operations
+
+- `grades.keys()` returns a tuple-like iterable of **all keys**
+- `grades.values()` returns a tuple-like iterable of **all values**
+```
+>>> grades.keys()
+dict_keys(['John', 'Adam', 'Morty'])
+>>> grades.values()
+dict_values(['A+', 'B+', 'A'])
+```
+*Note: these operators returns iterables with no guaranteed order*
+
+## Dictionaries and Values
+
+### Values
+
+- any type (immutable and mutable)
+- can be duplicates
+- can be lists, or even other dictionaries
+
+### Keys
+
+- must be unique
+- immutable: **hashable objects**, *just think immutable as all immutable objects are hashable*, exp:
+`int, float, string, tuple, bool`
+- careful with `float` as a key
+
+### Keys and values **have no order**
+
+## Lists vs Dictionaries
+
+| `List`  | `Dict` |
+| ------------- | ------------- |
+| ordered sequence  | keys to values  |
+| look up elements by an integer index  | look up one item by another item  |
+| indices have an order  | no guaranteed order  |
+| index is an integer  | key can be any immutable type |

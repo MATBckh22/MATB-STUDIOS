@@ -326,3 +326,81 @@ dict_values(['A+', 'B+', 'A'])
 | look up elements by an integer index  | look up one item by another item  |
 | indices **have an order**  | **no guaranteed order**  |
 | index is an **integer**  | key can be **any immutable type** |
+
+### Example Application (Song Lyrics Analyzer)
+
+- frequency dictionary (`str:int`)
+- find a word that **occurs the most** using lists and returning tuples (`list,int`) for (words_list,highest_freq)
+- find the words that **occur at least X times**
+```
+def lyrics_to_frequencies(lyrics):
+    myDict = {}
+    for word in lyrics:
+        if word in myDict:
+            myDict[word] += 1
+        else:
+            myDict[word] = 1
+    return myDict
+```
+This function creates a dictionary of words which the song lyrics have. For every word that is listed in the lyrics, the for loop will add it into the dictionary.
+```
+def most_common_words(freqs):
+    values = freqs.values()
+    best = max(values)
+    words = []
+    for k in freqs:
+            if freqs[k] == best:
+                words.append(k)
+    return (words, best)
+```
+Take note to `best = max(values)`, this is iterated that `best` variable is the most frequent word appeared in the dictionary. We set up `words` as an empty list so we can walk through all of the words in the lyrics, if the frequency of a particular word fits into `best`, the list will add the word in. When the loop finishes the tuple will be returned.
+
+*note: max() can be used because this function is **iterable***
+```
+def words_often(freqs, minTimes):
+    result = []
+    done = False
+    while not done:
+    temp = most_common_words(freqs)
+    if temp[1] >= minTimes:
+        result.append(temp)
+        for w in temp[0]:
+            del(freqs[w])
+    else:   
+        done = True
+    return result
+print(words_often(beatles, 5))
+```
+This is a function to check how many times a word appeared in the lyrics. We again create a new dictionary for the results. We then set the flag `False` to `done` to keep track when it's done. In the while loop when it's not yet done, a temporary variable `temp` to set the most common words and the frequency of them appearing in the lyrics. If it's value is bigger than what we're looking for, it will be added into `result`.
+
+The for loop later deletes the rest of the words in the dictionary. When all of these are achieved, done will be changed to `True` and breaks the while loop. Output of result will be printed.
+
+## Fibonacci Recursive Code
+
+Here we take a deeper look into making recursive code more efficient. The example of fibonacci might look efficient to write code for, but the process of calculation will be inefficient for the computer. By using dictionaries with recursion, we can minimize the amount of calculations needed to get to base case:
+
+- Recursion without dictionary
+
+*Recalculating same values many times and keeping track of already calculated values*
+```
+def fib(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return fib(n-1) + fib(n-2)
+```
+- Recursion with dictionary
+```
+def fib_efficient(n, d):
+    if n in d:
+        return d[n]
+    else:
+        ans = fib_efficient(n-1, d) + fib_efficient(n-2, d)
+    d[n] = ans
+    return ans
+d = {1:1, 2:2}
+print(fib_efficient(6, d))
+```
+*Does a lookup first in case it already calculated the values and modifies it as progress through function calls*

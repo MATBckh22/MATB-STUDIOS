@@ -140,3 +140,10 @@ def abs(x):
 
 ## Error Messages
 
+| Reason of Error  | Example | Error Output |
+| ------------- | ------------- | ------------- |
+| trying to access beyond list limits  | `test = [1,2,3]` then `test[4]`  | `IndexError`
+| trying to convert inapproriate types  | `int(test)`  | `TypeError`
+| referencing a non-existing variable  | `a`  | `NameError`
+| mixing data types without approriate coercion  | `'3'/4 `  | `TypeError`
+| forgetting to close parenthesis, quotation, etc  | `a = len([1,2,3]` then `print(a)`  | `SyntaxError`

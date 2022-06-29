@@ -303,5 +303,197 @@ These can be seen as if-else blocks to catch certain errors, the last `except` b
 
 ## Other Exceptions
 
-`else`:
-    
+### `else`
+
+Executed when execution of associated `try` body **completes with no exception**
+
+### `finally`
+
+**This block is always executed** after any `try`, `else`, `except`, etc clauses, even after an error is raised or `break`, `continue` or `return` is executed. This is incredibly useful to clean up code that **should be run no matter what happened.**
+
+## Usage of Exceptions
+
+What to do when encounter an error?
+
+- fail silently: **not recommended, do not do this**
+    - substitute default or just continue
+    - no warning output
+
+- return an error value: **not recommended too**
+    - *what values to choose?*
+    - complicates code having to check for special values
+
+### **Recommended method:**
+
+- stop execution, signal error condition:
+    - raising an exception: `raise Exception("descriptive string")`
+
+## Exceptions as Control Flow
+
+### Flow
+
+- raise an exception when unable to produce a result consistent with function's specifications:
+
+`raise <exceptionName>(<arguments>)`
+
+ This is followed by a keyword, the name of error to be raised and a string of message describing the exception (optional)
+
+ ## Example of Raising Exceptions 1
+
+ ```
+ def get_ratios(L1, L2):
+    """ Assumes: L1 and L2 are lists of equal length of numbers
+    Returns: a list containing L1[i]/L2[i] """
+    ratios = []
+    for index in range(len(L1)):
+    try:
+        ratios.append(L1[index]/L2[index])
+    except ZeroDivisionError:
+        ratios.append(float('nan')) #nan = not a number
+    except:
+        raise ValueError('get_ratios called with bad arg')
+    return ratios
+```
+This function is used to calculate a set of ratios of numbers. We begin by setting an empty list `ratio = []`. Under the for loop, when a number is indexed in, `try` block is executed when the index is in the correct boundary that we want. 
+
+In cases where there is a `ZeroDivisionError` error, `nan` is added into the list indicating that it is not a number. 
+
+Otherwise, when any error left is detected, `ValueError` is raised instead. 
+
+## Example of Raising Exceptions 2
+
+- Class list of each subject: each is a list of two parts:
+    - first and last name of a student
+    - grades on assignments
+
+```
+test_grades = [[['peter', 'parker'], [80.0, 70.0, 85.0]],
+[['bruce', 'wayne'], [100.0, 80.0, 74.0]]]
+```
+- create a **new class list** with names, grades and an average
+
+```
+[[['peter', 'parker'], [80.0, 70.0, 85.0], 78.33333],
+[['bruce', 'wayne'], [100.0, 80.0, 74.0], 84.666667]]]
+```
+
+### Without `try` and `except`
+
+```
+def get_stats(class_list):
+    new_stats = []
+    for elt in class_list:
+        new_stats.append([elt[0], elt[1], avg(elt[1])])
+    return new_stats
+
+def avg(grades):
+    return sum(grades)/len(grades)
+```
+
+Here we begin with defining the first function `get_stats()` to setup a new list containing a name with the associated grade and average. 
+
+`avg()` is called to calculate the average of the student's grades: `return sum(grades)/len(grades)`
+
+However, this system is flawed. It doesn't take account into students that don't have a grade:
+
+```
+test_grades = [[['peter', 'parker'], [10.0, 5.0, 85.0]],
+[['bruce', 'wayne'], [10.0, 8.0, 74.0]],
+[['captain', 'america'], [8.0,10.0,96.0]],
+[['deadpool'], []]] #<-- here
+```
+
+`ZeroDivisionError: float division by zero` will be raised because `return sum(grades)/len(grades)` is being executed.
+
+We have two options to solve this problem:
+
+### Option 1: Flag the error by printing a message
+
+- **notify something** when it goes wrong:
+
+```
+def avg(grades):
+    try:
+        return sum(grades)/len(grades)
+    except ZeroDivisionError:
+        print('warning: no grades data')
+```
+
+The output will look like this:
+
+```
+warning: no grades data #error flagged
+[[['peter', 'parker'], [10.0, 5.0, 85.0], 15.41666666],
+[['bruce', 'wayne'], [10.0, 8.0, 74.0], 13.83333334],
+[['captain', 'america'], [8.0, 10.0, 96.0], 17.5],
+[['deadpool'], [], None]] #notice None
+```
+
+Even though the error is raised and flagged, `None` will still be printed because **there is no return program under** `except` **block.**
+
+### Option 2: Change the policy
+
+- decide that a **student with no grades gets a zero:**
+
+```
+def avg(grades):
+    try:
+        return sum(grades)/len(grades)
+    except ZeroDivisionError:
+        print('warning: no grades data')
+        return 0.0
+```
+Now it will print zero:
+
+```
+warning: no grades data
+[[['peter', 'parker'], [10.0, 5.0, 85.0], 15.41666666],
+[['bruce', 'wayne'], [10.0, 8.0, 74.0], 13.83333334],
+[['captain', 'america'], [8.0, 10.0, 96.0], 17.5],
+[['deadpool'], [], 0.0]] #zero is printed
+```
+
+## Assertions
+
+- want to be sure that **assumptions on state of
+computation are as expected**
+- use an assert statement to **raise an
+AssertionError exception if assumptions not met**
+- an example of **good defensive programming**
+
+### Asserting
+
+```
+def avg(grades):
+    assert len(grades) != 0, 'no grades data'
+    return sum(grades)/len(grades)
+```
+`assert len(grades) != 0, 'no grades data'` is an assertion. It is a pre-condition where the **function ends immediately if this assertion is not met.** 
+
+It raises `AssertionError` if it is given an empty list of grades. 
+
+This is good practice that it prevents the program from outputting bad values. The program stops when something went wrong, so it's easier to trace the error and where exactly the bug came from.
+
+## Assertions as Defensive Programming
+
+- assertions don’t allow a programmer to control
+response to unexpected conditions
+- ensure that **execution halts** whenever an expected
+condition is not met
+- typically used to **check inputs** to functions, but can be
+used anywhere
+- can be used to **check outputs** of a function to avoid
+propagating bad values
+- can make it easier to **locate a source of a bu**g
+
+## Where To Use Assertions
+
+- goal is to **spot bugs as soon as introduced and make
+clear where they happened**
+- use as a **supplement to testing**
+- raise **exceptions** if users supplies **bad data input**
+- use assertions to
+    - check **types of arguments or values**
+    - check that **invariants** on data structures are met
+    - check **constraints on return values**
+    - check for **violations of constraints** on procedure (e.g. no duplicates in a list)

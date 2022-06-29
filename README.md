@@ -9,20 +9,31 @@ RBX studio is based on one language: rbx lua (lua)
 
 *ignore 3.7*
 
-# MATB-Reset and Improve Program
-
-materials:
+## MATB-Reset and Improve Program
+-----
+### Materials
 - https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8
 - https://cs50.harvard.edu/x/2022/
 - https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4
 - https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/
 
-## Updates:
+### MIT6 Updates
 
 Lecture notes for MIT6 is still not yet complete. Kindly refer to the list below on sections that are not yet updated:
 
 - MIT6-Lec1: whole set
-- Mit6-Lec2
+    - rearrangement on format
+    - material review
+- MIT6-Lec2: whole set
+    - rearrangement on format
+- MIT6-Lec4: under `return` *vs* `print`
+    - incomplete notes
+- MIT6-Lec6: under Fibonacci Numbers
+    - incomplete notes
 
+### Using MIT6 Notes
 
+- `MIT-Lec`: code used in lectures
+- `MIT6-Lec.pdf`: lecture ppt 
+- `readme`: lecture notes written by author MATBckh22
 

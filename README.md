@@ -170,3 +170,64 @@ Return operator is also used under method block as it behaves similarly to funct
 
 ## Using Methods
 
+Conventional way to use the class:
+ ```
+ c = Coordinate(3,4)
+zero = Coordinate(0,0)
+print(c.distance(zero))
+```
+`c` is the object to call the method `distance`. In details, `c` is going to look up the class `Coordinate`, under this class it's going to look up method `distance`. `self` is not included because `c` is assigned to it by default.
+
+Inside the parenthesis it gives parameter `zero`.
+
+This is also equivalent to (easier to understand although more tedious to write):
+
+```
+c = Coordinate(3,4)
+zero = Coordinate(0,0)
+print(Coordinate.distance(c, zero))
+```
+`print(Coordinate.distance(c, zero))` is the same as `print(c.distance(zero))`.
+
+`Coordinate` here is being shown as the class, `distance` being the method and inside the parentheses it includes all of the variables **including** `self`. `zero` here can be seen as `other`.
+
+## Print Representation Of An Object
+
+```
+>>> c = Coordinate(3,4)
+>>> print(c)
+<__main__.Coordinate object at 0x7fa918510488>
+```
+- uninformative print representation by default
+- define a `__str__` method for a class
+- Python calls the `__str__ `method when used with print on your class object
+
+### **Goal:** 
+
+Define a print method that shows actual coordinates:
+
+```
+>>> print(c)
+<3,4>
+```
+
+## Defining Your Own Print Methods
+
+```
+class Coordinate(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def distance(self, other):
+        x_diff_sq = (self.x-other.x)**2
+        y_diff_sq = (self.y-other.y)**2
+        return (x_diff_sq + y_diff_sq)**0.5
+    def __str__(self):
+        return "<"+str(self.x)+","+str(self.y)+">"
+        #notice that it's concatenated with the + operator
+```
+
+`__str__()` is the name of the special method to define a print. **Remember, ur printing a string, so it has to be in** `"<>"` **.** All of the strings that are in the print method should be concatenated with the `+` operator.
+
+## Wrapping Your Head Around Types and Classes
+

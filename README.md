@@ -148,6 +148,7 @@ Methods behave like a function other than `self` and dot notation (take params, 
 def distance(self, other):
 # code here
 ```
+
 This is the format to **define a method.** Inside the parentheses of a method it **refers to an existing instance called** `self` **and creates another parameter `other`,** combining the previous instance definition will look like this:
 
 ```
@@ -160,6 +161,7 @@ class Coordinate(object):
         y_diff_sq = (self.y-other.y)**2
         return (x_diff_sq + y_diff_sq)**0.5
 ```
+
 Instance definitions are always followed by a method, in this case it's `distance`. In `distance` parameter there will be `self` and `other`:
 - `self` is used to refer to any instance
 - `other` is used as another parameter to method
@@ -171,11 +173,13 @@ Return operator is also used under method block as it behaves similarly to funct
 ## Using Methods
 
 Conventional way to use the class:
+
  ```
  c = Coordinate(3,4)
 zero = Coordinate(0,0)
 print(c.distance(zero))
 ```
+
 `c` is the object to call the method `distance`. In details, `c` is going to look up the class `Coordinate`, under this class it's going to look up method `distance`. `self` is not included because `c` is assigned to it by default.
 
 Inside the parenthesis it gives parameter `zero`.
@@ -198,6 +202,7 @@ print(Coordinate.distance(c, zero))
 >>> print(c)
 <__main__.Coordinate object at 0x7fa918510488>
 ```
+
 - uninformative print representation by default
 - define a `__str__` method for a class
 - Python calls the `__str__ `method when used with print on your class object
@@ -231,3 +236,78 @@ class Coordinate(object):
 
 ## Wrapping Your Head Around Types and Classes
 
+To clear up confusion for types and classes:
+- ask for the type of an object instance
+
+```
+>>> c = Coordinate(3,4)
+>>> print(c)
+<3,4> #return of __str__ method
+>>> print(type(c)) #prints the type of class c is
+<class __main__.Coordinate> #c is in class Coordinate
+```
+
+Notice the difference between `print(c)` and `print(type(c))`. `print(type())` is used to print the type of class the object's in.
+
+- this makes sense since
+
+```
+>>> print(Coordinate)
+<class __main__.Coordinate> #Coordinate is a class
+>>> print(type(Coordinate))
+<type 'type'> #Coordinate class is a type of object
+```
+
+If we print `Coordinate` itself, it shows that it's a class. However, printing the type of `Coordinate` will just be seen as printing an object **(a** `Coordinate` **class is just an object)**, thus it shows `type`.
+
+- use `isinstance()` to check if an object is a `Coordinate`
+
+```
+>>> print(isinstance(c, Coordinate))
+True
+```
+
+`isinstance()` is used to check whether a particular object is an instance of a class.
+
+## Special Operators
+
+- `+`, `-`, `==`, `<`, `>`, `len()`, `print`, and many others
+
+### https://docs.python.org/3/reference/datamodel.html#basic-customization
+
+Similar to `print`, u can override these to work with ur class. Define them with double underscores before/after: 
+
+| Method Operators | Object Operators |
+| - | - |
+| `__add__(self, other)` | `self + other`
+| `__sub__(self, other)` | `self - other`
+| `__eq__(self, other)` | `self == other`
+| `__lt__(self, other)` | `self < other`
+| `__len__(self)` | `len(self)`
+| `__str__(self)` | `print self`
+
+This must be used when interacting with two objects of the same class.
+
+### Example: Fractions
+
+**Goal: Create a new type to represent a number as a fraction:**
+
+- internal representation is two integers
+    - numerator
+    - denominator
+
+- interface (methods) how to interact with `Fraction` objects
+    - add, subtract
+    - print representation, convert to a float
+    - invert the fraction
+
+*Author will post code and explanation later, try it out first!*
+
+## The Power of OOP
+
+- bundle together objects that share
+    - **common attributes** 
+    - **procedures** that operate on those attributes
+- use **abstraction** to make a distinction between **how to implement an object vs how to use the object**
+- build **layers of object abstractions** that inherit behaviors from other classes of objects
+- **create our own classes of objects** on top of python’s basic classes

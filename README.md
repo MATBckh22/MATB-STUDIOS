@@ -32,7 +32,7 @@ Lecture video playlist can be found [here](https://youtu.be/nykOeWgQcHM)
 
 ### MIT6 Updates
 
-Lecture notes for MIT6 is still not yet complete. Kindly refer to the list below on sections that are not yet updated:
+Lecture notes for MIT6 are incomplete. Kindly refer to the list below on sections that are not yet updated:
 
 - MIT6-Lec1: whole set
     - rearrangement on format

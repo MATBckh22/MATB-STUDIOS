@@ -63,3 +63,83 @@ def set_name(self, newname=""):
 
 ## Instance and Dot Notation 
 
+Instantiation creates an instance of an object:
+
+```
+a = Animal(3)
+```
+
+Dot notation is used to access attributes (data and methods):
+
+```
+a.age #allowed but not recommended
+a.get_age() #recommended getters and setters method
+```
+
+## Information Hiding
+
+Author of class definition may change data attribute variable names:
+
+```
+class Animal(object):
+    def __init__(self, age):
+        self.years = age
+    def get_age(self):
+        return self.years
+```
+
+Notice `self.years = age` how `age` is replaced with `self.years`. Errors may occur if u are accessing **data attributes outside the class and class definiton changes.** 
+
+It is advised to use getters and setters outside of the class, use `a.get_age()` and not `a.age`:
+- good style
+- easy to maintain code
+- prevents bugs
+
+### Python Not Great at Information Hiding
+
+Python allows: **(not recommended)**
+
+- **accessing data** outside class definition:
+```
+print(a.age)
+```
+- **writing data** outside class definition:
+```
+a.age = 'infinite'
+```
+- **creating data** attributes from an instance outside class definition:
+```
+a.size = "tiny"
+```
+
+## Default Arguments
+
+Default Arguments for formal parameters are used if there's no specific argument is given:
+
+```
+def set_name(self, newname=""):
+    self.name = newname
+```
+
+`""` is called default argument. It can be used in:
+
+```
+a = Animal(3)
+a.set_name()
+print(a.get_name()) 
+```
+
+`print(a.get_name())` prints an empty string `""`. No parameters are passed in `a.set_name()`, but because `newname=""` already has a default argument, it will print `""` instead of an error. If there are no formal parameters passed in the argument, then it will use whatever is set by default.
+
+Normal argument:
+
+```
+a = Animal(3)
+a.set_name("fluffy")
+print(a.get_name())
+```
+
+This will print `"fluffy"` as it has an argument passed into `a.set_name()`.
+
+## Hierarchies
+

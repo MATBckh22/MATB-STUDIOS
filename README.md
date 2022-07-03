@@ -273,7 +273,7 @@ True
 
 - `+`, `-`, `==`, `<`, `>`, `len()`, `print`, and many others
 
-### https://docs.python.org/3/reference/datamodel.html#basic-customization
+### [Basic Customization Operators](https://docs.python.org/3/reference/datamodel.html#basic-customization)
 
 Similar to `print`, u can override these to work with ur class. Define them with double underscores before/after: 
 

@@ -143,3 +143,46 @@ This will print `"fluffy"` as it has an argument passed into `a.set_name()`.
 
 ## Hierarchies
 
+Hierarchies are layers of classes to build up from:
+
+- parent class (superclass)
+    - highest level or higher level of class
+- child class (subclass)
+inherits all data and behaviors of parent class
+    - add more info
+    - add more behavior
+    - override behavior
+
+*Example: If animal is a parent class, it will have child classes people, cats, rabbits, etc. In a people's class it will have students, workers, etc.
+
+**Different child classes have different behaviours, but they all have the same parent class attributes.**
+
+## Inheritance: Parent Class
+
+```
+class Person(Animal):
+    def __init__(self, name, age):
+        Animal.__init__(self, age)
+        self.set_name(name)
+        self.friends = []
+    def get_friends(self):
+        return self.friends
+    def speak(self):
+        print("hello")
+    def add_friend(self, fname):
+        if fname not in self.friends:
+            self.friends.append(fname)
+    def age_diff(self, other):
+        diff = self.age - other.age
+        print(abs(diff), "year difference")
+    def __str__(self):
+        return "person:"+str(self.name)+":"+str(self.age)
+```
+
+- everything is an object
+- class `object` implements basic operations in phyton
+
+## Inheritance: Subclass 
+
+ 
+

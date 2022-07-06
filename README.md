@@ -2,7 +2,7 @@
 
 ## Author's Note
 
-Welcome to Course `6.0001` **Introduction to Computer Science and Programming in Python!** This is a rather gentle but deep guide on grasping the basics of programming concepts. Although the main language taught will be Python, you will be able to conceptualize the mindset of a programmer. Hope to see you through the end of the course!
+Welcome to Course `6.0001` **Introduction to Computer Science and Programming in Python!** This is a rather gentle but deep guide on grasping the basics of programming concepts. I have watched roughly 9 hours worth of lecture videos so you don't have to (although learning with videos is highly recommended, the lecturers are extremely articulate). While the main language taught will be Python, you will be able to conceptualize the mindset of a programmer. Hope to see you through the end of the course!
 
 ## Prep
 

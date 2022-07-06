@@ -121,7 +121,22 @@ If `e` is not on the list, the program needs to loop multiple times until it doe
 
 When `e` is in the middle of the list, the program has to look halfway through the elements to find `e`. This is the **average case scenario**.
 
-The point of this function is to measure the behaviour of how a program runs in a certain way.
+**The point of this function is to measure the behaviour of how a program runs in a certain way.**
+
+## Best, Average, Worst Cases
+
+Suppose a list `L` with a length `len(L)`, we divide cases over **all possible inputs of** `len(L)`:
+
+- **best case: minimum running time:**
+    - constant for `search_for_elmt`
+    - first element in any list
+- **average case: average running time:**
+    - practical measure
+- **worst case: maximum running time:**
+    - linear in length of list of `search_for_elmt`
+    - **must search entire list and not find it**
+
+## Orders of Growth
 
 
 

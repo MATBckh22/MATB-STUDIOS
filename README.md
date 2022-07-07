@@ -138,6 +138,32 @@ Suppose a list `L` with a length `len(L)`, we divide cases over **all possible i
 
 ## Orders of Growth
 
+We want to achieve these:
+- evaluate program efficiency with **very large inputs**
+- express **growth of program's run time**
+- putting **upper bound** of growth
+- emphasizing **order** and **not exact**
+- tighting upper bound on growth as function of size of input in worst case
 
+## Measuring Order of Growth: Big "Oh" Notation: `O()`
 
+- used to describe worst case:
+    - worst case occurs often and is the bottleneck when a program runs
+    - express rate of growth of program relative to input size
+    - **evaluate algorithm only**
 
+## Exact Steps vs `O()`
+
+Code to calculate a factorial:
+
+```
+def fact_iter(n):
+    ""assumes n an int >= 0"""
+    answer = 1
+    while n > 1:
+        answer *= n
+        n -= 1
+    return answer
+ ```
+
+The number of steps for the code to run will be 1+6n+1. However, as this was previously said, this method is incosistent. It would be better to evaluate the [asymptotic complexity](https://www.tutorialspoint.com/asymptotic-complexity) of a program, in this case it's $O(n)$. 

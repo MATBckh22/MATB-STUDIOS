@@ -177,23 +177,23 @@ Focus on **dominant terms:**
 
 $O(n^2) : n^2 + 2n + 2$
 
-Since $n^2$ is the largest term here, the asymptotic behavior of this is $O(n^2)$.
+- Since $n^2$ is the largest term here, the asymptotic behavior of this is $O(n^2)$.
 
 $O(n^2) : n^2 + 100000n + 3^{1000}$
 
-Even when $100000n$ is considered very large in the beginning, when n input grows to an incredibly large amount, $n^2$ will still be the dominant term.
+- Even when $100000n$ is considered very large in the beginning, when n input grows to an incredibly large amount, $n^2$ will still be the dominant term.
 
 $O(n) : \log n + n + 4$
 
-n grows much faster than $\log n$, so the order of growth here will be $O(n)$.
+- n grows much faster than $\log n$, so the order of growth here will be $O(n)$.
 
 $O(n\log n) : 0.0001*n*\log n + 300n$
 
-Even when $n\log n$ is multiplied by a very small decimal, when input size grows it will still be the largest term that grows the most rapidly.
+- Even when $n\log n$ is multiplied by a very small decimal, when input size grows it will still be the largest term that grows the most rapidly.
 
 $O(3^n) : 2n^{30} + 3^n$
 
-Exponentials grows faster than powers. So order of growth is $O(3^n)$.
+- Exponentials grows faster than powers. So order of growth is $O(3^n)$.
 
 
 ![Types of order of growth](https://scontent.fkul3-2.fna.fbcdn.net/v/t1.15752-9/292257433_1180369952536190_2868922925712914083_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=vojOX5r1SmgAX-6xHrJ&_nc_ht=scontent.fkul3-2.fna&oh=03_AVKGkvM_clzpau0-iZcbJu1Q-3jf4gqxoUF-TFRrmGx_AA&oe=62EBF37E)

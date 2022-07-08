@@ -145,14 +145,14 @@ We want to achieve these:
 - emphasizing **order** and **not exact**
 - tighting upper bound on growth as function of size of input in worst case
 
-## Measuring Order of Growth: Big "Oh" Notation: `O()`
+## Measuring Order of Growth: Big "Oh" Notation: $O()$
 
 - used to describe worst case:
     - worst case occurs often and is the bottleneck when a program runs
     - express rate of growth of program relative to input size
     - **evaluate algorithm only**
 
-## Exact Steps vs `O()`
+## Exact Steps vs $O()$
 
 Code to calculate a factorial:
 
@@ -167,3 +167,5 @@ def fact_iter(n):
  ```
 
 The number of steps for the code to run will be 1+6n+1. However, as this was previously said, this method is incosistent. It would be better to evaluate the [asymptotic complexity](https://www.tutorialspoint.com/asymptotic-complexity) of a program, in this case it's $O(n)$. 
+
+### Asymptotic Complexity with The Big O Notation

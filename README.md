@@ -181,7 +181,7 @@ $O(n^2) : n^2 + 2n + 2$
 
 $O(n^2) : n^2 + 100000n + 3^{1000}$
 
-- Even when $100000n$ is considered very large in the beginning, when n input grows to an incredibly large amount, $n^2$ will still be the dominant term.
+- Although $100000n$ is considered very large in the beginning, when n input grows to an incredibly large amount, $n^2$ will still be the dominant term.
 
 $O(n) : \log n + n + 4$
 
@@ -198,4 +198,25 @@ $O(3^n) : 2n^{30} + 3^n$
 
 ![Types of order of growth](https://scontent.fkul3-2.fna.fbcdn.net/v/t1.15752-9/292257433_1180369952536190_2868922925712914083_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=vojOX5r1SmgAX-6xHrJ&_nc_ht=scontent.fkul3-2.fna&oh=03_AVKGkvM_clzpau0-iZcbJu1Q-3jf4gqxoUF-TFRrmGx_AA&oe=62EBF37E)
 
+### As observed (time to input size):
+- constant growth doesn't change
+- linear growth increases as a straight line
+- quadratic growth starts to grow more quicker 
+- logarithmic is always better than linear as it slows down at the end
+- $n \log n$ sits between linear and quadratic, it's commonly found in algorithms
+- exponential growth booms
+
+## Analyzing Programs and Their Complexity
+
+Laws of addition and multiplication can combine complex cases and multiple O notations:
+
+### Laws of Addition: $O(f(n))+O(g(n)) = {O}$
+
+
+```
+for i in range(n):
+    print ("a")
+for j in range(n*n):
+    print ("b")
+```
 

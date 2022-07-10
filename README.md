@@ -28,7 +28,7 @@ Make sure to download the Python extension, you can find this at the 5th selecti
 - `MIT6-Lec.pdf`: lecture ppt 
 - `readme`: lecture notes written by author MATBckh22
 
-Lecture video playlist can be found [here](https://youtu.be/nykOeWgQcHM)
+Please inform the author for any typo, format, link errors found in the notes, lecture video playlist can be found [here](https://youtu.be/nykOeWgQcHM)
 
 ### MIT6 Updates
 

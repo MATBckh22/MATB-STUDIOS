@@ -210,8 +210,9 @@ $O(3^n) : 2n^{30} + 3^n$
 
 Laws of addition and multiplication can combine complex cases and multiple O notations:
 
-### Laws of Addition: $O(f(n))+O(g(n)) = {O}$
+### Laws of Addition: $O(f(n))+O(g(n)) = O(f(n)+g(n)) = O(\max{(f(n),g(n))})$
 
+- used with **sequential** statements:
 
 ```
 for i in range(n):
@@ -219,4 +220,35 @@ for i in range(n):
 for j in range(n*n):
     print ("b")
 ```
+
+Again only considering the dominant term we get $O(n)+O(n * n) = O(n+n^2) = O(n^2)$.
+
+### Laws of Multiplication: $O(f(n))+O(g(n)) = O(f(n) * g(n))$
+
+- used with **nested** statements:
+
+```
+for i in range(n):
+    for j in range(n):
+        print('a')
+```
+
+Outer loop goes n times, and the inner loop goes every n times as well for every outer loop iterated: $O(n) * O(n) = O(n * n) = O(n^2)$
+
+## Complexity classes
+
+Here is a table of complexity classes from low to high:
+
+| Class | example | 
+| - | - |
+| Constant | $O(k), k \in \mathbb{R}$ 
+| Logarithmic | $O(\log n)$
+| Linear | $O(n)$
+| Log-linear | $O(n \log n)$
+| Polynomial | $O(n^k)$
+| Exponential | $O(k^n)$
+
+## Linear Complexity
+
+
 

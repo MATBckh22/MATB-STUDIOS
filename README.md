@@ -187,7 +187,7 @@ $O(n) : \log n + n + 4$
 
 - n grows much faster than $\log n$, so the order of growth here will be $O(n)$.
 
-$O(n\log n) : 0.0001*n*\log n + 300n$
+$O(n \log n) : 0.0001 * n * \log n + 300n$
 
 - Even when $n\log n$ is multiplied by a very small decimal, when input size grows it will still be the largest term that grows the most rapidly.
 

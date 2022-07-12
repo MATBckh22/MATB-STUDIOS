@@ -250,5 +250,23 @@ Here is a table of complexity classes from low to high:
 
 ## Linear Complexity
 
+### Linear Search on **Unsorted** List
 
+This is an example function used to search things linearly:
+
+```
+def linear_search(L, e):
+    found = False
+    for i in range(len(L)): 
+        if e == L[i]: #speeding up by returning True, but doesn't impact worst case
+        found = True
+    return found
+```
+
+The overall complexity of this program is $O(n)$ where n is `len(L)`. Worst case: it must look through all elements to decide it's not there.
+
+- $O(len(L))$ for the loop $O(1)$ to test if `e == L[i]`
+    - $O(1+4n+1) = O(4n+2) = O(n)$
+
+### Constant Time List Access
 

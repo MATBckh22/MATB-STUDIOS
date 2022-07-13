@@ -270,9 +270,27 @@ The overall complexity of this program is $O(n)$ where n is `len(L)`. Worst case
 - $O(len(L))$ for the loop $O(1)$ to test if `e == L[i]`
     - $O(1+4n+1) = O(4n+2) = O(n)$
 
+### Linear Search on **Sorted** List
+
+```
+def search(L, e):
+    for i in range(len(L)):
+        if L[i] == e:
+            return True
+        if L[i] > e:
+            return False
+    return False
+```  
+
+Given that the list is sorted, we can program it so that when the search finds the desired element, it will return `True`, for elements beyond will return `False`.
+
+Overall complexity is still $O(n)$ where `len(L)` will be the total length of the search. Though run time may differ for this method.
+
 ## Constant Time List Access
 
-### About Constant Time $O(1)$
+List access `L[i]` is different from search methods. Here we will explain why accessing an index from a list takes constant time:
+
+### About Constant Time: $O(k)$
 
 Constant complexity refers to an algorithm that **takes the same amount of time no matter how many inputs are given.** 
 
@@ -280,6 +298,133 @@ Constant complexity refers to an algorithm that **takes the same amount of time 
 
 A list is represented internally as an array. An array lookup is always $O(1)$, it does not depend on the size of the array. this is known by a memory location or a pointer. 
 
-In case of array the memory location is calculated by using base pointer, index of element and size of element. 
+In case of array, the memory location is calculated by using base pointer, index of element and size of element. 
 
-Let's say, an array of 10 integer variables, with indices 0 through 9, may be stored as 10 words at memory addresses 2000, 2004, 2008, … 2036, so that the element with index i has the address 2000 + 4 × i. **This involves one multiplication and one addition operation, which takes constant time to execute, this operation is fixed.**
+Let's say, an array of 10 integer variables, with indices 0 through 9, may be stored as 10 words at memory addresses 2000, 2004, 2008, … 2036, so that the element with index i has the address 2000 + 4 × i. **This involves one multiplication and one addition operation, which takes constant time to execute, since this operation is fixed, list access takes constant time to execute as well.**
+
+Relative sources: 
+- [Complexity Exercises](https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/?ref=lbp)
+- [Stack Overflow](https://stackoverflow.com/questions/7297916/why-does-accessing-an-element-in-an-array-take-constant-time)
+
+## Linear Complexity
+
+### Example 1
+
+`addDigits()` is a function to search a list in sequence to see if the element is present:
+
+```
+def addDigits(s):
+    val = 0
+    for c in s:
+        val += int(c)
+    return val
+```
+
+### Example 2
+
+`fact_iter()` is an example of a factorial code:
+
+```
+def fact_iter(n):
+    prod = 1
+    for i in range(1, n+1):
+        prod *= i
+    return prod
+```
+
+it loops n times but the number of operations inside the loop is constant:
+- set `i`
+- multiply
+- set `prod`
+
+Since the complexity inside the loop is $O(1+3n+1) = O(3n+2) = O(n)$, the overall complexity of the entire function is also $O(n)$, which is linear.
+
+## Quadratic Complexity - Nested Loops
+
+### Subset List
+
+This example is to determine whether one list is a subset of another (every element of the first list appears in the second, assuming there are no duplicates): [Visualization](https://pythontutor.com/render.html#code=def%20isSubset%28L1,%20L2%29%3A%0A%20%20%20%20for%20e1%20in%20L1%3A%0A%20%20%20%20%20%20%20%20matched%20%3D%20False%0A%20%20%20%20%20%20%20%20for%20e2%20in%20L2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20e1%20%3D%3D%20e2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20matched%20%3D%20True%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20break%0A%20%20%20%20%20%20%20%20if%20not%20matched%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20return%20True%0A%0A%0AisSubset%28%7B1,2,3,4,5,6%7D,%7B1,2,3,4,5,6,7%7D%29&cumulative=false&curInstr=77&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def isSubset(L1, L2):
+    for e1 in L1:
+        matched = False
+        for e2 in L2:
+            if e1 == e2:
+                matched = True
+                break
+        if not matched:
+            return False
+    return True
+```
+
+We begin by setting a `False` flag, for every 1st for loop is being executed the 2nd for loop will be looped to search for the elements. This will go either two ways:
+- if it finds that both elements are present in the lists, as `e1 == e2`, the loop will break and return True, adding the counter by 1 and restarting the process again
+- if it goes through the entire list and doesn't find it, `False` is returned
+
+### Subset Complexity
+
+Outer loops is executed `len(L1)` times, note that each iteration will execute the inner loop up to `len(L2)` times in which a constant number of operations will be executed under that loop. **Hence, for every outer loop runs a `len(L2)` inner loop is ran:**
+
+$O(len(L1) * len(L2))$
+
+**Worst case scenario: no elements that are shared in both lists, :**
+
+$O({len(L1)}^2), len(L1) = len(L2)$
+
+### List Intersection
+
+This example finds an intersection of two lists. It returns a list where it appears on both of the lists:
+[Visualization](https://pythontutor.com/render.html#code=def%20intersect%28L1,%20L2%29%3A%0A%20%20%20%20tmp%20%3D%20%5B%5D%0A%20%20%20%20for%20e1%20in%20L1%3A%0A%20%20%20%20%20%20%20%20for%20e2%20in%20L2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20e1%20%3D%3D%20e2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tmp.append%28e1%29%0A%20%20%20%20res%20%3D%20%5B%5D%0A%20%20%20%20for%20e%20in%20tmp%3A%0A%20%20%20%20%20%20%20%20if%20not%28e%20in%20res%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20res.append%28e%29%0A%20%20%20%20return%20res%0A%20%20%20%20%0Aintersect%28%5B1,2,3,4,5%5D,%5B1,2%5D%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def intersect(L1, L2):
+    tmp = []
+    for e1 in L1:
+        for e2 in L2:
+            if e1 == e2:
+                tmp.append(e1)
+    res = []
+    for e in tmp:
+        if not(e in res):
+            res.append(e)
+    return res
+```
+
+We begin by creating an empty list variable `tmp`, using similar concepts from subset, when there is an element shared within `L1` and `L2`, that element will be added into `tmp`. 
+
+We then create another empty list variable `res` to remove any possible duplicates in `tmp` and add it into the list.
+
+`res` is returned containing elements that are in both lists.
+
+### Intersection Complexity
+
+First nested loop, similar to subsets, has a complexity of
+
+$O(len(L1) * len(L2))$
+
+Second loop is not nested, it depends on `tmp`, specifically the length of `L1`, so it's complexity is just
+
+$O(len(L1))$
+
+Assuming both lists are about the same length, applying basic rules of asymptotic complexity this algorithm has a growth of
+
+$O({len(L1)}^2), len(L1) = len(L2)$
+
+## $O()$ Nested Loops
+
+Basic example to calculate $n^2$: 
+```
+def g(n):
+    """ assume n >= 0 """
+    x = 0
+    for i in range(n):
+        for j in range(n):
+            x += 1
+    return x
+```
+
+- inefficient
+- when dealing with nested loops, **look at ranges**
+- nested loops, **each iterating n times**
+- **nested loops typically have quadratic behaviour:** $O(n^2)$

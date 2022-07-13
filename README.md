@@ -61,3 +61,6 @@ Below are the links to every chapter in the course, those without them are yet t
 - Understanding Program Efficiency, Part 1
 - Understanding Program Efficiency, Part 2
 - Searching and Sorting
+
+## Other Materials
+[bad Habits](https://towardsdatascience.com/18-common-python-anti-patterns-i-wish-i-had-known-before-44d983805f0f)

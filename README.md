@@ -206,6 +206,20 @@ $O(3^n) : 2n^{30} + 3^n$
 - $n \log n$ sits between linear and quadratic, it's commonly found in algorithms
 - exponential growth booms
 
+## Complexity classes
+
+Here is a table of complexity classes from low to high:
+
+| Class | example | 
+| - | - |
+| Constant | $O(k), k \in \mathbb{R}$ 
+| Logarithmic | $O(\log n)$
+| Linear | $O(n)$
+| Log-linear | $O(n \log n)$
+| Polynomial | $O(n^k)$
+| Exponential | $O(k^n)$
+| Factorial | $O(n!)$
+
 ## Analyzing Programs and Their Complexity
 
 Laws of addition and multiplication can combine complex cases and multiple O notations:
@@ -235,18 +249,6 @@ for i in range(n):
 
 Outer loop goes n times, and the inner loop goes every n times as well for every outer loop iterated: $O(n) * O(n) = O(n * n) = O(n^2)$
 
-## Complexity classes
-
-Here is a table of complexity classes from low to high:
-
-| Class | example | 
-| - | - |
-| Constant | $O(k), k \in \mathbb{R}$ 
-| Logarithmic | $O(\log n)$
-| Linear | $O(n)$
-| Log-linear | $O(n \log n)$
-| Polynomial | $O(n^k)$
-| Exponential | $O(k^n)$
 
 ## Linear Complexity
 
@@ -268,5 +270,16 @@ The overall complexity of this program is $O(n)$ where n is `len(L)`. Worst case
 - $O(len(L))$ for the loop $O(1)$ to test if `e == L[i]`
     - $O(1+4n+1) = O(4n+2) = O(n)$
 
-### Constant Time List Access
+## Constant Time List Access
 
+### About Constant Time $O(1)$
+
+Constant complexity refers to an algorithm that **takes the same amount of time no matter how many inputs are given.** 
+
+### How is list/array access constant time?
+
+A list is represented internally as an array. An array lookup is always $O(1)$, it does not depend on the size of the array. this is known by a memory location or a pointer. 
+
+In case of array the memory location is calculated by using base pointer, index of element and size of element. 
+
+Let's say, an array of 10 integer variables, with indices 0 through 9, may be stored as 10 words at memory addresses 2000, 2004, 2008, … 2036, so that the element with index i has the address 2000 + 4 × i. **This involves one multiplication and one addition operation, which takes constant time to execute, this operation is fixed.**

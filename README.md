@@ -27,3 +27,52 @@ Worst case: element is not on the list, so the program slices until it is left w
 The complexity will be:
 
 $O(\log n), n = len(L)$
+
+## Bisection Search Implementation 1
+
+Here is an example of bisection search to guess a number:
+
+```
+def bisect_search1(L, e):
+    if L == []:
+        return False
+```
+
+We start by avoiding empty inputs, if the user input is empty, `False` is returned.
+
+```
+    elif len(L) == 1:
+        return L[0] == e
+```
+
+If the length of the list is 1, which is the only elements on the list, that number is returned.
+
+```
+    else:
+        half = len(L)//2
+        if L[half] > e:
+            return bisect_search1( L[:half], e)
+        else:
+            return bisect_search1( L[half:], e)
+```
+
+Otherwise, divide the list by half, the program will return either half of the list where the number is at.
+
+Full code:
+
+```
+def bisect_search1(L, e):
+    if L == []:
+        return False
+    elif len(L) == 1:
+        return L[0] == e
+    else:
+        half = len(L)//2
+        if L[half] > e:
+            return bisect_search1( L[:half], e)
+        else:
+            return bisect_search1( L[half:], e)
+```
+
+## Complexity of Bisection Search 1
+

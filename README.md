@@ -74,6 +74,55 @@ def bisect_search1(L, e):
             return bisect_search1( L[half:], e)
 ```
 
+As we can see, operations under if and elif block take constant time, under else:
+
+```
+if L[half] > e:
+            return bisect_search1( L[:half], e)
+        else:
+            return bisect_search1( L[half:], e)
+```
+
+This is not constant, list slicing `list[:]` or list copying `list.copy()` is linear to the amount of elements. Thus, it goes over all the elements of the list and adds a copy of it: $O(n)$
+
+The complexity of recursively copying the half of the list will be as stated earlier: $O(\log n)$
+
 ## Complexity of Bisection Search 1
+
+- $O(\log n)$ bisection search calls
+    - each recursive call, range of search is sliced half
+    - if original size is n, in worst case to range of size 1:
+$\frac{n}{2^k} = 1$ or when $k = \log n$
+
+- $O(n)$ for each operation to copy list
+
+- Using multiplication rules, the complexity of the algorithm is $O(\log n) * O(n) = O(n \log n)$
+    - note: $O(n)$ still dominates the $\log n$ cost due to the amount of recursive calls used
+
+## Bisection Search Alternative
+
+Although this code is more lengthy, it's more efficient for the computer to run:
+
+```
+def bisect_search2(L, e):
+    def bisect_search_helper(L, e, low, high):
+        print('low: ' + str(low) + '; high: ' + str(high))  #added to visualize
+        if high == low:
+            return L[low] == e
+        mid = (low + high)//2
+        if L[mid] == e:
+            return True
+        elif L[mid] > e:
+            if low == mid: #nothing left to search
+                return False
+            else:
+                return bisect_search_helper(L, e, low, mid - 1)
+        else:
+            return bisect_search_helper(L, e, mid + 1, high)
+    if len(L) == 0:
+        return False
+    else:
+        return bisect_search_helper(L, e, 0, len(L) - 1)
+```
 
 [Visualization](https://pythontutor.com/render.html#code=def%20bisect_search2%28L,%20e%29%3A%0A%20%20%20%20def%20bisect_search_helper%28L,%20e,%20low,%20high%29%3A%0A%20%20%20%20%20%20%20%20print%28'low%3A%20'%20%2B%20str%28low%29%20%2B%20'%3B%20high%3A%20'%20%2B%20str%28high%29%29%20%20%23added%20to%20visualize%0A%20%20%20%20%20%20%20%20if%20high%20%3D%3D%20low%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20L%5Blow%5D%20%3D%3D%20e%0A%20%20%20%20%20%20%20%20mid%20%3D%20%28low%20%2B%20high%29//2%0A%20%20%20%20%20%20%20%20if%20L%5Bmid%5D%20%3D%3D%20e%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20elif%20L%5Bmid%5D%20%3E%20e%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20low%20%3D%3D%20mid%3A%20%23nothing%20left%20to%20search%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20bisect_search_helper%28L,%20e,%20low,%20mid%20-%201%29%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20bisect_search_helper%28L,%20e,%20mid%20%2B%201,%20high%29%0A%20%20%20%20if%20len%28L%29%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20bisect_search_helper%28L,%20e,%200,%20len%28L%29%20-%201%29%0A%0AtestList%20%3D%20%5B%5D%0Afor%20i%20in%20range%28100%29%3A%0A%20%20%20%20testList.append%28i%29%0A%20%20%20%20%0Aprint%28bisect_search2%28testList,%2076%29%29&cumulative=false&curInstr=265&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)

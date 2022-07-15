@@ -203,3 +203,35 @@ $\frac{n}{2^k} = 1$ or when $k = \log n$
 - `return bisect_search_helper(L, e, low, mid - 1)` and `return bisect_search_helper(L, e, mid + 1, high)` are constant rather than recursive
 - overall complexity: $O(\log n) * O(1) = O(\log n)$
 
+## Logarithmic Complexity Example
+
+This is an example of a code that has logarithmic complexity, it changes ints to strings: [Visualization](https://pythontutor.com/render.html#code=def%20intToStr%28i%29%3A%0A%20%20%20%20digits%20%3D%20'0123456789'%0A%20%20%20%20if%20i%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20'0'%0A%20%20%20%20result%20%3D%20''%0A%20%20%20%20while%20i%20%3E%200%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20digits%5Bi%2510%5D%20%2B%20result%0A%20%20%20%20%20%20%20%20i%20%3D%20i//10%0A%20%20%20%20return%20result%0A%20%20%20%20%0Ai%20%3D%20int%28input%28%22Number%20here%22%29%29%0AintToStr%28i%29&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def intToStr(i):
+    digits = '0123456789'
+    if i == 0:
+        return '0'
+    result = ''
+    while i > 0:
+        result = digits[i%10] + result
+        i = i//10
+    return result
+    
+i = int(input("Number here"))
+intToStr(i)
+```
+
+We first set an existing string of digits from 0-9:
+- if int input is zero, it will return zero as a string
+- otherwise, **divide the number by 10 and get the remainder repeatedly until there's no remainder left to divide**
+    - *note: dividing by 10 is intended to get the digit we're looking for*
+
+### Complexity
+
+Only the while loop block will be considered here:
+- constant number of operations per loop
+- how many times `i` can be divided by 10?
+    - $O(\log i)$
+
+## $O()$ For Iterative Factorial

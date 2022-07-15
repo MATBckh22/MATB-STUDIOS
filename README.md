@@ -101,7 +101,36 @@ $\frac{n}{2^k} = 1$ or when $k = \log n$
 
 ## Bisection Search Alternative
 
-Although this code is more lengthy, it's more efficient for the computer to run:
+Although this code is more lengthy, it's more efficient for the computer to run, we will split this into two parts:
+- main block: `bisect_search2`
+- sub block: `bisect_search_helper`
+
+### `bisect_search2`
+
+```
+def bisect_search2(L, e):
+    if len(L) == 0:
+        return False
+    else:
+        return bisect_search_helper(L, e, 0, len(L) - 1)
+```
+
+This block checks if the list is empty. if it is, `False` wil be returned. Otherwise, call `bisect_search_helper` with variables:
+- `L`: list of searching range
+- `e`: number to search
+- `0`: zero, this is later returned with `low` as the lower bound
+- `len(L) - 1` length of list reduced by 1, this is also later returned with `high` as the upper bound
+
+### `bisect_search_helper`
+
+```
+def bisect_search_helper(L, e, low, high):
+        print('low: ' + str(low) + '; high: ' + str(high))  #added to visualize
+        if high == low:
+            return L[low] == e
+```
+
+Under this block, we begin by setting a print operation to visualize the searching process. 
 
 ```
 def bisect_search2(L, e):

@@ -187,3 +187,19 @@ def bisect_search2(L, e):
         return bisect_search_helper(L, e, 0, len(L) - 1)
 ```
 
+## Complexity of Bisection Search 2
+
+### Similar to Bisection Implementation 1:
+
+- $O(\log n)$ bisection search calls
+    - each recursive call, range of search is sliced half
+    - if original size is n, in worst case to range of size 1:
+$\frac{n}{2^k} = 1$ or when $k = \log n$
+
+### Difference:
+
+- pass list and indices as parameters
+- never copies list, just repasses it as pointers
+- `return bisect_search_helper(L, e, low, mid - 1)` and `return bisect_search_helper(L, e, mid + 1, high)` are constant rather than recursive
+- overall complexity: $O(\log n) * O(1) = O(\log n)$
+

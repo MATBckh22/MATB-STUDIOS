@@ -281,7 +281,7 @@ Although due to the amount of function calls it runs a bit slower than the itera
     - high costs
     - consider approximate solutions to provide reasonable answers more quickly
 
-## Complexity of Towers of Hanoi
+### Complexity of Towers of Hanoi
 
 Let $t_{n}$ denote time to solve tower of size n:
 
@@ -315,9 +315,29 @@ Order of Growth = $O(2^n)$
 
 ## Exponential Complexity - Power Set
 
-A power set is to generate the collection of all possible subsets when given a set of no repeating integers.
+A power set is to generate the collection of **all possible subsets when given a set of no repeating integers.**
 
 Exp:
-{1, 2, 3, 4} would generate:
+{1, 2, 3, 4} would generate (*order doesn't matter*):
 
 `{}, {1}, {2}, {3}, {4}, {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4}, {1, 2, 3},	{1,	2, 4}, {1, 3, 4}, {2, 3, 4}, {1, 2,	3, 4}`
+
+### Power Set - Recursive Concept
+
+- generate set of integers 1 to n
+- assume we can generate set integers of 1 to n-1
+- all of the subsets belong to bigger power sets
+
+$2^1$: `{}, {1}`
+
+$2^2$: `{}, {1}, {2}, {1,2}`
+
+$2^3$: `{}, {1}, {2}, {1,2}, {3}, {1,3}, {2,3}, {1,2,3}`
+
+$...$
+
+$2^n$
+
+Notice how a $2^2$ power set is by adding elements into a $2^1$ subset and branch from there. Same as a  $2^3$ power set where it adds 3 in subset $2^2$ and branch from there.
+
+### Power Set - Code

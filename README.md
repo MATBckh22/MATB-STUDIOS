@@ -424,3 +424,24 @@ $= t_{n-k}+2^{n-k}+...+2^{n-1}+c$
 $= t_{0}+2^{0}+...+2^{n-1}+nc$
 
 $= 1+2^n+nc$
+
+Therefore, complexity of a power set is $O(2^n)$
+
+## Iterative vs Recursive Fibonacci
+
+### Iterative Fibonacci
+
+```
+def fib_iter(n):
+    if n == 0:
+        return 0
+    elif: n == 1:
+        return 1
+    else:
+        fib_ii = 1
+        for i in range(n-1):
+            tmp = fib_i
+            fib_i = fib_ii
+            fib_ii = tmp + fib_ii
+        return fib_ii 
+```

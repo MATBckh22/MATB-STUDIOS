@@ -341,3 +341,86 @@ $2^n$
 Notice how a $2^2$ power set is by adding elements into a $2^1$ subset and branch from there. Same as a  $2^3$ power set where it adds 3 in subset $2^2$ and branch from there.
 
 ### Power Set - Code
+
+A code to create a power set looks like this:
+
+```
+def genSubsets(L):
+    res = [] #base case
+    if len(L) == 0:
+        return [[]] #list of empty list
+```
+
+We start of to create a new list variable `res`, and if the input of the list is blank, it returns an empty list.
+
+```
+smaller = genSubsets(L[:-1]) # all subsets without last element
+    extra = L[-1:] # create a list of just last element
+    new = []
+```
+
+Continuing from that, we create three variables:
+- `smaller`: all subsets without the last element, it calls the function recursively to add elements into the list
+- `extra`: list with only the last element
+- `new`: empty list to be added with `smaller`
+
+```
+for small in smaller:
+        new.append(small+extra) 
+```
+
+For all of the subsets that exclude the last element, it will be added in here, as `new` is added with all `smaller` subsets and `extra`.
+
+```
+return smaller+new
+```
+
+Returning the generated power list.
+
+Full code: [Visualization](https://pythontutor.com/render.html#code=def%20genSubsets%28L%29%3A%0A%20%20%20%20res%20%3D%20%5B%5D%0A%20%20%20%20if%20len%28L%29%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20%5B%5B%5D%5D%20%23list%20of%20empty%20list%0A%20%20%20%20smaller%20%3D%20genSubsets%28L%5B%3A-1%5D%29%20%23%20all%20subsets%20without%20last%20element%0A%20%20%20%20print%28smaller%29%0A%20%20%20%20extra%20%3D%20L%5B-1%3A%5D%20%23%20create%20a%20list%20of%20just%20last%20element%0A%20%20%20%20new%20%3D%20%5B%5D%0A%20%20%20%20for%20small%20in%20smaller%3A%0A%20%20%20%20%20%20%20%20new.append%28small%2Bextra%29%20%20%23%20for%20all%20smaller%20solutions,%20add%20one%20with%20last%20element%0A%20%20%20%20return%20smaller%2Bnew%20%20%23%20combine%20those%20with%20last%20element%20and%20those%20without%0A%0A%0AtestSet%20%3D%20%5B1,2,3,4%5D%0Aprint%28genSubsets%28testSet%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def genSubsets(L):
+    res = [] #base case
+    if len(L) == 0:
+        return [[]] #list of empty list
+    smaller = genSubsets(L[:-1]) # all subsets without last element
+    print(smaller)
+    extra = L[-1:] # create a list of just last element
+    new = []
+    for small in smaller:
+        new.append(small+extra)  # for all smaller solutions, add one with last element
+    return smaller+new  # combine those with last element and those without
+
+
+testSet = [1,2,3,4]
+print(genSubsets(testSet))
+```
+
+### Power Set - Recursive Complexity
+
+Rather than iterating tedious loops to complete a power set, it's better to break it down to two parts and then connect it together:
+- generate all possible subsets excluding last element
+- adding last element into all subsets
+
+These two parts contribute to the complexity of this program, but all of this depends on the heaviest dependent variable: `smaller`.
+
+**Overall, for a set of size k, we will have $2^k$ cases.**
+
+Let $t_{n}$ denote time to solve problem of size n, in this case it's `smaller = genSubsets(L[:-1])`.
+
+Let $s_{n}$ denote size of solution to solve problem of size n, in this case it's `for small in smaller`.
+
+Let $c$ be the constant number of the operations that take constant time.
+
+$t_{n} = t_{n-1}+s_{n-1}+c$
+
+$t_{n} = t_{n-1}+2^{n-1}+c$
+
+$= t_{n-1}+2^{n-2}+c+2^{n-1}+c$
+
+$= t_{n-k}+2^{n-k}+...+2^{n-1}+c$
+
+$= t_{0}+2^{0}+...+2^{n-1}+nc$
+
+$= 1+2^n+nc$

@@ -11,6 +11,10 @@ Welcome to MATB's private library of the program! This library features a detail
 - MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
 - MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/54fe695dc7330e6552c2c23153c63f8eb7e6bcea/README.md))
 
+## For Writers 
+
+To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to here.
+
 ## Archive
 
 A formal project hub for MATB Studios, this is where all the magic happens. 

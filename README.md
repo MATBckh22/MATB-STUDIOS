@@ -313,4 +313,11 @@ $\therefore 2^{n-1}+2^{n-2}+...+4+2+1 = 2^n-1$
 
 Order of Growth = $O(2^n)$
 
-## Exponential Complexity
+## Exponential Complexity - Power Set
+
+A power set is to generate the collection of all possible subsets when given a set of no repeating integers.
+
+Exp:
+{1, 2, 3, 4} would generate:
+
+`{}, {1}, {2}, {3}, {4}, {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4}, {1, 2, 3},	{1,	2, 4}, {1, 3, 4}, {2, 3, 4}, {1, 2,	3, 4}`

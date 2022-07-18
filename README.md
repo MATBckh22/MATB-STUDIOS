@@ -41,7 +41,7 @@ Below are the links to every chapter in the course, those without them are yet t
 - [Object Oriented Programming](https://github.com/MATBckh22/MATB-STUDIOS/blob/8bd87bb90bf671e75a2fd06c8b4172966c9f024c/README.md)
 - [Python Classes and Inheritance](https://github.com/MATBckh22/MATB-STUDIOS/blob/0b08fdd7444d3768d4dfcbc55d76868b5ec46a07/README.md)
 - [Understanding Program Efficiency, Part 1](https://github.com/MATBckh22/MATB-STUDIOS/blob/edd8e251955a8a41c077607bba468310486466fe/README.md)
-- Understanding Program Efficiency, Part 2
+- [Understanding Program Efficiency, Part 2](https://github.com/MATBckh22/MATB-STUDIOS/blob/361e078d9f21ddb57882af16bb7cdeba2de73d70/README.md)
 - Searching and Sorting
 
 ## Other Materials

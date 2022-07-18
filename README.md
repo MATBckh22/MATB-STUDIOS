@@ -445,3 +445,37 @@ def fib_iter(n):
             fib_ii = tmp + fib_ii
         return fib_ii 
 ```
+
+There's only one for loop block we need to consider. Since the operations underneath are all constant, the order of growth will be:
+- best case: $O(1)$
+- worst case: $O(1)+O(n)+O(1) = O(n)$
+
+### Recursive Fibonacci
+
+```
+def fib_recur(n):
+    """ assumes n an int >= 0 """
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib_recur(n-1) + fib_recur(n-2)
+```
+
+Although this code looks cleaner, it's way more inefficient for the computer to run. Given that it includes two recursive calls, the complexity of this is exponential: $O(2^n)$
+
+That said, recursive programs, although looks cleaner and more efficient to write from a programmer stance, it's not always efficient for the computer to run. 
+
+## Big Oh Summary
+
+- compare **efficiency of algorithms**
+    - notation that describes growth
+    - **lower order of growth is always faster**
+    - **independent of machine specific implementation**
+
+- use Big Oh
+    - describe **order of growth**
+    - **asymptotic growth**
+    - **upper bound**
+    - **worst case** analysis

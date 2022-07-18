@@ -234,5 +234,83 @@ Only the while loop block will be considered here:
 - how many times `i` can be divided by 10?
     - $O(\log i)$
 
-## $O()$ For Iterative Factorial
+## $O()$ Factorial
 
+### Iterative Factorial
+
+Complexity can depend on number of iterative calls:
+
+```
+def fact_iter(n):
+    prod = 1
+    for i in range(1, n+1):
+        prod *= i
+    return prod
+```
+
+The complexity for this is overall $O(n)$, constant cost each time for n loops.
+
+### Recursive Factorial
+
+Another alternative to compute factorials is to code it recursively:
+
+```
+def fact_recur(n):
+    """ assume n >= 0 """
+    if n <= 1:
+        return 1
+    else:
+        return n*fact_recur(n – 1)
+```
+
+Although due to the amount of function calls it runs a bit slower than the iterative version. However, growth is still the same - $O(n)$.
+
+## Log-Linear Complexity
+- many practical algorithms are log-linear
+- commonly used is merge sort
+
+## Polynomial Complexity
+- quadratic
+- nested loops / recursive function calls
+
+## Exponential Complexity
+- recursive functions
+    - more than one recursive call for one problem
+        - Tower of Hanoi
+- many important problems are inherently exponential
+    - high costs
+    - consider approximate solutions to provide reasonable answers more quickly
+
+## Complexity of Towers of Hanoi
+
+Let $t_{n}$ denote time to solve tower of size n:
+
+$t_{n} = 2t_{n-1}+1$
+
+$= 2(2t_{n-2}+1)+1$
+
+$= 4t_{n-2}+2+1$
+
+$= 4(2t_{n-3}+1)+2+1$
+
+$= 8t_{n-3}+4+2+1$
+
+$= 2^kt_{n-k}+2^{k-1}+...+4+2+1$
+
+$= 2^{n-1}+2^{n-2}+...+4+2+1$
+
+Applying Geometric Growth:
+
+$a = 2^{n-1}+...+2+1$
+
+$2a = 2^n+2^{n-1}+...+2$
+
+$a = 2^n-1$
+
+$\because a = 2^n-1$
+
+$\therefore 2^{n-1}+2^{n-2}+...+4+2+1 = 2^n-1$
+
+Order of Growth = $O(2^n)$
+
+## Exponential Complexity

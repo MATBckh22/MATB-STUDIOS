@@ -45,8 +45,8 @@ Below are the links to every chapter in the course, those without them are yet t
 - Searching and Sorting
 
 ## Other Materials
-[Bad Habits](https://towardsdatascience.com/18-common-python-anti-patterns-i-wish-i-had-known-before-44d983805f0f)
-[Python References](https://www.w3schools.com/python/python_reference.asp)
-[Understanding Time Complexity with Simple Examples](https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/?ref=lbp)
-[Python Exceptions](https://www.w3schools.com/python/python_ref_exceptions.asp)
-[Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
+- [Bad Habits](https://towardsdatascience.com/18-common-python-anti-patterns-i-wish-i-had-known-before-44d983805f0f)
+- [Python References](https://www.w3schools.com/python/python_reference.asp)
+- [Understanding Time Complexity with Simple Examples](https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/?ref=lbp)
+- [Python Exceptions](https://www.w3schools.com/python/python_ref_exceptions.asp)
+- [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)

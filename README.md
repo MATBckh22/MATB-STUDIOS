@@ -233,3 +233,6 @@ print(testList)
 - doing $len(L)-1$ comparisons and $Len(L)-1$ passes
 
 ### Selection Sort
+
+
+![Selection Sort](https://upload.wikimedia.org/wikipedia/commons/f/f6/Selection_Sort_Animation.gif)

@@ -112,7 +112,20 @@ $SORT < O(n) - O(\log n)$
 
 From here, we can say that we should sort first then search to decrease growth based on previous analysis on linear vs bisection, this is the condition to when does the cost of sorting is less expensive than the linear cost.
 
-### WRONG! Sorting a collection of n elements is $O(n)$, every element must be looked through at least once for the sort to execute!
+### WRONG! Sorting a collection of n elements is already $O(n)$, every element must be looked through at least once for the sort to execute!
 
 ## Amortized Cost - n is `len(L)`
 
+- why bother sorting first?
+- in some cases, **may sort a list once then do many searches**
+- **amortize cost** of the sort over many searches
+
+$SORT+K*O(\log n) < K*O(n)$
+- for large $K$, **sort time becomes irrelevant**, if cost of sorting is small enough
+
+## Sort Algorithms
+
+### Monkey Sort / Bogo Sort
+
+- 
+![Bogosort](https://upload.wikimedia.org/wikipedia/commons/7/7b/Bogo_sort_animation.gif)

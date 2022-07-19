@@ -191,12 +191,12 @@ while not swap:
 Looping the print operation so we can see the process of sorting, `True` is set to to reinitialize the sorting process.
 
 ```
-        for j in range(1, len(L)):
-            if L[j-1] > L[j]:
-                swap = False
-                temp = L[j]
-                L[j] = L[j-1]
-                L[j-1] = temp
+for j in range(1, len(L)):
+    if L[j-1] > L[j]:
+        swap = False
+        temp = L[j]
+        L[j] = L[j-1]
+        L[j-1] = temp
 ```
 
 This will be the main sorting process. `if L[j-1] > L[j]` compares two elements:

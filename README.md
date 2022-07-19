@@ -173,3 +173,63 @@ Return list: `{1}, {5}, {2}, {6}, {11}`
 
 ### Complexity of Bubble Sort
 
+Bubble sort code looks like this:
+
+```
+def bubble_sort(L):
+    swap = False
+```
+
+We initially set a flag `swap = False` for an unsorted list.
+
+```
+while not swap:
+    print('bubble sort: ' + str(L))
+    swap = True
+```
+
+Looping the print operation so we can see the process of sorting, `True` is set to to reinitialize the sorting process.
+
+```
+        for j in range(1, len(L)):
+            if L[j-1] > L[j]:
+                swap = False
+                temp = L[j]
+                L[j] = L[j-1]
+                L[j-1] = temp
+```
+
+This will be the main sorting process. `if L[j-1] > L[j]` compares two elements:
+- if (n-1)th element is smaller than nth element, `swap` remains `True`, as previously set, program will continue to the next pair
+- if (n-1)th element is bigger than nth element, `swap` will be changed to `False`, current positions in the pair of elements will be swapped
+
+
+Full code: [Visualization](https://pythontutor.com/render.html#code=def%20bubble_sort%28L%29%3A%0A%20%20%20%20swap%20%3D%20False%0A%20%20%20%20while%20not%20swap%3A%0A%20%20%20%20%20%20%20%20print%28'bubble%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20%20%20%20%20swap%20%3D%20True%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%281,%20len%28L%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20L%5Bj-1%5D%20%3E%20L%5Bj%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20swap%20%3D%20False%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20temp%20%3D%20L%5Bj%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20L%5Bj%5D%20%3D%20L%5Bj-1%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20L%5Bj-1%5D%20%3D%20temp%0A%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%0Aprint%28''%29%0Aprint%28bubble_sort%28testList%29%29%0Aprint%28testList%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def bubble_sort(L):
+    swap = False
+    while not swap:
+        print('bubble sort: ' + str(L))
+        swap = True
+        for j in range(1, len(L)):
+            if L[j-1] > L[j]:
+                swap = False
+                temp = L[j]
+                L[j] = L[j-1]
+                L[j-1] = temp
+
+testList = [1,3,5,7,2,6,25,18,13]
+
+print('')
+print(bubble_sort(testList))
+print(testList)
+```
+
+- inner for loop is for the **comparisons**
+- outer while loop is for doing **multiple passes until no more swaps**
+
+**Overall Complexity: $O(n^2)$ where n is** `len(L)`**, note that this is not a nested loop.**
+- doing $len(L)-1$ comparisons and $Len(L)-1$ passes
+
+### Selection Sort

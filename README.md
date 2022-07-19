@@ -127,5 +127,49 @@ $SORT+K*O(\log n) < K*O(n)$
 
 ### Monkey Sort / Bogo Sort
 
-- 
-![Bogosort](https://upload.wikimedia.org/wikipedia/commons/7/7b/Bogo_sort_animation.gif)
+- sorting elements by creating random permutations
+- throwing them up in the air repeatedly waiting for a miracle
+
+![Bogo Sort](https://upload.wikimedia.org/wikipedia/commons/7/7b/Bogo_sort_animation.gif)
+
+### Complexity of Bogo Sort
+
+```
+def bogo_sort(L):
+    while not is_sorted(L):
+        random.shuffle(L)
+```
+
+- best case: $O(n)$, n is `len(L)` to check if sorted
+- worst case: $O(?)$, unbounded if really unlucky (forever)
+
+### Bubble Sort
+
+Assume a list of 5 elements: `{1}, {5}, {6}, {2}, {11}`
+
+- **compare and swap** pairs of elements such that smaller is first:
+
+`{1}, {5}`: Correct
+
+`{5}, {6}`: Correct
+
+`{6}, {2}`: Incorrect, swap: `{2}, {6}`
+
+`{6}, {11}`: Correct
+
+Return list: `{1}, {5}, {2}, {6}, {11}`
+
+- **repeat again and stop when no more swaps are made:**
+
+`{1}, {5}, {2}, {6}, {11}`
+
+`{1}, {2}, {5}, {6}, {11}`
+
+- largest unsorted element always at **end after pass, so at most n passes:**
+
+`{1}, {2}, {5}, {6}, {11}`: Correct
+
+![Bubble Sort](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
+
+### Complexity of Bubble Sort
+

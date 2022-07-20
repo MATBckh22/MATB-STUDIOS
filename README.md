@@ -279,3 +279,32 @@ Return sorted list: `{1}, {2}, {5}, {6}, {11}`
 
 ### Complexity of Selection Sort
 
+```
+def selection_sort(L):
+    suffixSt = 0
+    while suffixSt !=  len(L):
+        print('selection sort: ' + str(L))
+        for i in range(suffixSt, len(L)):
+            if L[i] < L[suffixSt]:
+                L[suffixSt], L[i] = L[i], L[suffixSt]
+        suffixSt += 1
+```
+
+We will start off with a counter variable `suffixSt`. In the while loop where the counter doesn't go over the length of the list, it keeps track of two variables:
+- `i`: element counter in the list
+- `suffixSt`: element to compare
+
+From the list, let's say `suffixSt` is 1 which is the 2nd variable of the list, `L[i]` will go through every index to find whether an element is less than the 2nd variable `L[suffixSt]`. If it is, swap them and add the counter by 1, keeping the left part of the list sorted.
+
+[Visualization](https://pythontutor.com/render.html#code=def%20selection_sort%28L%29%3A%0A%20%20%20%20suffixSt%20%3D%200%0A%20%20%20%20while%20suffixSt%20!%3D%20%20len%28L%29%3A%0A%20%20%20%20%20%20%20%20print%28'selection%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20%20%20%20%20for%20i%20in%20range%28suffixSt,%20len%28L%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20L%5Bi%5D%20%3C%20L%5BsuffixSt%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20L%5BsuffixSt%5D,%20L%5Bi%5D%20%3D%20L%5Bi%5D,%20L%5BsuffixSt%5D%0A%20%20%20%20%20%20%20%20suffixSt%20%2B%3D%201%0A%20%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%20%20%20%20%20%20%20%0Aprint%28''%29%0Aprint%28selection_sort%28testList%29%29%0Aprint%28testList%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+- outer loop: executes `len(L)` times
+- inner loop: executes `len(L) - suffixSt` times, which is $O(len(L))$
+
+Since this is a nested loop, the complexity of a selection sort is quadratic: $O(n^2)$
+
+### Merge Sort
+
+
+
+![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/8/8e/Merge_sort_animation.gif)

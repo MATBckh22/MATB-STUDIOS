@@ -234,5 +234,44 @@ print(testList)
 
 ### Selection Sort
 
+This is one of the sorting system that we often use realistically: `{1}, {5}, {6}, {2}, {11}`
+
+- first step: 
+    - **extract minimum element**
+    - **swap it at index 0**
+    - list shortened by 1
+
+`{1}, {5}, {6}, {2}, {11}`: Extract `{1}`
+
+Return sorted list: `{1}`
+
+Return unsorted list: `{5}, {6}, {2}, {11}`
+
+- subsequent/repeating step:
+    - **remaining sublist extract another minimum element**
+    - **swap that with index 1**
+
+`{5}, {6}, {2}, {11}`: Extract `{2}`
+
+Return sorted list: `{1}, {2}`
+
+Return unsorted list: `{5}, {6}, {11}`
+
+...
+
+Return sorted list: `{1}, {2}, {5}, {6}, {11}`
+
+- keep the left portion of the list sorted:
+    - **for i steps, first i elements are sorted**
+    - all other elements are bigger than first i elements
+
+| Sorted | Unsorted |
+| - | - |
+| - | `{1}, {5}, {6}, {2}, {11}`
+| `{1}` | `{5}, {6}, {2}, {11}` 
+| `{1}, {2}` | `{5}, {6}, {11}`
+| `{1}, {2}, {5}` | `{6}, {11}`
+| `{1}, {2}, {5}, {6}` | `{11}`
+| `{1}, {2}, {5}, {6}, {11}` | -
 
 ![Selection Sort](https://upload.wikimedia.org/wikipedia/commons/f/f6/Selection_Sort_Animation.gif)

@@ -229,7 +229,8 @@ print(testList)
 - inner for loop is for the **comparisons**
 - outer while loop is for doing **multiple passes until no more swaps**
 
-**Overall Complexity: $O(n^2)$ where n is** `len(L)`**, note that this is not a nested loop.**
+**Overall Complexity: $O(n^2)$ where n is** `len(L)`**:**
+
 - doing $len(L)-1$ comparisons and $Len(L)-1$ passes
 
 ### Selection Sort

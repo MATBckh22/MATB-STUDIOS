@@ -6,7 +6,7 @@ Here's a checklist of tasks to prepare before signing up:
 - [download Python](https://www.python.org/downloads/)
 - download one or more of the following:
     - [VIM IDE](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
-    - [Spyder IDE](https://www.spyder-ide.org/)
+    - *(Used in lecture)* [Spyder IDE](https://www.spyder-ide.org/)
     - **(Recommended)** [Visual Studio Code](https://code.visualstudio.com/)
     - [Pycharm IDE](https://www.jetbrains.com/pycharm/download/#section=windows)
 ### About Python in Visual Studio Code

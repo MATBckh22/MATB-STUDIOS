@@ -120,7 +120,7 @@ From here, we can say that we should sort first then search to decrease growth b
 - in some cases, **may sort a list once then do many searches**
 - **amortize cost** of the sort over many searches
 
-$SORT+K*O(\log n) < K*O(n)$
+$SORT+K * O(\log n) < K * O(n)$
 - for large $K$, **sort time becomes irrelevant**, if cost of sorting is small enough
 
 ## Sort Algorithms

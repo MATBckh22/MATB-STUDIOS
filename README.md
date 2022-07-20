@@ -13,7 +13,7 @@ Welcome to MATB's private library of the program! This library features a detail
 
 ## For Writers 
 
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to here.
+To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to here. (This section is still in construction, stay tuned!)
 
 ## Archive
 

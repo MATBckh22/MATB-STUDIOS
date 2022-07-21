@@ -506,6 +506,8 @@ print('')
 print(merge_sort(testList))
 ```
 
+![Merge Sort Visualization](https://scontent.xx.fbcdn.net/v/t1.15752-9/289054493_610030770441958_4212030267877862078_n.png?stp=dst-png_p403x403&_nc_cat=104&ccb=1-7&_nc_sid=aee45a&_nc_ohc=8YZdsuN23VsAX83cqls&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKKWHGKkZdP8Dq13NyXfaYxz3Pl0CqsVzSUePCMe8pvLQ&oe=62FE80AC)
+
 `merge_sort`
 - divide list into **two halves**
 - considers **smallest pieces down one branch first before moving to larger pieces**

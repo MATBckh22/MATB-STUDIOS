@@ -306,6 +306,82 @@ Since this is a nested loop, the complexity of a selection sort is quadratic: $O
 
 ### Merge Sort
 
+Merge sort is a sorting method using a **divide-and-conquer approach:**
+- if `len(L)` is 0 or 1, already sorted
+- if list has more than one element, split into two groups and sort each
+- merge sorted sublists
+    - **look at first element of each, move smaller to the end of the result**
+    - **when one list empty, copy rest of the list**
 
+**We will break this method mainly into three steps:**
+
+### Spliting
+
+Assume we have a list of `{1}, {5}, {9}, {7}, {0}, {10}, {20}`
+
+- split list into groups of two, remainding element will also be in a group:
+
+S1: `{1}, {5}`
+
+S2: `{9}, {7}`
+
+S3: `{0}, {10}`
+
+S4: `{20}`
+
+### Compare
+
+- compare each element in the group and sort accordingly:
+
+S1: `{1}, {5}`
+
+S2: `{7}, {9}`
+
+S3: `{0}, {10}`
+
+S4: `{20}`
+
+### Merge
+
+- merge two groups together and compare:
+    - smallest of each group first
+    - winner compare to larger element in 1st group
+    - winner compare to larger element in 2nd group
+
+M1 = S1 + S2 = `{1}, {5}` + `{9}, {7}`
+
+| Compare | Winner | Sorted List |
+| - | - | -|
+| `{1}, {9}` | `{9}` | `{1}`
+| `{9}, {5}` | `{9}` | `{1}, {5}`
+| `{9}, {7}` | `{9}` | `{1}, {5}, {7}`
+| - | - | `{1}, {5}, {7}, {9}`
+
+M2 = S3 + S4 = `{0}, {10}` + `{20}`
+
+| Compare | Winner | Sorted List |
+| - | - | -|
+| `{20}, {0}` | `{20}` | `{0}`
+| `{20}, {10}` | `{20}` | `{0}, {10}`
+| - | - | `{0}, {10}, {20}`
+
+### Repeat
+
+- merge again and sort:
+
+M = M1 + M2 = `{1}, {5}, {7}, {9}` + `{0}, {10}, {20}`
+
+| Compare | Winner | Sorted List |
+| - | - | -|
+| `{0}, {1}` | `{1}` | `{0}`
+| `{1}, {10}` | `{10}` | `{0}, {1}`
+| `{10}, {5}` | `{10}` | `{0}, {1}, {5}`
+| `{10}, {7}` | `{10}` | `{0}, {1}, {5}, {7}`
+| `{10}, {9}` | `{10}` | `{0}, {1}, {5}, {7}, {9}`
+| - | - | `{0}, {1}, {5}, {7}, {9}, {10}, {20}`
+
+Return sorted list: `{0}, {1}, {5}, {7}, {9}, {10}, {20}`
 
 ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/8/8e/Merge_sort_animation.gif)
+
+### Merging Sublists Step

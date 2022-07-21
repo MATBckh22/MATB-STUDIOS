@@ -384,4 +384,151 @@ Return sorted list: `{0}, {1}, {5}, {7}, {9}, {10}, {20}`
 
 ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/8/8e/Merge_sort_animation.gif)
 
-### Merging Sublists Step
+### Merge Sort Algorithm - Recursive `merge_sort`
+
+This section will focus on spliting the list into sublists for them to be compared after: [Visualization](https://pythontutor.com/render.html#code=def%20merge_sort%28L%29%3A%0A%20%20%20%20print%28'merge%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20if%20len%28L%29%20%3C%202%3A%0A%20%20%20%20%20%20%20%20return%20L%5B%3A%5D%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20middle%20%3D%20len%28L%29//2%0A%20%20%20%20%20%20%20%20left%20%3D%20merge_sort%28L%5B%3Amiddle%5D%29%0A%20%20%20%20%20%20%20%20right%20%3D%20merge_sort%28L%5Bmiddle%3A%5D%29%0A%20%20%20%20%20%20%20%20return%20merge%28left,%20right%29%0A%20%20%20%20%20%20%20%20%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%0Aprint%28''%29%0Aprint%28merge_sort%28testList%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def merge_sort(L):
+    print('merge sort: ' + str(L))
+    if len(L) < 2:
+        return L[:]
+    else:
+        middle = len(L)//2
+        left = merge_sort(L[:middle])
+        right = merge_sort(L[middle:])
+        return merge(left, right)
+```
+
+This function is to do two things:
+- base case: if `len(L)` is less than 2, break the list in half and return this to `merge` (sorting function)
+- recursive step: otherwise, break the length of the list into two parts `left` and `right` and return them again to `merge`
+
+This is to divide list into halves so smallest pieces down one branch will be considered before moving to larger pieces.
+
+### Merging Sublists Step - `merge`
+
+This function will execute the merging and comparing section of the sorting process:
+
+```
+def merge(left, right):
+    result = []
+    i,j = 0,0
+```
+
+We begin by setting two variables `i` and `j` and a new `result` list to keep track of the sorted part of the list.
+
+```
+while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+```
+
+This is to say that when there's still elements in both lists, compare the smallest input of both lists:
+- if the input in left section is smaller than the right, add the input into the sorted list as the smallest number and add `i` counter by 1
+- otherwise, add the input in the right section to the sorted list as the smallest number and add `j` counter by 1
+
+```
+while (i < len(left)):
+        result.append(left[i])
+        i += 1
+while (j < len(right)):
+        result.append(right[j])
+        j += 1
+```
+
+This handles the copying part of the sorting process. If either `left` or `right` is empty, copy the remaining elements of the other list into result to skip unnecessary sorting.
+
+Full code:
+
+```
+def merge(left, right):
+    result = []
+    i,j = 0,0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    while (i < len(left)):
+        result.append(left[i])
+        i += 1
+    while (j < len(right)):
+        result.append(right[j])
+        j += 1
+    print('merge: ' + str(left) + '&' + str(right) + ' to ' +str(result))
+    return result
+```
+
+### Complexity of `merge_sort` and `merge`
+
+Full code: [Visualization](https://pythontutor.com/render.html#code=def%20merge%28left,%20right%29%3A%0A%20%20%20%20result%20%3D%20%5B%5D%0A%20%20%20%20i,j%20%3D%200,0%0A%20%20%20%20while%20i%20%3C%20len%28left%29%20and%20j%20%3C%20len%28right%29%3A%0A%20%20%20%20%20%20%20%20if%20left%5Bi%5D%20%3C%20right%5Bj%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20result.append%28left%5Bi%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20i%20%2B%3D%201%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20result.append%28right%5Bj%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20j%20%2B%3D%201%0A%20%20%20%20while%20%28i%20%3C%20len%28left%29%29%3A%0A%20%20%20%20%20%20%20%20result.append%28left%5Bi%5D%29%0A%20%20%20%20%20%20%20%20i%20%2B%3D%201%0A%20%20%20%20while%20%28j%20%3C%20len%28right%29%29%3A%0A%20%20%20%20%20%20%20%20result.append%28right%5Bj%5D%29%0A%20%20%20%20%20%20%20%20j%20%2B%3D%201%0A%20%20%20%20print%28'merge%3A%20'%20%2B%20str%28left%29%20%2B%20'%26'%20%2B%20str%28right%29%20%2B%20'%20to%20'%20%2Bstr%28result%29%29%0A%20%20%20%20return%20result%0A%0Adef%20merge_sort%28L%29%3A%0A%20%20%20%20print%28'merge%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20if%20len%28L%29%20%3C%202%3A%0A%20%20%20%20%20%20%20%20return%20L%5B%3A%5D%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20middle%20%3D%20len%28L%29//2%0A%20%20%20%20%20%20%20%20left%20%3D%20merge_sort%28L%5B%3Amiddle%5D%29%0A%20%20%20%20%20%20%20%20right%20%3D%20merge_sort%28L%5Bmiddle%3A%5D%29%0A%20%20%20%20%20%20%20%20return%20merge%28left,%20right%29%0A%20%20%20%20%20%20%20%20%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%0Aprint%28''%29%0Aprint%28merge_sort%28testList%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```
+def merge(left, right):
+    result = []
+    i,j = 0,0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    while (i < len(left)):
+        result.append(left[i])
+        i += 1
+    while (j < len(right)):
+        result.append(right[j])
+        j += 1
+    print('merge: ' + str(left) + '&' + str(right) + ' to ' +str(result))
+    return result
+
+def merge_sort(L):
+    print('merge sort: ' + str(L))
+    if len(L) < 2:
+        return L[:]
+    else:
+        middle = len(L)//2
+        left = merge_sort(L[:middle])
+        right = merge_sort(L[middle:])
+        return merge(left, right)
+        
+testList = [1,3,5,7,2,6,25,18,13]
+
+print('')
+print(merge_sort(testList))
+```
+
+`merge_sort`
+- divide list into **two halves**
+- considers **smallest pieces down one branch first before moving to larger pieces**
+
+**This is a recursive program, hence overall complexity: $O(\log n)$**
+
+`merge`
+- goes through two lists and **passing only once**
+- compare only **smallest elements in each sublist**
+- **$O(len(left)+len(right))$ copied elements**
+- comparisons consider the longer lengths of the list
+    - **linear in length of lists**
+
+**Overall complexity: $O(n)$**
+
+`merge_sort` and `merge`
+- first recursion level:
+    - $\frac{n}{2}$ elements in each list
+    - $O(n)+O(n) = O(n)$ where n is `len(L)`
+- second recursion level:
+    - $\frac{n}{4}$ elements in each list
+    - two merges
+        - $O(n)$ where n is `len(L)`
+- each recursive level is $O(n)$ where dividing list in half with each recursive call is $O(\log n)$
+
+**Complexity of merge sort: $O(n) * O(\log n) = O(n \log n)$ (fastest among sorting algorithms discussed until now!)**

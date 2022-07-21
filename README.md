@@ -42,7 +42,7 @@ Below are the links to every chapter in the course, those without them are yet t
 - [Python Classes and Inheritance](https://github.com/MATBckh22/MATB-STUDIOS/blob/0b08fdd7444d3768d4dfcbc55d76868b5ec46a07/README.md)
 - [Understanding Program Efficiency, Part 1](https://github.com/MATBckh22/MATB-STUDIOS/blob/edd8e251955a8a41c077607bba468310486466fe/README.md)
 - [Understanding Program Efficiency, Part 2](https://github.com/MATBckh22/MATB-STUDIOS/blob/361e078d9f21ddb57882af16bb7cdeba2de73d70/README.md)
-- [Searching and Sorting]([https://github.com/MATBckh22/MATB-STUDIOS/blob/bb5bfff956da877d33b2433ec654150b6bb3f6d1/README.md](https://github.com/MATBckh22/MATB-STUDIOS/blob/a6c18b6277715637ede19163567e8773d27a3368/README.md))
+- [Searching and Sorting](https://github.com/MATBckh22/MATB-STUDIOS/blob/a6c18b6277715637ede19163567e8773d27a3368/README.md)
 
 ## Other Materials
 - [Bad Habits](https://towardsdatascience.com/18-common-python-anti-patterns-i-wish-i-had-known-before-44d983805f0f)

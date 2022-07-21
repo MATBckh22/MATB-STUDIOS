@@ -471,7 +471,7 @@ def merge(left, right):
 Full code: [Visualization](https://pythontutor.com/render.html#code=def%20merge%28left,%20right%29%3A%0A%20%20%20%20result%20%3D%20%5B%5D%0A%20%20%20%20i,j%20%3D%200,0%0A%20%20%20%20while%20i%20%3C%20len%28left%29%20and%20j%20%3C%20len%28right%29%3A%0A%20%20%20%20%20%20%20%20if%20left%5Bi%5D%20%3C%20right%5Bj%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20result.append%28left%5Bi%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20i%20%2B%3D%201%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20result.append%28right%5Bj%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20j%20%2B%3D%201%0A%20%20%20%20while%20%28i%20%3C%20len%28left%29%29%3A%0A%20%20%20%20%20%20%20%20result.append%28left%5Bi%5D%29%0A%20%20%20%20%20%20%20%20i%20%2B%3D%201%0A%20%20%20%20while%20%28j%20%3C%20len%28right%29%29%3A%0A%20%20%20%20%20%20%20%20result.append%28right%5Bj%5D%29%0A%20%20%20%20%20%20%20%20j%20%2B%3D%201%0A%20%20%20%20print%28'merge%3A%20'%20%2B%20str%28left%29%20%2B%20'%26'%20%2B%20str%28right%29%20%2B%20'%20to%20'%20%2Bstr%28result%29%29%0A%20%20%20%20return%20result%0A%0Adef%20merge_sort%28L%29%3A%0A%20%20%20%20print%28'merge%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20if%20len%28L%29%20%3C%202%3A%0A%20%20%20%20%20%20%20%20return%20L%5B%3A%5D%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20middle%20%3D%20len%28L%29//2%0A%20%20%20%20%20%20%20%20left%20%3D%20merge_sort%28L%5B%3Amiddle%5D%29%0A%20%20%20%20%20%20%20%20right%20%3D%20merge_sort%28L%5Bmiddle%3A%5D%29%0A%20%20%20%20%20%20%20%20return%20merge%28left,%20right%29%0A%20%20%20%20%20%20%20%20%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%0Aprint%28''%29%0Aprint%28merge_sort%28testList%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
 ```
-def merge(left, right):
+def merge(left, right): 
     result = []
     i,j = 0,0
     while i < len(left) and j < len(right):
@@ -534,3 +534,43 @@ print(merge_sort(testList))
 - each recursive level is $O(n)$ where dividing list in half with each recursive call is $O(\log n)$
 
 **Complexity of merge sort: $O(n) * O(\log n) = O(n \log n)$ (fastest among sorting algorithms discussed until now!)**
+
+## Sorting Summary
+
+| Algorithms | Complexity |
+| - | - |
+| Bogo | unbounded $O(?)$
+| Bubble | $O(n^2)$
+| Selection | $O(n^2)$
+| Merge | $O(n \log n)$
+
+## Three A's of Computational Thinking
+
+### Abstraction
+
+- choosing right abstractions
+- operating in multiple layers of abstraction simultaneously
+- defining relationships bettween abstraction layers
+
+### Automation
+
+- think in terms of mechanizing abstractions
+    - possible because we have precise and exacting notations and models
+    - some "machine" that can interpret our notations
+
+### Algorithms
+
+- language for describing automated processes
+- also allows abstraction of details
+- language for communicating ideas and processes
+
+## Aspects of Computational Thinking
+
+- analyzing difficulty of a problem and the best solution to solve it
+    - theortical computer science gives precise meaning to these and related questions and their answers
+- thinking recursively
+    - reformulating a seemingly difficult problem into smaller problems
+    - reduction, embedding, transformation, simulation
+
+
+

@@ -1,28 +1,46 @@
-# MATB-STUDIOS 
+# CS50 Content Page
 
-## MATB-Reset and Improve Program
------
-### Materials
+## Author's Note
 
-Welcome to MATB's private library of the program! This library features a detailed walkthrough of self-study materials related to members' undergraduate major. Feel free to pick up one of the materials and start learning! All lecture notes are written by the members themselves with reference to said materials. Please contact the right author for any inquiry regarding them.
+## Prep
 
-- MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
-- CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-- MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/54fe695dc7330e6552c2c23153c63f8eb7e6bcea/README.md))
+Here's a checklist of tasks to prepare before signing up:
+- [download Python](https://www.python.org/downloads/)
+- download one or more of the following:
+    - [VIM IDE](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
+    - *(Used in lecture)* [Spyder IDE](https://www.spyder-ide.org/)
+    - **(Recommended)** [Visual Studio Code](https://code.visualstudio.com/)
+    - [Pycharm IDE](https://www.jetbrains.com/pycharm/download/#section=windows)
+### About Python in Visual Studio Code
+Make sure to download the Python extension, you can find this at the 5th selection on the left side of the screen.
 
-## For Writers 
+## CS50 Course Must-Reads
 
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to here. (This section is still in construction, stay tuned!)
+### Using CS50 Notes
 
-## Archive
+- `CS50-Lec`: code used in lectures
+- `CS50-Lec.pdf`: lecture ppt 
+- `readme`: lecture notes written by author MATBckh22
+Please inform the author for any typo, format, link errors found in the notes, lecture video playlist can be found here
 
-A formal project hub for MATB Studios, this is where all the magic happens. 
+### CS50 Updates
 
-half-detailed description of every keyword in rbx studio + some notes
+Lecture notes for CS50 are incomplete. Kindly refer to the list below on sections that are not yet updated:
 
-RBX studio is based on one language: rbx lua (lua)
+## Content Page
 
-*STARTER MANUAL* https://www.lua.org/manual/5.1/manual.html
+Below are the links to every chapter in the course, those without them are yet to be written.
+- Scratch
+- C
+- Arrays
+- Algorithms
+- Memory
+- Data Structures
+- Python
+- SQL
+- HTML, CSS, JavaScript
+- Flask
+- Emoji
 
-*ignore 3.7*
+## Other Materials
+

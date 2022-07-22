@@ -26,7 +26,7 @@ Lecture notes for MIT6 are incomplete. Kindly refer to the list below on section
     - incomplete notes
 ## Content Page
 Below are the links to every chapter in the course, those without them are yet to be written:
-- [What is computation?](https://github.com/MATBckh22/MATB-STUDIOS/blob/38196c2b057f7d64ed5c2fac12a01c1e51434242/README.md)
+- [What is computation?](https://github.com/MATBckh22/MATB-STUDIOS/blob/2964ea85691c50ba81cfda784a67f08b6e3fbd63/README.md)
 - [Branching and Iteration](https://github.com/MATBckh22/MATB-STUDIOS/blob/f0ae1199c3a548c45bbe1dcc8523bc9d56097be5/README.md)
 - [String Manipulation, Guess and Check, Approximations, Bisection](https://github.com/MATBckh22/MATB-STUDIOS/blob/1c7cfc482be1f81ece4a1ded6c173ec0e4b97a25/README.md)
 - [Decomposition, Abstractions, Functions](https://github.com/MATBckh22/MATB-STUDIOS/blob/8c8ead004ffefed35caa015db795d7d0d9c9d32b/README.md)

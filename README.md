@@ -21,6 +21,7 @@ Make sure to download the Python extension, you can find this at the 5th selecti
 - `CS50-Lec`: code used in lectures
 - `CS50-Lec.pdf`: lecture ppt 
 - `readme`: lecture notes written by author MATBckh22
+- 
 Please inform the author for any typo, format, link errors found in the notes, lecture video playlist can be found here
 
 ### CS50 Updates

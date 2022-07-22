@@ -19,7 +19,7 @@ hi chong
 hichong
 ```
 
-## INPUT: input("")
+## Input: `input("")`
 prints whatever is in the quotes, the string user types next will be binded as a variable (input into memory), exp:
 ```
 >>> text = input("type something down below")
@@ -28,7 +28,7 @@ hello
 >>> print(text)
 hello
 ```
-## Cast: input for numbers
+## Cast: Input For Numbers
 binding numbers (only when ur working with numbers):
 
 ```
@@ -46,11 +46,12 @@ i > j
 i >= j
 i < j
 i <= j
-i == j  equality test, True if i is the same as j
-i != j  inequality test, True if i not the same as j
+i == j  #equality test, True if i is the same as j
+i != j  #inequality test, True if i not the same as j
 ```
 
-test:
+Test:
+
 ```
 >>> i = 5
 >>> j = 6
@@ -60,10 +61,25 @@ True
 False
 ```
 
-## Logic Variables
-*Note: may take some time to understand this*
+## Logic Operators on `boolean`
 
-Boolean values: table refer to slide 8, comparison example:
+Assume `a` and `b` are variable names with Boolean values:
+
+| A | B | A and B | A or B |
+| - | - | - | - |
+| `True` | `True` | `True` | `True`
+| `True` | `False` | `False` | `True`
+| `False` | `True` | `False` | `True`
+| `False` | `False` | `False` | `False`
+
+Logic operators can be used in code to connect variables:
+- `not a`
+    - `True` if `a` is `False`
+    - `False` if `a` is `True`
+- `a and b`
+    - `True` if both are `True`
+- `a or b`
+    - `True` if either one is `True` or both are `True`
 
 ```
 pset_time = 15
@@ -87,8 +103,7 @@ else:
 <expression>
 ```
 
-Decision is made from the condition under if that is true or false, expressions is evaluated or executed when condition is true
-(but it will be weird).
+Decision is made from the condition under if that is true or false, expressions is evaluated or executed when condition is true.
 
 ```
 if <condition>:
@@ -103,7 +118,7 @@ else:
 <expression>
 <expression>
 ```
-`elif` is made for a separate condition if the first condition is not true, if all is false, the last expression under `else` is executed
+`elif` is made for a separate condition if the first condition is not `True`. If all are `False`, the last expression under `else` is executed
 
 *see how multiple conditions can have shorter strings of code using elif vs if*
 
@@ -137,7 +152,7 @@ else:
 
 # `while` loops
 
-`if else` infinite loop can be turned into `while` loops:
+`if else` infinite loops can be turned into `while` loops:
 
 ```
 while <condition>:
@@ -145,7 +160,7 @@ while <condition>:
 <expression>
 ```
 
-`<condition>` evaluates to a Boolean. If <condition> is `True`, do all the steps inside the `while` code block. Check `<condition>` again, repeat until <condition> is `False`.
+`<condition>` evaluates to a Boolean. If <condition> is `True`, do all the steps inside the `while` code block. Check `<condition>` again, repeat until <condition> it's `False`.
 
 # `for` loops
     
@@ -183,11 +198,13 @@ for i in range(5, 11, 2):
 mysum += i
 print(mysum)
 ```
+
 *note: doesn't include stop values*
 
 ## `break`
     
-`break` acts as an immediate exit from the `while` loop when a condition is met and skips the remaining expressions after, but only exits it's innermost loop.
+`break` acts as an immediate exit from the `while` loop when a condition is met and skips the remaining expressions after, but only exits it's innermost loop:
+
 ```
 while <condition_1>:
   while <condition_2>:
@@ -197,7 +214,7 @@ while <condition_1>:
     <expression_c>
 ```
         
-Example:
+Example: 
         
 ```
 mysum = 0
@@ -208,5 +225,16 @@ for i in range(5, 11, 2):
     mysum += 1
 print(mysum)
 ```
+
+Since `i` is 5 inside the for loop, when `mysum += i` occurs `mysum` will equal to 5 as well.
+
+Notice that because `mysum` is 5 so it fits the if block's condition, hence the for loop will break.
         
-A more in-depth comparison between for and while loops can be found in the last slide.
+## `for` vs `while` loops
+
+| `for` | `while` |
+| - | - |
+| **know** number of iterations | iterations are **unbounded**
+| end early via `break` | end early via `break`
+| uses a **counter** | **uses a counter but must initialize before loop and increment it inside loop**
+| can rewrite a `for` loop using a `while` loop | may not be able to rewrite a `while` loop using a `for` loop

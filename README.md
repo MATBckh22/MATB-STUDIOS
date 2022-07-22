@@ -1,5 +1,7 @@
 # Branching and Iteration
+
 ## String
+
 Enclosed in quotation marks or single quotes, exp:
 `hi = "hello there"`
 

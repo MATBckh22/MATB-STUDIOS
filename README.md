@@ -1,6 +1,6 @@
- ### Author's Note: concepts are in the first half of the notes, if u wanna skip these go to the lower half of the notes, or skip this chapter entirely. 前言：有写过程式的人可以选择忽略这一部分的笔记，这边是给完全没有写代码经验的萌新，但如果要参考专业用词的也可以扫过一遍。
----
 # What is Computation?
+
+### Author's Note: concepts are in the first half of the notes, if u wanna skip these go to the lower half of the notes, or skip this chapter entirely. 前言：有写过程式的人可以选择忽略这一部分的笔记，这边是给完全没有写代码经验的萌新，但如果要参考专业用词的也可以扫过一遍。
 
 ## What Does a Computer Do?
 

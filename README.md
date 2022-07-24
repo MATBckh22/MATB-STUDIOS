@@ -9,7 +9,7 @@ Welcome to MATB's private library of the program! This library features a detail
 - MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
 - CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
 - MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md)
+- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md))
 
 ## For Writers 
 

@@ -106,3 +106,59 @@ If the function definition is missing a return statement, python automatically r
 
 ## `return` vs `print`
 
+| `return` | `print` |
+| - | - |
+| return only has meaning **inside** a function | print can be used **outside** functions
+| only one `return` can be executed inside a function | many `print` statemtents can be executed
+| code after `return` statement will not be executed | can be executed after `print`
+| has a value associated with it, given to **function caller** | has a value associated with it but outputted to console 
+
+### With `return`
+
+Here we have a function that can identify even positive integers:
+
+```
+def is_even_with_return( i ):
+    """ 
+    Input: i, a positive int
+    Returns True if i is even, otherwise False
+    """
+    print('with return')
+    remainder = i % 2
+    return remainder == 0
+
+is_even_with_return(3) 
+print(is_even_with_return(3) )
+```
+
+Notice the statement `return remainder == 0`, that is to say if there are no remainders after division, `True` is returned to the function caller, otherwise print `False`.
+
+However, as previously discussed, the boolean values that are returned will not be showed in console unless a `print` statement is carried out, like `print(is_even_with_return(3) )`.
+
+[Visualization](https://pythontutor.com/render.html#code=def%20is_even_with_return%28%20i%20%29%3A%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20Input%3A%20i,%20a%20positive%20int%0A%20%20%20%20Returns%20True%20if%20i%20is%20even,%20otherwise%20False%0A%20%20%20%20%22%22%22%0A%20%20%20%20print%28'with%20return'%29%0A%20%20%20%20remainder%20%3D%20i%20%25%202%0A%20%20%20%20return%20remainder%20%3D%3D%200%0A%0Ais_even_with_return%283%29%20%0Aprint%28is_even_with_return%283%29%20%29&cumulative=false&curInstr=13&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+### Without `return`
+
+```
+def is_even_without_return( i ):
+    """ 
+    Input: i, a positive int
+    Does not return anything
+    """
+    print('without return')
+    remainder = i % 2
+
+is_even_without_return(3)
+print(is_even_without_return(3) )
+```
+
+This function has the same goal, however it doesn't work like it's supposed to be. This is because the function doesn't have a  `return` statement. 
+
+As previously discussed, since this function is missing a `return` statement, there are no operations to get back to the function caller.
+
+[Visualization](https://pythontutor.com/render.html#code=def%20is_even_without_return%28%20i%20%29%3A%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20Input%3A%20i,%20a%20positive%20int%0A%20%20%20%20Does%20not%20return%20anything%0A%20%20%20%20%22%22%22%0A%20%20%20%20print%28'without%20return'%29%0A%20%20%20%20remainder%20%3D%20i%20%25%202%0A%0Ais_even_without_return%283%29%0Aprint%28is_even_without_return%283%29%20%29&cumulative=false&curInstr=10&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+### Thus, `None` will be returned to address this issue, the following `print` statement will also print `None`.
+
+## Function as Arguments
+

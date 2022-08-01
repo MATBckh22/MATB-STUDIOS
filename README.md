@@ -11,6 +11,7 @@ Here's a checklist of tasks to prepare before signing up:
     - [Pycharm IDE](https://www.jetbrains.com/pycharm/download/#section=windows)
 ### About Python in Visual Studio Code
 Make sure to download the Python extension, you can find this at the 5th selection on the left side of the screen.
+[Instructions](https://code.visualstudio.com/docs/python/python-tutorial)
 ## MIT6 Course Must-Reads
 [Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/pages/syllabus/) will have **lecture videos, PPT slides and sample code:**
 ### Using MIT6 Notes

@@ -2,6 +2,8 @@
 
 ## Author's Note
 
+[CS50](https://cs50.harvard.edu/x/2022/) is a rigorous introduction to computer science with a steep learning curve. For those who don't have the fundamental basics of programming or have little to no experience in coding, I sincerely advise going to [MIT6](https://github.com/MATBckh22/MATB-STUDIOS/blob/5ea3c077cd38b89d2ad7db645db75bc9bbdde76d/README.md) to start off first. That being said, this course covers a lot of content which are beneficial for a novice programmer.
+
 ## Prep
 
 Here's a checklist of tasks to prepare before signing up:
@@ -16,6 +18,10 @@ Make sure to download the Python extension, you can find this at the 5th selecti
 
 ## CS50 Course Must-Reads
 
+### Regarding CS50 Lectures
+
+Some of the content are repeated in [MIT6](https://github.com/MATBckh22/MATB-STUDIOS/blob/5ea3c077cd38b89d2ad7db645db75bc9bbdde76d/README.md), hence author will skip chapters that are repeated or otherwise better taught in MIT6. Feel free to browse the course website and grab their notes there. Kindly refer to CS50 Updates.
+
 ### Using CS50 Notes
 
 - `CS50-Lec`: code used in lectures
@@ -27,6 +33,12 @@ Please inform the author for any typo, format, link errors found in the notes, l
 ### CS50 Updates
 
 Lecture notes for CS50 are incomplete. Kindly refer to the list below on sections that are not yet updated:
+
+**Skipped Lectures:**
+- Scratch
+- Data Structures
+- Flask
+- Emoji
 
 ## Content Page
 

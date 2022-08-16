@@ -42,6 +42,8 @@ Similar to python `def` functions, C uses the `int main` function where the prog
 
 `printf` is a method to print `Hello World!` in the terminal. **The** `/n` **at the end of the string tells the compiler to get a new line after printing.**
 
+Compared to python, semicolon `;` must be at **the end of every operation to indicate that this is the end of statement.**
+
 ### Return Values
 
 `return 0` terminates the `main()` function and returns the value 0. This is useful to indicate that the program has executed successfully, it is good practice to include this at the end of the function.
@@ -56,17 +58,35 @@ Printing a string in C will look like this:
 printf("hello world");
 ```
 
-The `f` in `printf` refers to a formatted string. Compared to python, semicolon `;` must be at **the end of every operation to indicate that this is the end of statement.**
+The `f` in `printf` refers to a formatted string. 
 
-### Comments
+### Identifiers
 
-Comments are used to briefly explain the purpose of the code, they're ignored by the compiler:
+C identifier is a name to identify a variable, function, or any other user-defined item. Note that C identifier:
+- doesn't allow punctuation characters (@,$,etc)
+- is **case-sensitive**
+- can include underscores
+
+This is why it's good programming practice to name human-readable variables and functions to briefly specify the purpose of the indentifiers.
+
+A readable variable looks like this:
 
 ```
-/* Hi! This is a test. */
+Calculator_helper
 ```
 
-We start by 
+Do not take shortcuts like this:
 
-### Binding Variables
+```
+calc_help
+```
+
+### Keywords
+
+Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
+
+## Variables
+
+
+
 

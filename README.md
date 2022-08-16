@@ -85,8 +85,4 @@ calc_help
 
 Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
 
-## Variables
-
-
-
-
+## Binding Variables and Functions

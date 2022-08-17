@@ -52,7 +52,7 @@ Compared to python, semicolon `;` must be at **the end of every operation to ind
 
 Before going to the actual part of writing code, C is very different compared to Python, u cannot run programs as straight-forward as Python. Hence, take note on this section how to set up a compiler for C/C++.
 
-Here author will be using vscode to compile. The C/C++ doesn't include a compiler or debugger tool. Thus, u will have to install these tools to ur computer ([GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection) or [Clang](https://en.wikipedia.org/wiki/Clang) specifically).
+Here author will be using vscode to compile. The C/C++ extension doesn't include a compiler or debugger tool. Thus, u will have to install these tools to ur computer ([GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection) or [Clang](https://en.wikipedia.org/wiki/Clang) specifically).
 
 There may already be a C/C++ compiler and debugger provided by ur academic instructor. Check with ur instructors for guidance on how to install and use those compilers instead.
 

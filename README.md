@@ -85,9 +85,7 @@ Follow these steps to know how to compile, we will be using the `Hello World` ex
 
 [Reference](https://www.tutorialspoint.com/cprogramming/c_program_structure.htm)
 
-There are more commands to control workflow and file directories, see here:
-
-![Commands](https://scontent.xx.fbcdn.net/v/t1.15752-9/289055996_436088825132501_1677319937766619818_n.png?stp=dst-png_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=aee45a&_nc_ohc=oFhXswbfIVQAX__DGxG&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJIG1xqUI1JBj7taUOAexvdByMZWt7XsRyk8nVkp_s-zg&oe=6321FE78)
+There are more commands to control workflow and file directories, see [here](https://ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-doslinux.htm#:~:text=Many%20Linux%20commands%20you%20type,fact%2C%20some%20commands%20are%20identical.)
 
 ## Basic Syntax
 

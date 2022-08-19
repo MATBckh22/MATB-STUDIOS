@@ -93,7 +93,7 @@ There are more commands to control workflow and file directories, see [here](htt
 
 Printing a string in C will look like this:
 
-```
+```C
 printf("hello world");
 ```
 

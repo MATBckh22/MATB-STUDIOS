@@ -21,8 +21,6 @@ Make sure to download the Python extension, you can find this at the 5th selecti
 Please inform the author for any typo, format, link errors found in the notes, lecture video playlist can be found [here](https://youtu.be/nykOeWgQcHM)
 ### MIT6 Updates
 Lecture notes for MIT6 are incomplete. Kindly refer to the list below on sections that are not yet updated:
-- MIT6-Lec4: under `return` *vs* `print`
-    - incomplete notes
 - MIT6-Lec6: under Fibonacci Numbers
     - incomplete notes
 ## Content Page

@@ -15,15 +15,3 @@ Welcome to MATB's private library of the program! This library features a detail
 ## For Writers 
 
 To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to here. (This section is still in construction, stay tuned!)
-
-## Archive
-
-A formal project hub for MATB Studios, this is where all the magic happens. 
-
-half-detailed description of every keyword in rbx studio + some notes
-
-RBX studio is based on one language: rbx lua (lua)
-
-*STARTER MANUAL* https://www.lua.org/manual/5.1/manual.html
-
-*ignore 3.7*

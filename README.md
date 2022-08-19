@@ -9,6 +9,7 @@ Here's a checklist of tasks to prepare before signing up:
     - *(Used in lecture)* [Spyder IDE](https://www.spyder-ide.org/)
     - **(Recommended)** [Visual Studio Code](https://code.visualstudio.com/)
     - [Pycharm IDE](https://www.jetbrains.com/pycharm/download/#section=windows)
+    - [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 ### About Python in Visual Studio Code
 Make sure to download the Python extension, you can find this at the 5th selection on the left side of the screen.
 [Instructions](https://code.visualstudio.com/docs/python/python-tutorial)

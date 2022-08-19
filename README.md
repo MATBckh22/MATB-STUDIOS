@@ -15,7 +15,7 @@ A C program consists of the following parts:
 
 We will be using a `Hello World` example to explain the program structure written in C:
 
-```
+```C
 #include <stdio.h>
 
 int main() {
@@ -28,10 +28,10 @@ int main() {
 
 ### Preprocessor Command
 
-`#include <stdio.h>` is a preprocessor command, it tells the C compiler to include stdio.h file before going to the actual compilation.
+`#include <stdio.h>` is a preprocessor command, also called as a **header file**, it tells the C compiler to include stdio.h libraries before going to the actual compilation.
 
 ### Function
-
+   
 Similar to python `def` functions, C uses the `int main` function where the program execution begins.
 
 ### Comments
@@ -47,6 +47,45 @@ Compared to python, semicolon `;` must be at **the end of every operation to ind
 ### Return Values
 
 `return 0` terminates the `main()` function and returns the value 0. This is useful to indicate that the program has executed successfully, it is good practice to include this at the end of the function.
+
+## Setting Up a C/C++ Compiler 
+
+Before going to the actual part of writing code, C is very different compared to Python, u cannot run programs as straight-forward as Python. Hence, take note on this section how to set up a compiler for C/C++.
+
+Here author will be using vscode to compile. The C/C++ extension doesn't include a compiler or debugger tool. Thus, u will have to install these tools to ur computer ([GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection) or [Clang](https://en.wikipedia.org/wiki/Clang) specifically).
+
+There may already be a C/C++ compiler and debugger provided by ur academic instructor. Check with ur instructors for guidance on how to install and use those compilers instead.
+
+Otherwise, refer to [this complete guide on how to install and use C/C++ compiler on vscode](https://code.visualstudio.com/docs/languages/cpp) instead.
+
+## Compiling and Executing C Programs
+
+To make sure u have installed the compiler, execute this command line in the terminal:
+
+- GCC:
+
+```
+g++ --version
+```
+
+- Clang:
+
+```
+clang --version
+```
+
+Follow these steps to know how to compile, we will be using the `Hello World` example mentioned above:
+
+- open a text editor like vscode and add the example code
+- save the file as `hello.c`
+- open the terminal and type `gcc hello.c` and enter to compile the code
+- if there are no errors in the output, terminal will generate an `a.out` executable file
+- type `a.out` to execute the program
+- `Hello, World!` expected to be in output
+
+[Reference](https://www.tutorialspoint.com/cprogramming/c_program_structure.htm)
+
+There are more commands to control workflow and file directories, see [here](https://ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-doslinux.htm#:~:text=Many%20Linux%20commands%20you%20type,fact%2C%20some%20commands%20are%20identical.)
 
 ## Basic Syntax
 
@@ -85,4 +124,5 @@ calc_help
 
 Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
 
-## Binding Variables and Functions
+## 
+

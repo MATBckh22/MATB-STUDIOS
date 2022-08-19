@@ -7,7 +7,7 @@
 
 Here are we trying to group different objects part of the same type, in this case we're grouping animals. We begin with creating an animal class (initialization):
 
-```
+```python
 class Animal(object):
     def __init__(self, age):
         self.age = age
@@ -24,7 +24,7 @@ A complete visualization of the process can be found here: [Detailed Visualizati
 
 Getters and setters are often used when implementing a class, this is to prevent bugs when notations are changed:
 
-```
+```python
 class Animal(object):
     def __init__(self, age): #class initialization
         self.age = age
@@ -43,7 +43,7 @@ class Animal(object):
 
 - Getters: return values of any data attributes
 
-```
+```python
 def get_age(self):
     return self.age
 def get_name(self):
@@ -52,7 +52,7 @@ def get_name(self):
 
 - Setters: set data attributes to mapped values
 
-```
+```python
 def set_age(self, newage):
     self.age = newage
 def set_name(self, newname=""):
@@ -71,7 +71,7 @@ a = Animal(3)
 
 Dot notation is used to access attributes (data and methods):
 
-```
+```python
 a.age #allowed but not recommended
 a.get_age() #recommended getters and setters method
 ```
@@ -80,7 +80,7 @@ a.get_age() #recommended getters and setters method
 
 Author of class definition may change data attribute variable names:
 
-```
+```python
 class Animal(object):
     def __init__(self, age):
         self.years = age
@@ -100,15 +100,15 @@ It is advised to use getters and setters outside of the class, use `a.get_age()`
 Python allows: **(not recommended)**
 
 - **accessing data** outside class definition:
-```
+```python
 print(a.age)
 ```
 - **writing data** outside class definition:
-```
+```python
 a.age = 'infinite'
 ```
 - **creating data** attributes from an instance outside class definition:
-```
+```python
 a.size = "tiny"
 ```
 
@@ -116,14 +116,14 @@ a.size = "tiny"
 
 Default Arguments for formal parameters are used if there's no specific argument is given:
 
-```
+```python
 def set_name(self, newname=""):
     self.name = newname
 ```
 
 `""` is called default argument. It can be used in:
 
-```
+```python
 a = Animal(3)
 a.set_name()
 print(a.get_name()) 
@@ -133,7 +133,7 @@ print(a.get_name())
 
 Normal argument:
 
-```
+```python
 a = Animal(3)
 a.set_name("fluffy")
 print(a.get_name())
@@ -159,7 +159,7 @@ inherits all data and behaviors of parent class
 
 ## Inheritance: Parent Class
 
-```
+```python
 class Person(Animal):
     def __init__(self, name, age):
         Animal.__init__(self, age)
@@ -186,7 +186,7 @@ class Person(Animal):
 
  We can add functionality to a subclass, in this case we're adding `speak()` while inheriting all attributes of `Animal`
 
-```
+```python
 class Cat(Animal):
     def speak(self):
         print("meow")
@@ -209,7 +209,7 @@ class Cat(Animal):
 
 ### Inheritance Example
 
-```
+```python
 class Person(Animal):
     def __init__(self, name, age):
         Animal.__init__(self, age)
@@ -224,14 +224,14 @@ We start by creating data attributes for a list of friends.
 
 Here we define a set of methods:
 
-```
+```python
 def get_friends(self):
         return self.friends
 ```
 
 Returns the list of friends (getter)
 
-```
+```python
 def add_friend(self, fname):
         if fname not in self.friends:
             self.friends.append(fname)
@@ -239,14 +239,14 @@ def add_friend(self, fname):
 
 Adds a friend to the end of the list.
 
-```
+```python
 def speak(self):
         print("hello")
 ```
 
 Implementation of `speak()` method to print "hello".
 
-```
+```python
 def age_diff(self, other):
         diff = self.age - other.age
         print(abs(diff), "year difference")
@@ -254,7 +254,7 @@ def age_diff(self, other):
 
 Prints the age difference.
 
-```
+```python
 def __str__(self):
     return "person:"+str(self.name)+":"+str(self.age)
 ```
@@ -263,7 +263,7 @@ Overwriting `Animal`'s `__str__` method to return a string.
 
 Full code: [Visualization](https://pythontutor.com/render.html#code=class%20Animal%28object%29%3A%0A%20%20%20%20def%20__init__%28self,%20age%29%3A%0A%20%20%20%20%20%20%20%20self.age%20%3D%20age%0A%20%20%20%20%20%20%20%20self.name%20%3D%20None%0A%20%20%20%20def%20get_age%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.age%0A%20%20%20%20def%20get_name%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.name%0A%20%20%20%20def%20set_age%28self,%20newage%29%3A%0A%20%20%20%20%20%20%20%20self.age%20%3D%20newage%0A%20%20%20%20def%20set_name%28self,%20newname%3D%22%22%29%3A%0A%20%20%20%20%20%20%20%20self.name%20%3D%20newname%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22animal%3A%22%2Bstr%28self.name%29%2B%22%3A%22%2Bstr%28self.age%29%0A%0Aclass%20Person%28Animal%29%3A%0A%20%20%20%20def%20__init__%28self,%20name,%20age%29%3A%0A%20%20%20%20%20%20%20%20Animal.__init__%28self,%20age%29%0A%20%20%20%20%20%20%20%20self.set_name%28name%29%0A%20%20%20%20%20%20%20%20self.friends%20%3D%20%5B%5D%0A%20%20%20%20def%20get_friends%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.friends%0A%20%20%20%20def%20add_friend%28self,%20fname%29%3A%0A%20%20%20%20%20%20%20%20if%20fname%20not%20in%20self.friends%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.friends.append%28fname%29%0A%20%20%20%20def%20speak%28self%29%3A%0A%20%20%20%20%20%20%20%20print%28%22hello%22%29%0A%20%20%20%20def%20age_diff%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20diff%20%3D%20self.age%20-%20other.age%0A%20%20%20%20%20%20%20%20print%28abs%28diff%29,%20%22year%20difference%22%29%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22person%3A%22%2Bstr%28self.name%29%2B%22%3A%22%2Bstr%28self.age%29%0A%0Aprint%28%22%5Cn----%20person%20tests%20----%22%29%0Ap1%20%3D%20Person%28%22jack%22,%2030%29%0Ap2%20%3D%20Person%28%22jill%22,%2025%29%0Aprint%28p1.get_name%28%29%29%0Aprint%28p1.get_age%28%29%29%0Aprint%28p2.get_name%28%29%29%0Aprint%28p2.get_age%28%29%29%0Aprint%28p1%29%0Ap1.speak%28%29%0Ap1.age_diff%28p2%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 class Person(Animal):
     def __init__(self, name, age):
         Animal.__init__(self, age)
@@ -298,7 +298,7 @@ p1.age_diff(p2)
 
 Here we continue to create a subclass of `Student` while inheriting all attributes of `Person`:
 
-```
+```python
 import random
 ```
 
@@ -306,7 +306,7 @@ This will bring in method from `random` class:
 - `random` is by default in python docs
 - `random()` method gives back float in  [0,1)
 
-```
+```python
 class Student(Person):
     def __init__(self, name, age, major=None):
         Person.__init__(self, name, age)
@@ -315,14 +315,14 @@ class Student(Person):
 
 Setting up new data attributes while using default arguments `self`, `name` and `age`. We also set `major=None` beforehand and a new attribute `self.major`.
 
-```
+```python
 def change_major(self, major):
         self.major = major
 ```
 
 Setter method for students to change major.
 
-```
+```python
 def speak(self):
         r = random.random()
         if r < 0.25:
@@ -337,7 +337,7 @@ def speak(self):
 
 Here we're overwriting `speak()` to implement the `random()` method. `r = random.random()` is used to get a number randomly set between 0 to 1 (not including 1). Continuing from here, when it retrieves the random number it will look for a print operation to run correspondingly.
 
-```
+```python
  def __str__(self):
         return "student:"+str(self.name)+":"+str(self.age)+":"+str(self.major)
 ```
@@ -346,7 +346,7 @@ Overwriting `__str__` again.
 
 Full code: [Visualization](https://pythontutor.com/render.html#code=class%20Animal%28object%29%3A%0A%20%20%20%20def%20__init__%28self,%20age%29%3A%0A%20%20%20%20%20%20%20%20self.age%20%3D%20age%0A%20%20%20%20%20%20%20%20self.name%20%3D%20None%0A%20%20%20%20def%20get_age%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.age%0A%20%20%20%20def%20get_name%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.name%0A%20%20%20%20def%20set_age%28self,%20newage%29%3A%0A%20%20%20%20%20%20%20%20self.age%20%3D%20newage%0A%20%20%20%20def%20set_name%28self,%20newname%3D%22%22%29%3A%0A%20%20%20%20%20%20%20%20self.name%20%3D%20newname%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22animal%3A%22%2Bstr%28self.name%29%2B%22%3A%22%2Bstr%28self.age%29%0A%20%20%20%20%20%20%20%20%0Aclass%20Person%28Animal%29%3A%0A%20%20%20%20def%20__init__%28self,%20name,%20age%29%3A%0A%20%20%20%20%20%20%20%20Animal.__init__%28self,%20age%29%0A%20%20%20%20%20%20%20%20self.set_name%28name%29%0A%20%20%20%20%20%20%20%20self.friends%20%3D%20%5B%5D%0A%20%20%20%20def%20get_friends%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.friends%0A%20%20%20%20def%20speak%28self%29%3A%0A%20%20%20%20%20%20%20%20print%28%22hello%22%29%0A%20%20%20%20def%20add_friend%28self,%20fname%29%3A%0A%20%20%20%20%20%20%20%20if%20fname%20not%20in%20self.friends%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.friends.append%28fname%29%0A%20%20%20%20def%20age_diff%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20diff%20%3D%20self.age%20-%20other.age%0A%20%20%20%20%20%20%20%20print%28abs%28diff%29,%20%22year%20difference%22%29%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22person%3A%22%2Bstr%28self.name%29%2B%22%3A%22%2Bstr%28self.age%29%0A%20%20%20%20%20%20%20%20%0Aimport%20random%0A%0Aclass%20Student%28Person%29%3A%0A%20%20%20%20def%20__init__%28self,%20name,%20age,%20major%3DNone%29%3A%0A%20%20%20%20%20%20%20%20Person.__init__%28self,%20name,%20age%29%0A%20%20%20%20%20%20%20%20self.major%20%3D%20major%0A%20%20%20%20def%20change_major%28self,%20major%29%3A%0A%20%20%20%20%20%20%20%20self.major%20%3D%20major%0A%20%20%20%20def%20speak%28self%29%3A%0A%20%20%20%20%20%20%20%20r%20%3D%20random.random%28%29%0A%20%20%20%20%20%20%20%20if%20r%20%3C%200.25%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22i%20have%20homework%22%29%0A%20%20%20%20%20%20%20%20elif%200.25%20%3C%3D%20r%20%3C%200.5%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22i%20need%20sleep%22%29%0A%20%20%20%20%20%20%20%20elif%200.5%20%3C%3D%20r%20%3C%200.75%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22i%20should%20eat%22%29%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22i%20am%20watching%20tv%22%29%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22student%3A%22%2Bstr%28self.name%29%2B%22%3A%22%2Bstr%28self.age%29%2B%22%3A%22%2Bstr%28self.major%29%0A%0Aprint%28%22%5Cn----%20student%20tests%20----%22%29%0As1%20%3D%20Student%28'alice',%2020,%20%22CS%22%29%0As2%20%3D%20Student%28'beth',%2018%29%0Aprint%28s1%29%0Aprint%28s2%29%0Aprint%28s1.get_name%28%29,%22says%3A%22,%20end%3D%22%20%22%29%0As1.speak%28%29%0Aprint%28s2.get_name%28%29,%22says%3A%22,%20end%3D%22%20%22%29%0As2.speak%28%29&cumulative=false&curInstr=53&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 import random
 
 class Student(Person):
@@ -383,7 +383,7 @@ s2.speak()
 
 Class variables are different than instance variables, **their values are shared between all instances of a class:**
 
-```
+```python
 class Rabbit(Animal):
     # a class variable, tag, shared across all instances
     tag = 1
@@ -407,7 +407,7 @@ Notice `self.rid = Rabbit.tag`, **instance variable** `self.rid` is assigned to 
 
 ## `Rabbit` Getter Methods
 
-```
+```python
 def get_rid(self):
         # zfill used to add leading zeroes 001 instead of 1
         return str(self.rid).zfill(3)
@@ -423,7 +423,7 @@ These are the getter methods specific for a `Rabbit` class since we already have
 
 ## Working With Your Own Types
 
-```
+```python
 def __add__(self, other):
         # returning object of same type as this class
         return Rabbit(0, self, other)
@@ -441,7 +441,7 @@ Here we return a new `Rabbit` object. It recalls `0` as the rabbit's age, `self`
 
 This is a method that allows the program decide that **two rabbits are equal if they have the same two parents:**
 
-```
+```python
 def __eq__(self, other):
         # compare the ids of self and other's parents
         # don't care about the order of the parents
@@ -462,7 +462,7 @@ def __eq__(self, other):
 
 Full Code: [Visualization](https://pythontutor.com/render.html#code=class%20Animal%28object%29%3A%0A%20%20%20%20def%20__init__%28self,%20age%29%3A%0A%20%20%20%20%20%20%20%20self.age%20%3D%20age%0A%20%20%20%20%20%20%20%20self.name%20%3D%20None%0A%20%20%20%20def%20get_age%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.age%0A%20%20%20%20def%20get_name%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.name%0A%20%20%20%20def%20set_age%28self,%20newage%29%3A%0A%20%20%20%20%20%20%20%20self.age%20%3D%20newage%0A%20%20%20%20def%20set_name%28self,%20newname%3D%22%22%29%3A%0A%20%20%20%20%20%20%20%20self.name%20%3D%20newname%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22animal%3A%22%2Bstr%28self.name%29%2B%22%3A%22%2Bstr%28self.age%29%0A%20%20%20%20%20%20%20%20%0Aclass%20Rabbit%28Animal%29%3A%0A%20%20%20%20%23%20a%20class%20variable,%20tag,%20shared%20across%20all%20instances%0A%20%20%20%20tag%20%3D%201%0A%20%20%20%20def%20__init__%28self,%20age,%20parent1%3DNone,%20parent2%3DNone%29%3A%0A%20%20%20%20%20%20%20%20Animal.__init__%28self,%20age%29%0A%20%20%20%20%20%20%20%20self.parent1%20%3D%20parent1%0A%20%20%20%20%20%20%20%20self.parent2%20%3D%20parent2%0A%20%20%20%20%20%20%20%20self.rid%20%3D%20Rabbit.tag%0A%20%20%20%20%20%20%20%20Rabbit.tag%20%2B%3D%201%0A%20%20%20%20def%20get_rid%28self%29%3A%0A%20%20%20%20%20%20%20%20%23%20zfill%20used%20to%20add%20leading%20zeroes%20001%20instead%20of%201%0A%20%20%20%20%20%20%20%20return%20str%28self.rid%29.zfill%283%29%0A%20%20%20%20def%20get_parent1%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.parent1%0A%20%20%20%20def%20get_parent2%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.parent2%0A%20%20%20%20def%20__add__%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20%23%20returning%20object%20of%20same%20type%20as%20this%20class%0A%20%20%20%20%20%20%20%20return%20Rabbit%280,%20self,%20other%29%0A%20%20%20%20def%20__eq__%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20%23%20compare%20the%20ids%20of%20self%20and%20other's%20parents%0A%20%20%20%20%20%20%20%20%23%20don't%20care%20about%20the%20order%20of%20the%20parents%0A%20%20%20%20%20%20%20%20%23%20the%20backslash%20tells%20python%20I%20want%20to%20break%20up%20my%20line%0A%20%20%20%20%20%20%20%20parents_same%20%3D%20self.parent1.rid%20%3D%3D%20other.parent1.rid%20%5C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20and%20self.parent2.rid%20%3D%3D%20other.parent2.rid%0A%20%20%20%20%20%20%20%20parents_opposite%20%3D%20self.parent2.rid%20%3D%3D%20other.parent1.rid%20%5C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20and%20self.parent1.rid%20%3D%3D%20other.parent2.rid%0A%20%20%20%20%20%20%20%20return%20parents_same%20or%20parents_opposite%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20%22rabbit%3A%22%2B%20self.get_rid%28%29%0A%0Aprint%28%22%5Cn----%20rabbit%20tests%20----%22%29%0Aprint%28%22----%20testing%20creating%20rabbits%20----%22%29%0Ar1%20%3D%20Rabbit%283%29%0Ar2%20%3D%20Rabbit%284%29%0Ar3%20%3D%20Rabbit%285%29%0Aprint%28%22r1%3A%22,%20r1%29%0Aprint%28%22r2%3A%22,%20r2%29%0Aprint%28%22r3%3A%22,%20r3%29%0Aprint%28%22r1%20parent1%3A%22,%20r1.get_parent1%28%29%29%0Aprint%28%22r1%20parent2%3A%22,%20r1.get_parent2%28%29%29%0A%0Aprint%28%22----%20testing%20rabbit%20addition%20----%22%29%0Ar4%20%3D%20r1%2Br2%20%20%20%23%20r1.__add__%28r2%29%0Aprint%28%22r1%3A%22,%20r1%29%0Aprint%28%22r2%3A%22,%20r2%29%0Aprint%28%22r4%3A%22,%20r4%29%0Aprint%28%22r4%20parent1%3A%22,%20r4.get_parent1%28%29%29%0Aprint%28%22r4%20parent2%3A%22,%20r4.get_parent2%28%29%29%0A%0Aprint%28%22----%20testing%20rabbit%20equality%20----%22%29%0Ar5%20%3D%20r3%2Br4%0Ar6%20%3D%20r4%2Br3%0Aprint%28%22r3%3A%22,%20r3%29%0Aprint%28%22r4%3A%22,%20r4%29%0Aprint%28%22r5%3A%22,%20r5%29%0Aprint%28%22r6%3A%22,%20r6%29%0Aprint%28%22r5%20parent1%3A%22,%20r5.get_parent1%28%29%29%0Aprint%28%22r5%20parent2%3A%22,%20r5.get_parent2%28%29%29%0Aprint%28%22r6%20parent1%3A%22,%20r6.get_parent1%28%29%29%0Aprint%28%22r6%20parent2%3A%22,%20r6.get_parent2%28%29%29%0Aprint%28%22r5%20and%20r6%20have%20same%20parents%3F%22,%20r5%20%3D%3D%20r6%29%0Aprint%28%22r4%20and%20r6%20have%20same%20parents%3F%22,%20r4%20%3D%3D%20r6%29&cumulative=false&curInstr=238&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 class Rabbit(Animal):
     # a class variable, tag, shared across all instances
     tag = 1

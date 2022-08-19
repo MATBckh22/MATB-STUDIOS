@@ -54,7 +54,7 @@ def is_bigger(x, y): #natural boundaries to the problem
 ### **Black Box Testing**
 
 This is a method known to **explore paths through specification:**
-```
+```python
 def sqrt(x, eps):
     """ Assumes x, eps floats, x >= 0, eps > 0
     Returns res such that x-eps <= res*res <= x+eps """
@@ -86,7 +86,7 @@ Test:
 - while loops
     - cases that catch all ways to exit loop
 
-```
+```python
 def abs(x):
     """ Assumes x is an int
     Returns x if x>=0 and –x otherwise """
@@ -227,7 +227,7 @@ NameError: name 'a' is not defined
 
 - handlers (python)
 
-```
+```python
 try: #try block
     a = int(input("Tell me one number:"))
     b = int(input("Tell me another number:"))
@@ -239,7 +239,7 @@ except: #except block
 
 ### Without `try` and `except`
 
-```
+```python
 a = int(input("type a number"))
 b = int(input("type another number"))
 print(a/b,a+b,a-b,a*b,a%b)
@@ -261,7 +261,7 @@ A long exception error message is outputted, **it is not caught manually by the 
 
 ### With `try` and `except`
 
-```
+```python
 try:
     a = int(input("type a number"))
     b = int(input("type another number"))
@@ -285,7 +285,7 @@ Bug in user input
 
 Multiple `except` clauses can be used to deal with particular errors:
 
-```
+```python
 try:
     a = int(input("Tell me one number: "))
     b = int(input("Tell me another number: "))
@@ -340,7 +340,7 @@ What to do when encounter an error?
 
  ## Example of Raising Exceptions 1
 
- ```
+ ```python
  def get_ratios(L1, L2):
     """ Assumes: L1 and L2 are lists of equal length of numbers
     Returns: a list containing L1[i]/L2[i] """
@@ -366,20 +366,20 @@ Otherwise, when any error left is detected, `ValueError` is raised instead.
     - first and last name of a student
     - grades on assignments
 
-```
+```python
 test_grades = [[['peter', 'parker'], [80.0, 70.0, 85.0]],
 [['bruce', 'wayne'], [100.0, 80.0, 74.0]]]
 ```
 - create a **new class list** with names, grades and an average
 
-```
+```python
 [[['peter', 'parker'], [80.0, 70.0, 85.0], 78.33333],
 [['bruce', 'wayne'], [100.0, 80.0, 74.0], 84.666667]]]
 ```
 
 ### Without `try` and `except`
 
-```
+```python
 def get_stats(class_list):
     new_stats = []
     for elt in class_list:
@@ -396,7 +396,7 @@ Here we begin with defining the first function `get_stats()` to setup a new list
 
 However, this system is flawed. It doesn't take account into students that don't have a grade:
 
-```
+```python
 test_grades = [[['peter', 'parker'], [10.0, 5.0, 85.0]],
 [['bruce', 'wayne'], [10.0, 8.0, 74.0]],
 [['captain', 'america'], [8.0,10.0,96.0]],
@@ -411,7 +411,7 @@ We have two options to solve this problem:
 
 - **notify something** when it goes wrong:
 
-```
+```python
 def avg(grades):
     try:
         return sum(grades)/len(grades)
@@ -421,7 +421,7 @@ def avg(grades):
 
 The output will look like this:
 
-```
+```python
 warning: no grades data #error flagged
 [[['peter', 'parker'], [10.0, 5.0, 85.0], 15.41666666],
 [['bruce', 'wayne'], [10.0, 8.0, 74.0], 13.83333334],
@@ -435,7 +435,7 @@ Even though the error is raised and flagged, `None` will still be printed becaus
 
 - decide that a **student with no grades gets a zero:**
 
-```
+```python
 def avg(grades):
     try:
         return sum(grades)/len(grades)
@@ -445,7 +445,7 @@ def avg(grades):
 ```
 Now it will print zero:
 
-```
+```python
 warning: no grades data
 [[['peter', 'parker'], [10.0, 5.0, 85.0], 15.41666666],
 [['bruce', 'wayne'], [10.0, 8.0, 74.0], 13.83333334],
@@ -463,7 +463,7 @@ AssertionError exception if assumptions not met**
 
 ### Asserting
 
-```
+```python
 def avg(grades):
     assert len(grades) != 0, 'no grades data'
     return sum(grades)/len(grades)

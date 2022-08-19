@@ -179,7 +179,7 @@ int
 
 `print()` is a print command to show output:
 
-```
+```python
 print(3+2)
 print("3+2")
 ```
@@ -197,7 +197,7 @@ print("3+2")
 
 `=` is used to assign value to a variable name:
 
-```
+```python
 pi = 3.14159
 pi_approx = 22/7
 

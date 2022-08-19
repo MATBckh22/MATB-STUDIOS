@@ -35,26 +35,26 @@ Challenges in understanding efficiency of a solution to a computational problem:
 - time module `import time`
 - recall module and bring it to class:
 
-```
+```python
 def c_to_f(c):
     return c*9/5 + 32
 ```
 
 - start clock
 
-```
+```python
 t0 = time.clock()
 ```
 
 - call function
 
-```
+```python
 c_to_f(100000)
 ```
 
 - stop clock
 
-```
+```python
 t1 = time.clock() - t0
 Print("t =", t, ":", t1, "s,”)
 ```
@@ -81,7 +81,7 @@ Assuming these steps take constant time:
 
 Example code:
 
-```
+```python
 def c_to_f(c):
     return c*9.0/5 + 32 #3 ops
 def mysum(x):
@@ -108,7 +108,7 @@ Counting operations can still be reliable to some extent, a relationship between
 
 here is a function that searches an element from a list:
 
-```
+```python
 def search_for_elmt(L,e):
     for i in L;
         if i == e
@@ -157,7 +157,7 @@ We want to achieve these:
 
 Code to calculate a factorial:
 
-```
+```python
 def fact_iter(n):
     ""assumes n an int >= 0"""
     answer = 1
@@ -228,7 +228,7 @@ Laws of addition and multiplication can combine complex cases and multiple O not
 
 - used with **sequential** statements:
 
-```
+```python
 for i in range(n):
     print ("a")
 for j in range(n*n):
@@ -241,7 +241,7 @@ Again only considering the dominant term we get $O(n)+O(n * n) = O(n+n^2) = O(n^
 
 - used with **nested** statements:
 
-```
+```python
 for i in range(n):
     for j in range(n):
         print('a')
@@ -256,7 +256,7 @@ Outer loop goes n times, and the inner loop goes every n times as well for every
 
 This is an example function used to search things linearly:
 
-```
+```python
 def linear_search(L, e):
     found = False
     for i in range(len(L)): 
@@ -272,7 +272,7 @@ The overall complexity of this program is $O(n)$ where n is `len(L)`. Worst case
 
 ### Linear Search on **Sorted** List
 
-```
+```python
 def search(L, e):
     for i in range(len(L)):
         if L[i] == e:
@@ -312,7 +312,7 @@ Relative sources:
 
 `addDigits()` is a function to search a list in sequence to see if the element is present:
 
-```
+```python
 def addDigits(s):
     val = 0
     for c in s:
@@ -324,7 +324,7 @@ def addDigits(s):
 
 `fact_iter()` is an example of a factorial code:
 
-```
+```python
 def fact_iter(n):
     prod = 1
     for i in range(1, n+1):
@@ -345,7 +345,7 @@ Since the complexity inside the loop is $O(1+3n+1) = O(3n+2) = O(n)$, the overal
 
 This example is to determine whether one list is a subset of another (every element of the first list appears in the second, assuming there are no duplicates): [Visualization](https://pythontutor.com/render.html#code=def%20isSubset%28L1,%20L2%29%3A%0A%20%20%20%20for%20e1%20in%20L1%3A%0A%20%20%20%20%20%20%20%20matched%20%3D%20False%0A%20%20%20%20%20%20%20%20for%20e2%20in%20L2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20e1%20%3D%3D%20e2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20matched%20%3D%20True%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20break%0A%20%20%20%20%20%20%20%20if%20not%20matched%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20return%20True%0A%0A%0AisSubset%28%7B1,2,3,4,5,6%7D,%7B1,2,3,4,5,6,7%7D%29&cumulative=false&curInstr=77&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def isSubset(L1, L2):
     for e1 in L1:
         matched = False
@@ -377,7 +377,7 @@ $O({len(L1)}^2), len(L1) = len(L2)$
 This example finds an intersection of two lists. It returns a list where it appears on both of the lists:
 [Visualization](https://pythontutor.com/render.html#code=def%20intersect%28L1,%20L2%29%3A%0A%20%20%20%20tmp%20%3D%20%5B%5D%0A%20%20%20%20for%20e1%20in%20L1%3A%0A%20%20%20%20%20%20%20%20for%20e2%20in%20L2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20e1%20%3D%3D%20e2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tmp.append%28e1%29%0A%20%20%20%20res%20%3D%20%5B%5D%0A%20%20%20%20for%20e%20in%20tmp%3A%0A%20%20%20%20%20%20%20%20if%20not%28e%20in%20res%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20res.append%28e%29%0A%20%20%20%20return%20res%0A%20%20%20%20%0Aintersect%28%5B1,2,3,4,5%5D,%5B1,2%5D%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def intersect(L1, L2):
     tmp = []
     for e1 in L1:
@@ -414,7 +414,7 @@ $O({len(L1)}^2), len(L1) = len(L2)$
 ## $O()$ Nested Loops
 
 Basic example to calculate $n^2$: 
-```
+```python
 def g(n):
     """ assume n >= 0 """
     x = 0

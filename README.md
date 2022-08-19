@@ -15,7 +15,7 @@ A C program consists of the following parts:
 
 We will be using a `Hello World` example to explain the program structure written in C:
 
-```
+```C
 #include <stdio.h>
 
 int main() {

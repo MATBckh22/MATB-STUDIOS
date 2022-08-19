@@ -72,7 +72,7 @@ that work on them through well-defined interfaces
 
 `class` keyword is used to define a new type:
 
-```
+```python
 class Coordinate(object):
     #define attributes here
 ```
@@ -103,7 +103,7 @@ Before creating an instance of a class, **u have to define how to create an inst
 
 `__init__()` is specifically used to initialize data attributes:
 
-```
+```python
 class Coordinate(object):
     def __init__(self, x, y):
         self.x = x
@@ -119,7 +119,7 @@ class Coordinate(object):
 
 After defining a way to create instances, we will begin to actually create them:
 
-```
+```python
 c = Coordinate(3,4)
 origin = Coordinate(0,0)
 print(c.x)
@@ -144,14 +144,14 @@ A method in python is seen as a procedural attribute, it's like a **function tha
 
 Methods behave like a function other than `self` and dot notation (take params, do operations, return):
 
-```
+```python
 def distance(self, other):
 # code here
 ```
 
 This is the format to **define a method.** Inside the parentheses of a method it **refers to an existing instance called** `self` **and creates another parameter `other`,** combining the previous instance definition will look like this:
 
-```
+```python
 class Coordinate(object):
     def __init__(self, x, y):
         self.x = x
@@ -174,7 +174,7 @@ Return operator is also used under method block as it behaves similarly to funct
 
 Conventional way to use the class:
 
- ```
+ ```python
  c = Coordinate(3,4)
 zero = Coordinate(0,0)
 print(c.distance(zero))
@@ -186,7 +186,7 @@ Inside the parenthesis it gives parameter `zero`.
 
 This is also equivalent to (easier to understand although more tedious to write):
 
-```
+```python
 c = Coordinate(3,4)
 zero = Coordinate(0,0)
 print(Coordinate.distance(c, zero))
@@ -218,7 +218,7 @@ Define a print method that shows actual coordinates:
 
 ## Defining Your Own Print Methods
 
-```
+```python
 class Coordinate(object):
     def __init__(self, x, y):
         self.x = x

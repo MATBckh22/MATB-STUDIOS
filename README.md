@@ -31,7 +31,7 @@ int main() {
 `#include <stdio.h>` is a preprocessor command, also called as a **header file**, it tells the C compiler to include stdio.h libraries before going to the actual compilation.
 
 ### Function
-   
+
 Similar to python `def` functions, C uses the `int main` function where the program execution begins.
 
 ### Comments
@@ -93,7 +93,7 @@ There are more commands to control workflow and file directories, see [here](htt
 
 Printing a string in C will look like this:
 
-```C
+```
 printf("hello world");
 ```
 
@@ -125,4 +125,3 @@ calc_help
 Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
 
 ## 
-

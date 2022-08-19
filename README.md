@@ -31,7 +31,7 @@ Collection could be:
 
 ### Unsorted Linear
 
-```
+```python
 def linear_search(L, e):
     found = False
     for i in range(len(L)):
@@ -44,7 +44,7 @@ This search method has to look through all of the elements to decide it's not th
 
 ### Sorted Linear
 
-```
+```python
 def search(L, e):
     for i in range(len(L)):
         if L[i] == e:
@@ -65,7 +65,7 @@ This search method only looks until a number greater than e, for $O(len(L))$ the
 
 We're using the new version of divide-and-conquer algorithm that uses `bisect_search_helper`:
 
-```
+```python
 def bisect_search2(L, e):
     def bisect_search_helper(L, e, low, high):
         print('low: ' + str(low) + '; high: ' + str(high))  #added to visualize
@@ -134,7 +134,7 @@ $SORT+K * O(\log n) < K * O(n)$
 
 ### Complexity of Bogo Sort
 
-```
+```python
 def bogo_sort(L):
     while not is_sorted(L):
         random.shuffle(L)
@@ -175,14 +175,14 @@ Return list: `{1}, {5}, {2}, {6}, {11}`
 
 Bubble sort code looks like this:
 
-```
+```python
 def bubble_sort(L):
     swap = False
 ```
 
 We initially set a flag `swap = False` for an unsorted list.
 
-```
+```python
 while not swap:
     print('bubble sort: ' + str(L))
     swap = True
@@ -190,7 +190,7 @@ while not swap:
 
 Looping the print operation so we can see the process of sorting, `True` is set to to reinitialize the sorting process.
 
-```
+```python
 for j in range(1, len(L)):
     if L[j-1] > L[j]:
         swap = False
@@ -206,7 +206,7 @@ This will be the main sorting process. `if L[j-1] > L[j]` compares two elements:
 
 Full code: [Visualization](https://pythontutor.com/render.html#code=def%20bubble_sort%28L%29%3A%0A%20%20%20%20swap%20%3D%20False%0A%20%20%20%20while%20not%20swap%3A%0A%20%20%20%20%20%20%20%20print%28'bubble%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20%20%20%20%20swap%20%3D%20True%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%281,%20len%28L%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20L%5Bj-1%5D%20%3E%20L%5Bj%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20swap%20%3D%20False%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20temp%20%3D%20L%5Bj%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20L%5Bj%5D%20%3D%20L%5Bj-1%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20L%5Bj-1%5D%20%3D%20temp%0A%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%0Aprint%28''%29%0Aprint%28bubble_sort%28testList%29%29%0Aprint%28testList%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def bubble_sort(L):
     swap = False
     while not swap:
@@ -280,7 +280,7 @@ Return sorted list: `{1}, {2}, {5}, {6}, {11}`
 
 ### Complexity of Selection Sort
 
-```
+```python
 def selection_sort(L):
     suffixSt = 0
     while suffixSt !=  len(L):
@@ -388,7 +388,7 @@ Return sorted list: `{0}, {1}, {5}, {7}, {9}, {10}, {20}`
 
 This section will focus on spliting the list into sublists for them to be compared after: [Visualization](https://pythontutor.com/render.html#code=def%20merge_sort%28L%29%3A%0A%20%20%20%20print%28'merge%20sort%3A%20'%20%2B%20str%28L%29%29%0A%20%20%20%20if%20len%28L%29%20%3C%202%3A%0A%20%20%20%20%20%20%20%20return%20L%5B%3A%5D%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20middle%20%3D%20len%28L%29//2%0A%20%20%20%20%20%20%20%20left%20%3D%20merge_sort%28L%5B%3Amiddle%5D%29%0A%20%20%20%20%20%20%20%20right%20%3D%20merge_sort%28L%5Bmiddle%3A%5D%29%0A%20%20%20%20%20%20%20%20return%20merge%28left,%20right%29%0A%20%20%20%20%20%20%20%20%0AtestList%20%3D%20%5B1,3,5,7,2,6,25,18,13%5D%0A%0Aprint%28''%29%0Aprint%28merge_sort%28testList%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def merge_sort(L):
     print('merge sort: ' + str(L))
     if len(L) < 2:
@@ -410,7 +410,7 @@ This is to divide list into halves so smallest pieces down one branch will be co
 
 This function will execute the merging and comparing section of the sorting process:
 
-```
+```python
 def merge(left, right):
     result = []
     i,j = 0,0
@@ -418,7 +418,7 @@ def merge(left, right):
 
 We begin by setting two variables `i` and `j` and a new `result` list to keep track of the sorted part of the list.
 
-```
+```python
 while i < len(left) and j < len(right):
         if left[i] < right[j]:
             result.append(left[i])
@@ -432,7 +432,7 @@ This is to say that when there's still elements in both lists, compare the small
 - if the input in left section is smaller than the right, add the input into the sorted list as the smallest number and add `i` counter by 1
 - otherwise, add the input in the right section to the sorted list as the smallest number and add `j` counter by 1
 
-```
+```python
 while (i < len(left)):
         result.append(left[i])
         i += 1
@@ -445,7 +445,7 @@ This handles the copying part of the sorting process. If either `left` or `right
 
 Full code:
 
-```
+```python
 def merge(left, right):
     result = []
     i,j = 0,0

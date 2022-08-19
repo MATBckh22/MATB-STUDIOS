@@ -21,7 +21,7 @@ Tuples are similar to strings, they contain elements where `t[start,stop,step]` 
 U can also mix existing tuples with other elements. 
 ## Applying Tuples 
 - used to conveniently swap variable values
-```
+```python
 #this is not allowed
 x = y
 y = x
@@ -29,11 +29,11 @@ y = x
 temp = y
 y = x
 x = temp
-#this is more readable
+#this is also allowed
 (x,y) = (y,x)
 ```
 Applying this in a function, u can **return more than one value:**
-```
+```python
 def quotient_and_remainder(x,y):
     q = x//y
     r = x%y
@@ -44,7 +44,7 @@ def quotient_and_remainder(x,y):
 `x//y` is the product of a division rounded to the nearest whole number.
 ## Manipulating Tuples
 Iterating over tuples:  
-```
+```python
 def get_data(aTuple):
     nums = ()    # empty tuple
     words = ()
@@ -59,35 +59,49 @@ def get_data(aTuple):
     unique_words = len(words)
     return (min_n, max_n, unique_words)
 ```
-**Multiple data can be collected simultaneously** using tuples. With this example we initially set nums and words as an empty tuple. Inside the for loop **both tuples are replaced with new tuples that corresponds to a certain set of data.** In this case nums always collects the `(t[0],)` position of the input, which is the int; words will always collect `(t[1],)` position, which is the string. 
+**Multiple data can be collected simultaneously** using tuples. With this example we initially set nums and words as an empty tuple. Inside the for loop **both tuples are replaced with new tuples that corresponds to a certain set of data.** 
+
+In this case nums always collects the `(t[0],)` position of the input, which is the int; words will always collect `(t[1],)` position, which is the string. 
+
 Do note function `min()` and `max()` select the minimum and maximum value given from the input.
 `unique_words` is a variable to collect the total number of **unique** words (defined as `if t[1] not in words:`)
 Thus, the function returns three variables.
-```
-    def get_data(aTuple):
-        nums = ()    # empty tuple
-        words = ()
-        for t in aTuple:
-            # concatenating with a singleton tuple
-            nums = nums + (t[0],)   
-            # only add words haven't added before
-            if t[1] not in words:   
-                words = words + (t[1],)
-        min_n = min(nums)
-        max_n = max(nums)
-        unique_words = len(words)
-        return (min_n, max_n, unique_words)
-# apply to any data you want!
+```python
+def get_data(aTuple):
+    """
+    aTuple, tuple of tuples (int, string)
+    Extracts all integers from aTuple and sets 
+    them as elements in a new tuple. 
+    Extracts all unique strings from from aTuple 
+    and sets them as elements in a new tuple.
+    Returns a tuple of the minimum integer, the
+    maximum integer, and the number of unique strings
+    """
+    nums = ()    # empty tuple
+    words = ()
+    for t in aTuple:
+        # concatenating with a singleton tuple
+        nums = nums + (t[0],)   
+        # only add words haven't added before
+        if t[1] not in words:   
+            words = words + (t[1],)
+    min_n = min(nums)
+    max_n = max(nums)
+    unique_words = len(words)
+    return (min_n, max_n, unique_words)
+
 tswift = ((2014,"Katy"),
           (2014, "Harry"),
           (2012,"Jake"), 
           (2010,"Taylor"), 
           (2008,"Joe"))    
 (min_year, max_year, num_people) = get_data(tswift)
-print("From", min_year, "to", max_year, 
+print("From", min_year, "to", max_year, \
         "Taylor Swift wrote songs about", num_people, "people!")
 ```
-This is an example given from the lecture where data can be sorted to count how many people Taylor Swift has written songs about.
+This is an example given from the lecture where data can be sorted to count how many people Taylor Swift has written songs about. [Visualization](https://pythontutor.com/render.html#code=def%20get_data%28aTuple%29%3A%0A%20%20%20%20nums%20%3D%20%28%29%20%20%20%20%23%20empty%20tuple%0A%20%20%20%20words%20%3D%20%28%29%0A%20%20%20%20for%20t%20in%20aTuple%3A%0A%20%20%20%20%20%20%20%20%23%20concatenating%20with%20a%20singleton%20tuple%0A%20%20%20%20%20%20%20%20nums%20%3D%20nums%20%2B%20%28t%5B0%5D,%29%20%20%20%0A%20%20%20%20%20%20%20%20%23%20only%20add%20words%20haven't%20added%20before%0A%20%20%20%20%20%20%20%20if%20t%5B1%5D%20not%20in%20words%3A%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20words%20%3D%20words%20%2B%20%28t%5B1%5D,%29%0A%20%20%20%20min_n%20%3D%20min%28nums%29%0A%20%20%20%20max_n%20%3D%20max%28nums%29%0A%20%20%20%20unique_words%20%3D%20len%28words%29%0A%20%20%20%20return%20%28min_n,%20max_n,%20unique_words%29%0A%0Atswift%20%3D%20%28%282014,%22Katy%22%29,%0A%20%20%20%20%20%20%20%20%20%20%282014,%20%22Harry%22%29,%0A%20%20%20%20%20%20%20%20%20%20%282012,%22Jake%22%29,%20%0A%20%20%20%20%20%20%20%20%20%20%282010,%22Taylor%22%29,%20%0A%20%20%20%20%20%20%20%20%20%20%282008,%22Joe%22%29%29%20%20%20%20%0A%28min_year,%20max_year,%20num_people%29%20%3D%20get_data%28tswift%29%0Aprint%28%22From%22,%20min_year,%20%22to%22,%20max_year,%20%5C%0A%20%20%20%20%20%20%20%20%22Taylor%20Swift%20wrote%20songs%20about%22,%20num_people,%20%22people!%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+
 ## Lists
 Lists contains elements to create an ordered sequence, accessible by index. similar to tuples, a list is denoted by [ ].
 ### **Lists are mutable objects**
@@ -118,7 +132,7 @@ A variable can be given values to subtract from other values in `L[]` to print a
 ```
 ## Iterating Over a List
 This is a common pattern to compute the **sums of elements:**
-```
+```python
 total = 0
 L = [1,2,3,4,5]
 for i in range(len(L)):
@@ -127,7 +141,7 @@ print(total)
 ```
 `total` will be printed 15 in the terminal.
 We can modify this for a slightly more readable code:
-```
+```python
 total = 0
 L = [1,2,3,4,5]
 for i in L:

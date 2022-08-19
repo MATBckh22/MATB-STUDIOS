@@ -41,7 +41,7 @@ and a current value of computation:
 result --> result + a
 ```
 Applying these concepts, we get:
-```
+```python
 def mult_iter (a,b):
     result = 0
     while b > 0: #iteration
@@ -66,7 +66,7 @@ a*b = a + a + a + ... (up to b-th times)
 when b = 1, a*b = a
 ```
 Simplified code:
-```
+```python
 def mult_recur (a,b):
     if b == 1:
         return a
@@ -75,22 +75,22 @@ def mult_recur (a,b):
 ```
 ## Factorial
 Factorial equation:
-```
-n! = n(n-1)(n-2)...(1)
-```
+
+$n! = n(n-1)(n-2)...(1)$
+
 Base case for factorial: 
 `n = 1`
-```
+```python
 if n == 1: 
     return n
 ```
 Reducing the problem using recursive steps: `n*(n-1)!`
-```
+```python
 else:
     return n*factorial(n-1)
 ```
 Combining this will result in:
-```
+```python
 def fact(n):
     if n == 1:
         return n
@@ -109,7 +109,7 @@ Copy this code to https://pythontutor.com/ for a more detailed visualization of 
 ## Inductive Reasoning
 
 How to prove recursive code works:
-```
+```python
 def mult_iter(a,b):
     result = 0
     while b > 0:
@@ -119,7 +119,7 @@ def mult_iter(a,b):
 
 ```
 vs 
-```
+```python
 def mult(a,b):
     if b == 1:
         return a
@@ -147,7 +147,7 @@ Story:
 - take a stack of n-1 discs and move it to another spike
 - move the bottom one to another spike
 - stack and repeat
-```
+```python
 def printMove(fr, to):
  print('move from ' + str(fr) + ' to ' + str(to))
 
@@ -188,7 +188,7 @@ How do we solve this recursively?
 - Base case: string of 0-1 is a palindrome
 - Recursive step: first character matches last character, palindrome proved if middle is also a palindrome
 
-```
+```python
 def ispalindrome(s):
     def toChars(s):
         s = s.lower() #mutates the string and reduces any character to lower case
@@ -199,7 +199,7 @@ def ispalindrome(s):
         return ans
 ```
 `toChars(s)` function basically acts as a string manipulator to remove any spaces and turns all chacracters to lower cases.
-```
+```python
 def isPal(s):
         if len(s) <= 1: #base case
             return True
@@ -225,7 +225,7 @@ This is a practice used to solve a hard problem by breaking it into a set of sub
 ### Storing Student Info
 
 Here is an example of student info containing names, their grades and cgpa:
-```
+```python
 names = ["John","Adam","Morty"]
 grade = ["A+","B+","A"]
 course = [3.0,4.0,3.7]
@@ -234,7 +234,7 @@ For what we've learnt so far, this is the process to store it:
 - separate list for each item
 - each list has the same length 
 - each index refers to info for a different person
-```
+```python
 def get_grade(student, name_list, grade_list, course_list):
  i = name_list.index(student)
  grade = grade_list[i]
@@ -332,7 +332,7 @@ dict_values(['A+', 'B+', 'A'])
 - frequency dictionary (`str:int`)
 - find a word that **occurs the most** using lists and returning tuples (`list,int`) for (words_list,highest_freq)
 - find the words that **occur at least X times**
-```
+```python
 def lyrics_to_frequencies(lyrics):
     myDict = {}
     for word in lyrics:
@@ -343,7 +343,7 @@ def lyrics_to_frequencies(lyrics):
     return myDict
 ```
 This function creates a dictionary of words which the song lyrics have. For every word that is listed in the lyrics, the for loop will add it into the dictionary.
-```
+```python
 def most_common_words(freqs):
     values = freqs.values()
     best = max(values)
@@ -356,7 +356,7 @@ def most_common_words(freqs):
 Take note to `best = max(values)`, this is iterated that `best` variable is the most frequent word appeared in the dictionary. We set up `words` as an empty list so we can walk through all of the words in the lyrics, if the frequency of a particular word fits into `best`, the list will add the word in. When the loop finishes the tuple will be returned.
 
 *note: max() can be used because this function is **iterable***
-```
+```python
 def words_often(freqs, minTimes):
     result = []
     done = False
@@ -382,7 +382,7 @@ Here we take a deeper look into making recursive code more efficient. The exampl
 - Recursion without dictionary
 
 *Recalculating same values many times and keeping track of already calculated values*
-```
+```python
 def fib(n):
     if n == 1:
         return 1
@@ -392,7 +392,7 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 ```
 - Recursion with dictionary
-```
+```python
 def fib_efficient(n, d):
     if n in d:
         return d[n]

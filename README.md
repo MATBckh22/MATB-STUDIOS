@@ -7,14 +7,14 @@ Enclosed in quotation marks or single quotes, exp:
 
 notice `" "` is defined as space, exp:
 
-```
+```python
 name = ABC
 greeting = hi + " " + name
 print(greeting)
 ```
 
-Difference in printing , and + between objects
-```
+Difference in printing , and + between objects:
+```python
 >>> print("hi","chong")
 hi chong
 >>> print("hi"+"chong")
@@ -43,7 +43,7 @@ type a number25
 ## Comparisons
 Only variables, evaluate to a boolean:
 
-```
+```python
 i > j
 i >= j
 i < j
@@ -83,7 +83,7 @@ Logic operators can be used in code to connect variables:
 - `a or b`
     - `True` if either one is `True` or both are `True`
 
-```
+```python
 pset_time = 15
 sleep_time = 8
 print(sleep_time > pset_time)
@@ -95,7 +95,7 @@ print(both)
 
 ## if else vs elif else (Control Flow and Branching)
 
-```
+```python
 if <condition>:
 <expression>
 <expression>
@@ -107,7 +107,7 @@ else:
 
 Decision is made from the condition under if that is true or false, expressions is evaluated or executed when condition is true.
 
-```
+```python
 if <condition>:
 <expression>
 <expression>
@@ -125,7 +125,7 @@ else:
 *see how multiple conditions can have shorter strings of code using elif vs if*
 
 ### `if else` 
-```
+```python
 x = float(input("type a number to compare"))
 y = float(input("type another number to compare"))
 if x > y:
@@ -139,7 +139,7 @@ if x == y:
 ```
 
 ### `elif`
-```
+```python
 x = float(input("type a number to compare"))
 y = float(input("type another number to compare"))
 if x > y:
@@ -168,7 +168,7 @@ while <condition>:
     
 Acts as a $n = n+1$ loop shortcut, `while` vs `for` below:
     
-```
+```python
 n = 0
 while n < 5:
 print(n)
@@ -177,7 +177,7 @@ n = n+1
 
 `for` loop shortcut:
 
-```
+```python
 for n in range(5):
 print(n)
 ```
@@ -189,7 +189,7 @@ etc. `range()` **creates a sequence from 0 to whatever number u set, in this cas
 
 `range(start, stop, step)`, default: start = 0, step = 1:
     
-```
+```python
 mysum = 0
 for i in range(7, 10):
 mysum += i
@@ -207,7 +207,7 @@ print(mysum)
     
 `break` acts as an immediate exit from the `while` loop when a condition is met and skips the remaining expressions after, but only exits it's innermost loop:
 
-```
+```python
 while <condition_1>:
   while <condition_2>:
     <expression_a>
@@ -218,7 +218,7 @@ while <condition_1>:
         
 Example: 
         
-```
+```python
 mysum = 0
 for i in range(5, 11, 2):
     mysum += i

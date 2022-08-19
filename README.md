@@ -107,7 +107,7 @@ Although this code is more lengthy, it's more efficient for the computer to run,
 
 ### `bisect_search2`
 
-```
+```python
 def bisect_search2(L, e):
     if len(L) == 0:
         return False

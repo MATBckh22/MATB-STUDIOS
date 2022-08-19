@@ -32,7 +32,7 @@ $O(\log n), n = len(L)$
 
 Here is an example of bisection search to guess a number:
 
-```
+```python
 def bisect_search1(L, e):
     if L == []:
         return False
@@ -40,14 +40,14 @@ def bisect_search1(L, e):
 
 We start by avoiding empty inputs, if the user input is empty, `False` is returned.
 
-```
+```python
     elif len(L) == 1:
         return L[0] == e
 ```
 
 If the length of the list is 1, which is the only elements on the list, that number is returned.
 
-```
+```python
     else:
         half = len(L)//2
         if L[half] > e:
@@ -60,7 +60,7 @@ Otherwise, divide the list by half, the program will return either half of the l
 
 Full code:
 
-```
+```python
 def bisect_search1(L, e):
     if L == []:
         return False
@@ -76,7 +76,7 @@ def bisect_search1(L, e):
 
 As we can see, operations under if and elif block take constant time, under else:
 
-```
+```python
 if L[half] > e:
             return bisect_search1( L[:half], e)
         else:
@@ -123,7 +123,7 @@ This block checks if the list is empty. if it is, `False` wil be returned. Other
 
 ### `bisect_search_helper`
 
-```
+```python
 def bisect_search_helper(L, e, low, high):
         print('low: ' + str(low) + '; high: ' + str(high))  #added to visualize
         if high == low:
@@ -135,14 +135,14 @@ Under this block, we begin by setting a print operation to visualize the searchi
 
 We then take the mid-point of `low` and `high`.
 
-```
+```python
 if L[mid] == e:
     return True
 ```
 
 Adding this block will check if the mid-point is the number we're looking for.
 
-```
+```python
 elif L[mid] > e:
     if low == mid: #nothing left to search
         return False
@@ -156,7 +156,7 @@ For `e` that is in the lower half $[low, mid]$, we have another conditional stat
 
 From the latter, `bisect_search_helper` is called again and this process will repeat until either condition is met.
 
-```
+```python
 else:
     return bisect_search_helper(L, e, mid + 1, high)
 ```
@@ -165,7 +165,7 @@ For `e` that is in the upper half $[mid,high]$, we also return the same variable
 
 Full code: [Visualization](https://pythontutor.com/render.html#code=def%20bisect_search2%28L,%20e%29%3A%0A%20%20%20%20def%20bisect_search_helper%28L,%20e,%20low,%20high%29%3A%0A%20%20%20%20%20%20%20%20print%28'low%3A%20'%20%2B%20str%28low%29%20%2B%20'%3B%20high%3A%20'%20%2B%20str%28high%29%29%20%20%23added%20to%20visualize%0A%20%20%20%20%20%20%20%20if%20high%20%3D%3D%20low%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20L%5Blow%5D%20%3D%3D%20e%0A%20%20%20%20%20%20%20%20mid%20%3D%20%28low%20%2B%20high%29//2%0A%20%20%20%20%20%20%20%20if%20L%5Bmid%5D%20%3D%3D%20e%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20elif%20L%5Bmid%5D%20%3E%20e%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20low%20%3D%3D%20mid%3A%20%23nothing%20left%20to%20search%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20bisect_search_helper%28L,%20e,%20low,%20mid%20-%201%29%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20bisect_search_helper%28L,%20e,%20mid%20%2B%201,%20high%29%0A%20%20%20%20if%20len%28L%29%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20bisect_search_helper%28L,%20e,%200,%20len%28L%29%20-%201%29%0A%0AtestList%20%3D%20%5B%5D%0Afor%20i%20in%20range%28100%29%3A%0A%20%20%20%20testList.append%28i%29%0A%20%20%20%20%0Aprint%28bisect_search2%28testList,%2076%29%29&cumulative=false&curInstr=265&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def bisect_search2(L, e):
     def bisect_search_helper(L, e, low, high):
         print('low: ' + str(low) + '; high: ' + str(high))  #added to visualize
@@ -207,7 +207,7 @@ $\frac{n}{2^k} = 1$ or when $k = \log n$
 
 This is an example of a code that has logarithmic complexity, it changes ints to strings: [Visualization](https://pythontutor.com/render.html#code=def%20intToStr%28i%29%3A%0A%20%20%20%20digits%20%3D%20'0123456789'%0A%20%20%20%20if%20i%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20'0'%0A%20%20%20%20result%20%3D%20''%0A%20%20%20%20while%20i%20%3E%200%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20digits%5Bi%2510%5D%20%2B%20result%0A%20%20%20%20%20%20%20%20i%20%3D%20i//10%0A%20%20%20%20return%20result%0A%20%20%20%20%0Ai%20%3D%20int%28input%28%22Number%20here%22%29%29%0AintToStr%28i%29&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def intToStr(i):
     digits = '0123456789'
     if i == 0:
@@ -240,7 +240,7 @@ Only the while loop block will be considered here:
 
 Complexity can depend on number of iterative calls:
 
-```
+```python
 def fact_iter(n):
     prod = 1
     for i in range(1, n+1):
@@ -254,7 +254,7 @@ The complexity for this is overall $O(n)$, constant cost each time for n loops.
 
 Another alternative to compute factorials is to code it recursively:
 
-```
+```python
 def fact_recur(n):
     """ assume n >= 0 """
     if n <= 1:
@@ -344,7 +344,7 @@ Notice how a $2^2$ power set is by adding elements into a $2^1$ subset and branc
 
 A code to create a power set looks like this:
 
-```
+```python
 def genSubsets(L):
     res = [] #base case
     if len(L) == 0:
@@ -353,7 +353,7 @@ def genSubsets(L):
 
 We start of to create a new list variable `res`, and if the input of the list is blank, it returns an empty list.
 
-```
+```python
 smaller = genSubsets(L[:-1]) # all subsets without last element
     extra = L[-1:] # create a list of just last element
     new = []
@@ -364,7 +364,7 @@ Continuing from that, we create three variables:
 - `extra`: list with only the last element
 - `new`: empty list to be added with `smaller`
 
-```
+```python
 for small in smaller:
         new.append(small+extra) 
 ```
@@ -379,7 +379,7 @@ Returning the generated power list.
 
 Full code: [Visualization](https://pythontutor.com/render.html#code=def%20genSubsets%28L%29%3A%0A%20%20%20%20res%20%3D%20%5B%5D%0A%20%20%20%20if%20len%28L%29%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20%5B%5B%5D%5D%20%23list%20of%20empty%20list%0A%20%20%20%20smaller%20%3D%20genSubsets%28L%5B%3A-1%5D%29%20%23%20all%20subsets%20without%20last%20element%0A%20%20%20%20print%28smaller%29%0A%20%20%20%20extra%20%3D%20L%5B-1%3A%5D%20%23%20create%20a%20list%20of%20just%20last%20element%0A%20%20%20%20new%20%3D%20%5B%5D%0A%20%20%20%20for%20small%20in%20smaller%3A%0A%20%20%20%20%20%20%20%20new.append%28small%2Bextra%29%20%20%23%20for%20all%20smaller%20solutions,%20add%20one%20with%20last%20element%0A%20%20%20%20return%20smaller%2Bnew%20%20%23%20combine%20those%20with%20last%20element%20and%20those%20without%0A%0A%0AtestSet%20%3D%20%5B1,2,3,4%5D%0Aprint%28genSubsets%28testSet%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
-```
+```python
 def genSubsets(L):
     res = [] #base case
     if len(L) == 0:
@@ -431,7 +431,7 @@ Therefore, complexity of a power set is $O(2^n)$
 
 ### Iterative Fibonacci
 
-```
+```python
 def fib_iter(n):
     if n == 0:
         return 0
@@ -452,7 +452,7 @@ There's only one for loop block we need to consider. Since the operations undern
 
 ### Recursive Fibonacci
 
-```
+```python
 def fib_recur(n):
     """ assumes n an int >= 0 """
     if n == 0:

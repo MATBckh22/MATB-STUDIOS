@@ -77,12 +77,12 @@ atringtest
 
 ## Writing For loops with variable count
 For loops have a loop variable that iterates over a set of values
-```
+```python
 for var in range(4): 
   <expressions> 
 ```
 `var` iterates over values 0,1,2,3. Expressions inside loop executed with **EACH** value for var.
-```
+```python
 for var in range(4,6)
   <expressions>
 ```
@@ -91,7 +91,7 @@ for var in range(4,6)
 
 ## Application of string loops
 `s[index]` can be replaced with `char` to make it more readable:
-```
+```python
 s = "abcdefgh"
 for index in range(len(s)):
     if s[index] == 'i' or s[index] == 'u':
@@ -111,7 +111,7 @@ In general, `s[index] = char (variable).`
 
 ## guess-and-check/exhaustive enumeration
 Here is a simple code for solving the cube root of a number
-```
+```python
 cube = int(input("type a number for me to guess"))
 
 for guess in range(cube+1):
@@ -119,7 +119,7 @@ for guess in range(cube+1):
         print("the cube root of",cube,"is",guess)
 ```
 Though this code is flawed, it doesn't have any output for cube inputs that have cube roots of non-integrals. We can improve this by adding some details.
-```
+```python
 cube = int(input("type a number to begin!"))
 
 for guess in range(abs(cube)+1):
@@ -145,7 +145,7 @@ We can start with a guess and increment by small value. Keep guessing `|guess^3-
 
 However, decreasing increment size leads to **slower program but more accurate answer**, increasing epsilon will lead to **less accuracy but faster program.**
 
-```
+```python
 cube = int(input("start with a number!"))
 epsilon = 0.01
 guess = 0.0
@@ -177,7 +177,7 @@ input: 78
 guess:78, output: correct
 ```
 We can implement this concept into finding the cube root:
-```
+```python
 cube = int(input("type a number to begin!"))
 epsilon = 0.01
 num_guesses = 0

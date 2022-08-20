@@ -228,10 +228,10 @@ Similar to links, include an image using this syntax:
 Example:
 
 ```
-![Bubble sort visualization](https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubble_sort_animation.gif)
+![Bubble sort visualization](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
 ```
 
-![Bubble sort visualization](https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubble_sort_animation.gif)
+![Bubble sort visualization](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
 
 
 ## What To Include In Your Notes

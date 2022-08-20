@@ -77,7 +77,18 @@ Proper control flow is essential to organize your workspace and not have messy b
 flowchart TD;
     id1(Create branch)-->id2(Create readme file);
     id1(Create branch)-->id3(Include lecture PPT);
-    
+    id1(Create branch)-->id4(Include sample code);
+    id2(Create readme file)-->id5(Pull origin on Github Desktop);
+    id3(Include lecture PPT)-->id5(Pull origin on Github Desktop);
+    id4(Include sample code)-->id5(Pull origin on Github Desktop);
+    id5(Pull origin on Github Desktop)-->id6(Open file on VS Code);
+    id6(Open file on VS Code)-->id7(Write notes);
+    id7(Write notes)-->id8(Edit notes);
+    id8(Edit notes)-->id9(Proofread);
+    id9(Proofread)-->id10(Commit and push changes on Github Desktop);
+    id10(Commit and push changes on Github Desktop)-->id8(Edit notes);
+    id10(Commit and push changes on Github Desktop)-->id11(Finalizing);
+    id11(Finalizing)-->id12(Update content page);
 ```
 
 ## Formatting - Basic Github Markdowns

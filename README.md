@@ -71,14 +71,24 @@ When you personally think that you're fluent with managing these features, you c
 
 ### Control Flow
 
-My control flow for creating notes will be:
+Proper control flow is essential to organize your workspace and not have messy branches and changes that you struggle to track. In this section I would provide an example of how I create and edit notes for MIT6's Computer Science Course:
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+graph MIT6 Control Flow;
+    Create branch-->Create readme file;
+    Create branch-->Include lecture PPT;
+    Create branch-->Include sample code;
+    Create readme file-->Pull origin on Github Desktop;
+    Include lecture PPT-->Pull origin on Github Desktop;
+    Include sample code-->Pull origin on Github Desktop;
+    Pull origin on Github Desktop-->Open file on VS Code;
+    Open file on VS Code-->Write notes;
+    Write notes-->Edit notes;
+    Edit notes-->proofread;
+    Proofread-->Commit and push changes on Github Desktop;
+    Commit and push changes on Github Desktop-->Edit notes;
+    Commit and push changes on Github Desktop-->Finalizing;
+    Finalizing-->Update content page;
 ```
 
 ## Formatting - Basic Github Markdowns

@@ -74,7 +74,7 @@ When you personally think that you're fluent with managing these features, you c
 Proper control flow is essential to organize your workspace and not have messy branches and changes that you struggle to track. In this section I would provide an example of how I create and edit notes for MIT6's Computer Science Course:
 
 ```mermaid
-graph MIT6_Control_Flow;
+graph TD;
     Create branch-->Create readme file;
     Create branch-->Include lecture PPT;
     Create branch-->Include sample code;

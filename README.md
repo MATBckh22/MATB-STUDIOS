@@ -91,6 +91,8 @@ flowchart TD;
     id11(Finalizing)-->id12(Update content page);
 ```
 
+Of course, you will get the hang of the writing and publishing process when you're more and more experienced with it.
+
 ## Formatting - Basic Github Markdowns
 
 Everything you see here is formatted through Github's custom markdowns. This is how I would format content in my notes:
@@ -147,11 +149,22 @@ If you instead, prefer a numerical approach, you can replace `-` with numbers:
 
 ### Quoting text
 
-Quoting text look like this:
+Quoting text looks like this:
+
+```
+Normal text
+
+> quoted text
+```
+Normal text
+
+> quoted text
 
 ## What To Include In Your Notes
 
 ### Basic Content Page
+
+Feel free to change the names of these sections in your own content page as long as they exists:
 
 - Author's Note (optional)
 - **Updates**

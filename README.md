@@ -46,6 +46,10 @@ The library is built essentially to replace your ordinary paper and pen notes, s
 
 **In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
 
+## Get Started
+
+Starting fresh with [Github](https://github.com/) often times can be scary 
+
 ## Formatting - Basic Github Markdowns
 
 Everything you see here is formatted through Github's custom markdowns. This is how I would format content in my notes:
@@ -71,7 +75,7 @@ Headings could go up to 5 #, but it is advised to just use the three largest one
 
 `-` are used to creating **pointed** lists, just like this:
 
-```
+```markdown
 - markdowns are cool
 - markdowns make my life easier
 - i love markdowns
@@ -90,7 +94,7 @@ Headings could go up to 5 #, but it is advised to just use the three largest one
 
 If you instead, prefer a numerical approach, you can replace `-` with numbers:
 
-```
+```markdown
 1. markdowns are cool
 2. markdowns make my life easier
 3. i love markdowns

@@ -318,21 +318,26 @@ $$n! = n\times{(n-1)}\times{...}\times1$$
 
 $$n! = n\times{(n-1)}\times{...}\times1$$
 
-Another alternative example would to include the ` ```math ` code block syntax:
+Including dollar signs:
 
-````
-**Factorial Formula**
+- within a math expression, add `\` before `$`:
 
-```math
-n! = n\times{(n-1)}\times{...}\times1
 ```
-````
-
-**Factorial Formula**
-
-```math
-n! = n\times{(n-1)}\times{...}\times1
+$\sqrt{\$5}$
 ```
+
+$\sqrt{\$5}$
+
+- outside a math expression, use span tags around `$` instead:
+
+To split <span>$</span>50 in half, we calculate $50\div2$
+
+**For complicated equations that require a hefty load of syntaxes, it is best to use an [online LaTeX math equation editor](https://latex.codecogs.com/eqneditor/editor.php) to complete the expression in LaTeX form then paste it to your notes.**
+
+[Reference](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
+
+## Diagrams
+
 
 ## What To Include In Your Notes
 

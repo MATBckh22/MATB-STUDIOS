@@ -129,7 +129,7 @@ Here are text styles that Github supports:
 
 ### Supported Color Models
 
-`#0969DA`
+#0969DA
 
 ### Lists
 

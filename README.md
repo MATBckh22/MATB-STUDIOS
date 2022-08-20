@@ -46,13 +46,45 @@ The library is built essentially to replace your ordinary paper and pen notes, s
     - This includes metaphoring or hinting any kind of conflict, drama, etc. 
 - Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in your a section from your content page.**
 
+## Formatting - Github Markdowns
+
+Markdowns 
+
+
+
+
+
+
+
+
+
+
+
+
 ## What To Include In Your Notes
 
 ### Basic Content Page
 
 - Author's Note (optional)
-- Updates
+- **Updates**
     - **incomplete chapters**
     - declaration on notes that are complete
 - Summary (optional)
-- 
+    - course difficulty
+    - topics covered
+    - chapters that needs to be primarily focused
+    - general flow of course
+    - approximate duration to finish course
+- Preparation Measures
+    - **software/tools needed to download, resources, etc. Brief them in general and include download links and tutorials**
+- **Course Must-Reads**
+    - what to expect in your notes
+    - learning tools
+        - exp: example code for course, lecture ppt, etc
+- Other Materials (optional)
+    - other resources that are not included in your course
+    - useful tools/libraries/topics
+
+Get a general idea of the framework for your content page by looking at [this example](https://github.com/MATBckh22/MATB-STUDIOS/blob/d868c24226ffea27bbe3cc0f7250d70be3d729a5/README.md)
+
+## Main Content

@@ -338,11 +338,14 @@ To split <span>$</span>50 in half, we calculate $50\div2$
 
 **For complicated equations that require a hefty load of syntaxes, it is best to use an [online LaTeX math equation editor](https://latex.codecogs.com/eqneditor/editor.php) to complete the expression in LaTeX form then paste it to your notes.**
 
-
-
 ## Diagrams
 
+[Reference](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
 
+Github supports three syntaxes for diagrams:
+- creating GANTT, sequence, class, flowchart, Git graph, etc diagrams: [mermaid](https://mermaid-js.github.io/mermaid/#/)
+- geological mapping: [GeoJSON](https://geojson.io/#map=15/3.1805/101.7465) and TopoJSON
+- creating STL 3D models: ASCII STL syntax using `stl` 
 
 ## What To Include In Your Notes
 

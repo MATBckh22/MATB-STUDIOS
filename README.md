@@ -75,7 +75,7 @@ Proper control flow is essential to organize your workspace and not have messy b
 
 ```mermaid
 graph TD;
-    Create branch-->Create readme file;
+    Create_branch-->Create_readme_file;
     Create branch-->Include lecture PPT;
     Create branch-->Include sample code;
     Create readme file-->Pull origin on Github Desktop;

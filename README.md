@@ -35,8 +35,6 @@ The library is built essentially to replace your ordinary paper and pen notes, s
 - **Do not cheat on tests and exams.** Do not be academically dishonest. Do not offer money for doing homework assignments, and vice-versa.
 - Do not publish or include people's private information without their consent. 
 
-**In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
-
 ### Follow this and you're cool
 
 - **Respect topics in the same section, double check that you're writing in the right place.**
@@ -46,9 +44,11 @@ The library is built essentially to replace your ordinary paper and pen notes, s
     - This includes metaphoring or hinting any kind of conflict, drama, etc. 
 - Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in your a section from your content page.**
 
+**In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
+
 ## Formatting - Github Markdowns
 
-Markdowns 
+Everything you see here is formatted through Github's custom markdowns. 
 
 
 

@@ -158,7 +158,81 @@ Normal text
 ```
 Normal text
 
->>>>> quoted text
+> quoted text
+
+You can have multiple `>` to quote your text but it's not recommended, they look rather weird:
+
+>>>>>>>> multiple quotes
+
+### Code Blocks
+
+Code blocks are spaces that ignore Github markdowns, it is used to type your code in, create a code block by typing ` ``` ` at the start and bottom of your code:
+
+```
+#include <stdio.h>
+
+int main() {
+   /* my first program in C */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+```
+
+Of course, syntax highlighting is supported in Github using [Linguist](https://github.com/github/linguist) and [third-party grammars](https://github.com/github/linguist/blob/master/vendor/README.md)
+
+Add the name of the language right after you typed ` ``` `:
+
+C's example:
+
+```C
+#include <stdio.h>
+
+int main() {
+   /* my first program in C */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+```
+
+Python's example:
+
+```python
+#simple method to print Hello World!
+print("Hello World!")
+```
+
+### Links and Images
+
+Include a link using this syntax:
+
+```
+[Your text](URL)
+```
+
+Example:
+
+```
+[Download Visual Studio Code here!](https://code.visualstudio.com/)
+```
+
+[Download Visual Studio Code here!](https://code.visualstudio.com/)
+
+Similar to links, include an image using this syntax:
+
+```
+![Image Name](URL)
+```
+
+Example:
+
+```
+![Bubble sort visualization](https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubble_sort_animation.gif)
+```
+
+![Bubble sort visualization](https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubble_sort_animation.gif)
+
 
 ## What To Include In Your Notes
 

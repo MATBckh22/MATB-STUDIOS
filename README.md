@@ -74,10 +74,10 @@ When you personally think that you're fluent with managing these features, you c
 Proper control flow is essential to organize your workspace and not have messy branches and changes that you struggle to track. In this section I would provide an example of how I create and edit notes for MIT6's Computer Science Course:
 
 ```mermaid
-graph TD;
-    Create_branch-->Create_readme_file;
-    Create_branch-->Include_lecture_PPT;
-    Create_branch-->Include_sample_code;
+flowchart TD;
+    id1(Create branch)-->id2(Create readme file);
+    id1(Create branch)-->id3(Include lecture PPT);
+    
 ```
 
 ## Formatting - Basic Github Markdowns

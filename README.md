@@ -572,5 +572,3 @@ print(merge_sort(testList))
     - reformulating a seemingly difficult problem into smaller problems
     - reduction, embedding, transformation, simulation
 
-## this is a test
-

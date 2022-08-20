@@ -95,6 +95,8 @@ Of course, you will get the hang of the writing and publishing process when you'
 
 ## Formatting - Basic Github Markdowns
 
+[Reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
 Everything you see here is formatted through Github's custom markdowns. This is how I would format content in my notes:
 
 ### Headings
@@ -298,6 +300,8 @@ Advanced markdown formats can be extremely useful for notes that include large n
 
 ## Mathematical Expressions- LaTeX/Mathematics
 
+[Reference](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
+
 Github uses MathJax to render maths in LaTeX format. delimit the expression with the dollar sign `$`:
 
 ```
@@ -334,10 +338,98 @@ To split <span>$</span>50 in half, we calculate $50\div2$
 
 **For complicated equations that require a hefty load of syntaxes, it is best to use an [online LaTeX math equation editor](https://latex.codecogs.com/eqneditor/editor.php) to complete the expression in LaTeX form then paste it to your notes.**
 
-[Reference](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
+
 
 ## Diagrams
 
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#153cd5",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#2c6ced",
+        "fill-opacity": 0.1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.73142433166504,
+              3.1651979259496397
+            ],
+            [
+              101.75674438476562,
+              3.1651979259496397
+            ],
+            [
+              101.75674438476562,
+              3.17993817838262
+            ],
+            [
+              101.73142433166504,
+              3.17993817838262
+            ],
+            [
+              101.73142433166504,
+              3.1651979259496397
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#28ade6",
+        "marker-size": "medium",
+        "marker-symbol": "circle-stroked"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.7516803741455,
+          3.168797309304778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#4f3ed0",
+        "stroke-width": 2.5,
+        "stroke-opacity": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            101.7615509033203,
+            3.1957065872545733
+          ],
+          [
+            101.75949096679688,
+            3.181566449177488
+          ],
+          [
+            101.75605773925781,
+            3.1729108749526533
+          ],
+          [
+            101.75356864929199,
+            3.1664834214412103
+          ]
+        ]
+      }
+    }
+  ]
+}
+```
 
 ## What To Include In Your Notes
 

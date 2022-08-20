@@ -87,7 +87,7 @@ def bisect_search2(L, e):
         return bisect_search_helper(L, e, 0, len(L) - 1)
 ```
 
-For `bisect_search2` and `bisect_search_helper`:
+For `bisect_search2` and `bisect_search_helper`: 
 - $O(\log n)$ bisection search calls
     - reduce size fo problem by factor of 2 on each step
 - pass list and indices as parameters

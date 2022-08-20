@@ -30,15 +30,29 @@ The library is built essentially to replace your ordinary paper and pen notes, s
     - MATB cannot allow posting links or files with pirated content.
 - **Do not post NSFW, gore, violence, provocative, sexual-hints, insulting or inappropriate content.**
     - This also includes, but not limited to showing discrimination, harrassment and gaslighting political views and prejudices. **Keep your dank political humor to yourself.**
-- Unsolicited advertising, spamming and text flooding are red flags here.
+- Unsolicited advertising, spamming, trolling, writing nonsensical statements and text flooding are red flags here.
+    - nonsensical statements here are defined as statements that bear not even the slightest sense of grammar, statements that cannot be deciphered by a human.
 - **Do not cheat on tests and exams.** Do not be academically dishonest. Do not offer money for doing homework assignments, and vice-versa.
 - Do not publish or include people's private information without their consent. 
 
-**In general, apply common sense and be respectful, your main audience is people who are interested but are gatekeeped outside the walls of academics. You're a guide, not an egotistic show-off.**
+**In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
 
 ### Follow this and you're cool
 
 - **Respect topics in the same section, double check that you're writing in the right place.**
 - **Write from the perspective of a learner, avoid shortforms, slangs.** You're writing open-source notes that are being shown in public, write and format in your own style but consider that it's human-readable.
 - Feel free to include your social media, but avoid giving out your personal details in the hub. 
+- Avoid including your personal feelings and emotional baggage when writing, you don't want your readers to feel that you're passive-aggressively venting.
+    - This includes metaphoring or hinting any kind of conflict, drama, etc. 
+- Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in your a section from your content page.**
+
+## What To Include In Your Notes
+
+### Basic Content Page
+
+- Author's Note (optional)
+- Updates
+    - **incomplete chapters**
+    - declaration on notes that are complete
+- Summary (optional)
 - 

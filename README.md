@@ -114,9 +114,26 @@ This is used for the name of the subtopic.
 Headings could go up to 5 #, but it is advised to just use the three largest ones.
 ```
 
+### Styling Text
+
+Here are text styles that Github supports:
+
+| Style | Syntax | Example | Output | Keyboard Shortcut |
+| - | - | - | - | - |
+| Bold | `**` `**` or `__ __` | `**Bold text**` | **Bold text** | Highlight and `Ctrl+B`
+| Italic | `*` `*` or `_` `_` | `*Italicized test*` | *Italicized test* | Highlight and `Ctrl+I`
+| Strikethroughs | `~~` `~~` | `~~Strikethrough/Mistaken text~~` | Strikethrough/Mistaken text~~
+| Bold and nested italic | `**` `**` and `_` `_` | `**This text is _extremely_ important**`| *This text is _extremely_ important**
+| Subscript | `<sub>` `</sub>` | `<sub>Subscript text</sub>` | <sub>Subscript text</sub>
+| Superscript | `<sup>` `</sup>` | `<sup>Superscript text</sup>` | <sup>Superscript text</sup>
+
+### Supported Color Models
+
+`#0969DA`
+
 ### Lists
 
-`-` are used to creating **pointed** lists, just like this:
+Hyphens `-` are used to creating **pointed** lists, just like this:
 
 ```markdown
 - markdowns are cool
@@ -166,7 +183,15 @@ You can have multiple `>` to quote your text but it's not recommended, they look
 
 ### Code Blocks
 
-Code blocks are spaces that ignore Github markdowns, it is used to type your code in, create a code block by typing ` ``` ` at the start and bottom of your code:
+Code blocks are spaces that ignore Github markdowns, it is used to type your code in, create a code block by typing triple backticks ` ``` ` at the start and bottom of your code:
+
+````
+```
+Your code
+```
+````
+
+*Note that if you want to include triple backticks in a code block you have to wrap it with quadruple backticks.*
 
 ```
 #include <stdio.h>
@@ -203,6 +228,7 @@ Python's example:
 print("Hello World!")
 ```
 
+If you only want to call out a one simple line of a sentence or code, something like `print("Hello World!")`, use **only single backticks.**
 ### Links and Images
 
 Include a link using this syntax:
@@ -233,6 +259,23 @@ Example:
 
 ![Bubble sort visualization](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
 
+### Tables
+
+You can create organized tables using pipes `|` and hyphens `-`. Hyphens are used to create each column's header, where pipes separate each column:
+
+```
+| First Title | Second Title |
+| - | - |
+| Cell L1 | Cell R1 |
+| Cell L2 | Cell R2 |
+```
+
+| First Title | Second Title |
+| - | - |
+| Cell L1 | Cell R1 |
+| Cell L2 | Cell R2 |
+
+###
 
 ## What To Include In Your Notes
 

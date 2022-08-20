@@ -69,16 +69,40 @@ Headings could go up to 5 #, but it is advised to just use the three largest one
 
 ### Lists
 
-`-` are used to creating **pointed** lists, 
+`-` are used to creating **pointed** lists, just like this:
 
+```
+- markdowns are cool
+- markdowns make my life easier
+- i love markdowns
 
+- markdowns allow nested lists too
+    - like this
+        - and this, it goes on and on
+```
 
+- markdowns are cool
+- markdowns make my life easier
+- i love markdowns
+    - markdowns allow nested lists too
+        - like this
+            - and this, it goes on and on
 
+If you instead, prefer a numerical approach, you can replace `-` with numbers:
 
+```
+1. markdowns are cool
+2. markdowns make my life easier
+3. i love markdowns
+```
 
+1. markdowns are cool
+2. markdowns make my life easier
+3. i love markdowns
 
+### Quoting text
 
-
+Quoting text look like this:
 
 ## What To Include In Your Notes
 

@@ -42,13 +42,44 @@ The library is built essentially to replace your ordinary paper and pen notes, s
 - Feel free to include your social media, but avoid giving out your personal details in the hub. 
 - Avoid including your personal feelings and emotional baggage when writing, you don't want your readers to feel that you're passive-aggressively venting.
     - This includes metaphoring or hinting any kind of conflict, drama, etc. 
-- Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in your a section from your content page.**
+- Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in a section from your content page.**
 
 **In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
 
 ## Get Started
 
-Starting fresh with [Github](https://github.com/) often times can be scary 
+Starting fresh with [Github](https://github.com/) often times can be scary. It does not have an aesthetic user interface, it's built to be efficient on project flow for programmers. 
+
+After signing up, head to [Github's detailed description on how to get familiar with it's platform](https://docs.github.com/en/get-started/quickstart/github-flow) and quickly review the instructions given. You want to briefly familiarize yourself with it's features, which includes:
+
+- forking repositories
+- push and pull origins
+- branching
+- creating, editing, renaming, deleting and relocating files
+- markdowns/formatting on readme files
+- pull requests
+
+When you personally think that you're fluent with managing these features, you can increase your productivity by using [Github Desktop](https://desktop.github.com/) and [Visual Studio Code](https://code.visualstudio.com/) together to make your work more efficient. These two tools are the bread and butter to getting your work done faster.
+
+### Github Desktop
+
+[Github Desktop](https://desktop.github.com/) is a more refined and convenient tool to make changes on your branches and notes. Read [this simple startup guide](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop) on how to install, run and use Github Desktop to replace Github's web browser edition.
+
+### Visual Studio Code With Github
+
+[Visual Studio Code](https://code.visualstudio.com/) is a text editor to edit your code and projects in a way that your eyes don't hurt as much. [This guide](https://code.visualstudio.com/docs/editor/github) will help you to manage your repositories. You don't have to read it until the end if you're using it with Github Desktop.
+
+### Control Flow
+
+My control flow for creating notes will be:
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 ## Formatting - Basic Github Markdowns
 

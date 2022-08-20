@@ -158,7 +158,7 @@ Normal text
 ```
 Normal text
 
-> quoted text
+>>>>> quoted text
 
 ## What To Include In Your Notes
 

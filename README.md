@@ -46,11 +46,30 @@ The library is built essentially to replace your ordinary paper and pen notes, s
 
 **In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
 
-## Formatting - Github Markdowns
+## Formatting - Basic Github Markdowns
 
-Everything you see here is formatted through Github's custom markdowns. 
+Everything you see here is formatted through Github's custom markdowns. This is how I would format content in my notes:
 
+### Headings
 
+```markdown
+# Largest Heading
+
+This is used for the name of the chapter.
+
+## Second Largest Heading
+
+This is used for the name of the topic.
+
+### Third Largest
+
+This is used for the name of the subtopic.
+Headings could go up to 5 #, but it is advised to just use the three largest ones.
+```
+
+### Lists
+
+`-` are used to creating **pointed** lists, 
 
 
 

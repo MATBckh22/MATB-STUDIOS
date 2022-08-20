@@ -127,10 +127,6 @@ Here are text styles that Github supports:
 | Subscript | `<sub>` `</sub>` | `<sub>Subscript text</sub>` | <sub>Subscript text</sub>
 | Superscript | `<sup>` `</sup>` | `<sup>Superscript text</sup>` | <sup>Superscript text</sup>
 
-### Supported Color Models
-
-#0969DA
-
 ### Lists
 
 Hyphens `-` are used to creating **pointed** lists, just like this:
@@ -210,6 +206,20 @@ Add the name of the language right after you typed ` ``` `:
 
 C's example:
 
+````
+
+```C
+#include <stdio.h>
+
+int main() {
+   /* my first program in C */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+```
+````
+
 ```C
 #include <stdio.h>
 
@@ -222,6 +232,13 @@ int main() {
 ```
 
 Python's example:
+
+````
+```python
+#simple method to print Hello World!
+print("Hello World!")
+```
+````
 
 ```python
 #simple method to print Hello World!
@@ -275,7 +292,47 @@ You can create organized tables using pipes `|` and hyphens `-`. Hyphens are use
 | Cell L1 | Cell R1 |
 | Cell L2 | Cell R2 |
 
-###
+## Formatting - Advanced Github Markdowns
+
+Advanced markdown formats can be extremely useful for notes that include large number of mathematical expressions and graphs.
+
+## Mathematical Expressions- LaTeX/Mathematics
+
+Github uses MathJax to render maths in LaTeX format. delimit the expression with the dollar sign `$`:
+
+```
+The equation for a Factorial is $n! = n\times{(n-1)}\times{...}\times1$
+```
+
+The equation for a Factorial is $n! = n\times{(n-1)}\times{...}\times1$
+
+Writing expressions as blocks uses two dollar signs `$$`:
+
+```
+**Factorial Formula**
+
+$$n! = n\times{(n-1)}\times{...}\times1$$
+```
+
+**Factorial Formula**
+
+$$n! = n\times{(n-1)}\times{...}\times1$$
+
+Another alternative example would to include the ` ```math ` code block syntax:
+
+````
+**Factorial Formula**
+
+```math
+n! = n\times{(n-1)}\times{...}\times1
+```
+````
+
+**Factorial Formula**
+
+```math
+n! = n\times{(n-1)}\times{...}\times1
+```
 
 ## What To Include In Your Notes
 

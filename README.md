@@ -373,8 +373,28 @@ Feel free to change the names of these sections in your own content page as long
     - other resources that are not included in your course
     - useful tools/libraries/topics
 
+**Note that you must branch your content page to the `main` branch. For lecture notes you may branch it from the content page or from `main` as well.**
+
 Get a general idea of the framework for your content page by looking at [this example](https://github.com/MATBckh22/MATB-STUDIOS/blob/d868c24226ffea27bbe3cc0f7250d70be3d729a5/README.md)
 
 ## Main Content
 
+Once you have laid down the framework of your content page, you can finally start writing the most important part - lecture notes!
 
+Lecture/self study notes are the most exciting part of the course as it is the first thing people see and refer to when learning by themselves. MATB doesn't have much limitations and regulations on formatting notes, it is encouraged to write it in your own style. However, do consider the following:
+
+- format notes using a chapter title, topic titles and subtopic titles.
+    - doing so gives readers a quick glance on what kind of content the specific lecture has, which topics does it cover and what are the details of every topic. It's also easier for both the author and reader to look back and review content.
+- Keep shortforms and jargons at a minimum, unless it is mentioned before or it's a technical term.
+    - exp: HTML (HyperText Markup Language)
+- include visual aids when necessary
+- be clear of what you're writing, consider arranging the order of your content, prioritizing important fundamentals and connect them with more advanced topics later.
+- 
+
+## Interested in joining the hub?
+
+Contact me through my [Instagram](https://www.instagram.com/kar_hingg/) or through my [Discord](https://discord.gg/7ZcsByA4)
+
+See you soon!
+
+Revised 21/8/2022

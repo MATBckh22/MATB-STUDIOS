@@ -376,3 +376,120 @@ Feel free to change the names of these sections in your own content page as long
 Get a general idea of the framework for your content page by looking at [this example](https://github.com/MATBckh22/MATB-STUDIOS/blob/d868c24226ffea27bbe3cc0f7250d70be3d729a5/README.md)
 
 ## Main Content
+
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#5310d1",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#54256a",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -258.2852268218994,
+              3.1188333274920343
+            ],
+            [
+              -258.2694339752197,
+              3.1188333274920343
+            ],
+            [
+              -258.2694339752197,
+              3.131774485238336
+            ],
+            [
+              -258.2852268218994,
+              3.131774485238336
+            ],
+            [
+              -258.2852268218994,
+              3.1188333274920343
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#322fca",
+        "stroke-width": 2,
+        "stroke-opacity": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -258.25836181640625,
+            3.1364881122675263
+          ],
+          [
+            -258.2640266418457,
+            3.13417415256103
+          ],
+          [
+            -258.2624816894531,
+            3.1284320823045797
+          ],
+          [
+            -258.2691764831543,
+            3.124575450293233
+          ],
+          [
+            -258.27707290649414,
+            3.1204616938621763
+          ],
+          [
+            -258.28290939331055,
+            3.1190904381392173
+          ],
+          [
+            -258.28325271606445,
+            3.1140339172109828
+          ],
+          [
+            -258.2878875732422,
+            3.1141196211578888
+          ],
+          [
+            -258.2889175415039,
+            3.1107771620619107
+          ],
+          [
+            -258.2908058166504,
+            3.1068347607903313
+          ],
+          [
+            -258.29235076904297,
+            3.103063754491904
+          ],
+          [
+            -258.2962989807129,
+            3.1029780496468606
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -258.27784538269043,
+          3.1283463795250643
+        ]
+      }
+    }
+  ]
+}
+```

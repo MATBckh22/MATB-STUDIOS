@@ -389,6 +389,7 @@ Lecture/self study notes are the most exciting part of the course as it is the f
     - exp: HTML (HyperText Markup Language)
 - include visual aids when necessary
 - be clear of what you're writing, consider arranging the order of your content, prioritizing important fundamentals and connect them with more advanced topics later.
+    - paraphrase statements in your own words, your notes are a display of you're level of understanding on a topic
 - do fact-checks to prevent misleading or incorrect information, provide reasons when stating your own opinions
 
 ## Interested in joining the hub?

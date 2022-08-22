@@ -16,36 +16,6 @@ Github is an extraodinary platform to facilitate project flow and code editing. 
 
 The library is built essentially to replace your ordinary paper and pen notes, saving time and effort while using more appealing visual aids.
 
-## Rules and Ethics
-
-**MATB strictly follows Github's [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) to provide a friendly user experience while respecting the original author's work.** Building on these foundations, every author and developer in MATB has a few guidelines to adhere:
-
-### When broken, you're banned
-
-- Resources in the library are **completely free**, do not charge fees for any content in the hub. 
-    - However, MATB doesn't limit members outside the hub, MATB doesn't account for any liabilities for any transcations made personally.
-- **Plagarism is banned here**, *minimal paraphrasing is allowed.* 
-    - If the author thinks that the text cannot be explained better, quote using `>` and give the proper reference. (academic referencing of any kind is recommended, otherwise clearly state your reference in your own words)
-    - **Do not include problems in academic exams, quizzes, finals that are from your local institute in your notes. Tutorials, exercises and projects that your instrutor, lecturer or professor didn't assert it's confidentiality are allowed.**
-    - MATB cannot allow posting links or files with pirated content.
-- **Do not post NSFW, gore, violence, provocative, sexual-hints, insulting or inappropriate content.**
-    - This also includes, but not limited to showing discrimination, harrassment and gaslighting political views and prejudices. **Keep your dank political humor to yourself.**
-- Unsolicited advertising, spamming, trolling, writing nonsensical statements and text flooding are red flags here.
-    - nonsensical statements here are defined as statements that bear not even the slightest sense of grammar, statements that cannot be deciphered by a human.
-- **Do not cheat on tests and exams.** Do not be academically dishonest. Do not offer money for doing homework assignments, and vice-versa.
-- Do not publish or include people's private information without their consent. 
-
-### Follow this and you're cool
-
-- **Respect topics in the same section, double check that you're writing in the right place.**
-- **Write from the perspective of a learner, avoid shortforms, slangs.** You're writing open-source notes that are being shown in public, write and format in your own style but consider that it's human-readable.
-- Feel free to include your social media, but avoid giving out your personal details in the hub. 
-- Avoid including your personal feelings and emotional baggage when writing, you don't want your readers to feel that you're passive-aggressively venting.
-    - This includes metaphoring or hinting any kind of conflict, drama, etc. 
-- Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in a section from your content page.**
-
-**In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
-
 ## Get Started
 
 Starting fresh with [Github](https://github.com/) often times can be scary. It does not have an aesthetic user interface, it's built to be efficient on project flow for programmers. 
@@ -391,6 +361,36 @@ Lecture/self study notes are the most exciting part of the course as it is the f
 - be clear of what you're writing, consider arranging the order of your content, prioritizing important fundamentals and connect them with more advanced topics later.
     - paraphrase statements in your own words, your notes are a display of you're level of understanding on a topic
 - do fact-checks to prevent misleading or incorrect information, provide reasons when stating your own opinions
+
+## Rules and Ethics
+
+**Lastly, MATB strictly follows Github's [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) to provide a friendly user experience while respecting the original author's work.** Building on these foundations, every author and developer in MATB has a few guidelines to adhere:
+
+### When broken, you're banned
+
+- Resources in the library are **completely free**, do not charge fees for any content in the hub. 
+    - However, MATB doesn't limit members outside the hub, MATB doesn't account for any liabilities for any transcations made personally.
+- **Plagarism is banned here**, *minimal paraphrasing is allowed.* 
+    - If the author thinks that the text cannot be explained better, quote using `>` and give the proper reference. (academic referencing of any kind is recommended, otherwise clearly state your reference in your own words)
+    - **Do not include problems in academic exams, quizzes, finals that are from your local institute in your notes. Tutorials, exercises and projects that your instrutor, lecturer or professor didn't assert it's confidentiality are allowed.**
+    - MATB cannot allow posting links or files with pirated content.
+- **Do not post NSFW, gore, violence, provocative, sexual-hints, insulting or inappropriate content.**
+    - This also includes, but not limited to showing discrimination, harrassment and gaslighting political views and prejudices. **Keep your dank political humor to yourself.**
+- Unsolicited advertising, spamming, trolling, writing nonsensical statements and text flooding are red flags here.
+    - nonsensical statements here are defined as statements that bear not even the slightest sense of grammar, statements that cannot be deciphered by a human.
+- **Do not cheat on tests and exams.** Do not be academically dishonest. Do not offer money for doing homework assignments, and vice-versa.
+- Do not publish or include people's private information without their consent. 
+
+### Follow this and you're cool
+
+- **Respect topics in the same section, double check that you're writing in the right place.**
+- **Write from the perspective of a learner, avoid shortforms, slangs.** You're writing open-source notes that are being shown in public, write and format in your own style but consider that it's human-readable.
+- Feel free to include your social media, but avoid giving out your personal details in the hub. 
+- Avoid including your personal feelings and emotional baggage when writing, you don't want your readers to feel that you're passive-aggressively venting.
+    - This includes metaphoring or hinting any kind of conflict, drama, etc. 
+- Be as fluent in your writing as possible. Writing is a showcase of language. Revise and check for any grammatical errors, topics that are incomplete or not explained clearly and more. **If you're planning to edit these sections later, include it in a section from your content page.**
+
+**In general, apply common sense and be respectful, your main audience is people who are interested but don't have a direction to start. You're a guide, not an egotistic show-off.**
 
 ## Interested in joining the hub?
 

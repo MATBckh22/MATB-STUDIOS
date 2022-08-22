@@ -389,7 +389,7 @@ Lecture/self study notes are the most exciting part of the course as it is the f
     - exp: HTML (HyperText Markup Language)
 - include visual aids when necessary
 - be clear of what you're writing, consider arranging the order of your content, prioritizing important fundamentals and connect them with more advanced topics later.
-- 
+- do fact-checks to prevent misleading or incorrect information, provide reasons when stating your own opinions
 
 ## Interested in joining the hub?
 
@@ -397,4 +397,4 @@ Contact me through my [Instagram](https://www.instagram.com/kar_hingg/) or throu
 
 See you soon!
 
-Revised 21/8/2022
+Revised 22/8/2022

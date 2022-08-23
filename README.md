@@ -8,7 +8,7 @@ The goal of this exercise is to convert a string to a new string where each char
 
 Example:
 
-```
+```python
 "din"      =>  "((("
 "recede"   =>  "()()()"
 "Success"  =>  ")())())"
@@ -43,7 +43,7 @@ What is the tallest pyramid possible we can build from the given number of cubes
 
 Example:
 
-```
+```python
 4  -->  1
  5  -->  2
 13  -->  2
@@ -52,7 +52,7 @@ Example:
 
 ### Code
 
-```
+```python
 def pyramid_height(n):
     m = 0
     counter = 0

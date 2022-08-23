@@ -1,0 +1,11 @@
+def pyramid_height(n):
+    m = 0
+    counter = 0
+    deduction = n - m**2
+    while deduction > 0:
+        m += 1
+        deduction = deduction - m**2
+        counter += 1
+    if deduction < 0:
+        return counter - 1
+    return counter

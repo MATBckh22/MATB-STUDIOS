@@ -1,0 +1,9 @@
+def duplicate_encode(word):
+    x = word.casefold()
+    output = ''
+    for char in x:
+        if x.count(char) > 1:
+            output = output + ")"
+        else:
+            output = output + "("
+    return output

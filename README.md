@@ -87,6 +87,26 @@ Follow these steps to know how to compile, we will be using the `Hello World` ex
 
 There are more commands to control workflow and file directories, see [here](https://ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-doslinux.htm#:~:text=Many%20Linux%20commands%20you%20type,fact%2C%20some%20commands%20are%20identical.)
 
+## Commands 
+
+Commands are used in terminal, powershell or command prompt to configure file directories and edit files in your computer:
+| Commands | Usage |
+| - | - |
+| `dir` | Directory listing
+| `ren` | Rename a file
+| `copy` | Copying a file 
+| `move` | Moving a file
+| `cls` | Clear screen
+| `del` | Delete file
+| `find` | Search for a string in file
+| `time` | Displays time
+| `cd` | Change the current directory
+| `md` | Create a new directory/folder 
+| `echo` | Print 
+| `rmdir` | Delete a directory
+
+For more commands, see this [reference](https://www.geeksforgeeks.org/linux-vs-windows-commands/)
+
 ## Basic Syntax
 
 ### `printf`
@@ -101,7 +121,7 @@ The `f` in `printf` refers to a formatted string.
 
 ### Identifiers
 
-C identifier is a name to identify a variable, function, or any other user-defined item. Note that C identifier:
+C identifier is a name to identify a variable, function, or any other user-defined item. Note that a C identifier:
 - doesn't allow punctuation characters (@,$,etc)
 - is **case-sensitive**
 - can include underscores
@@ -124,4 +144,4 @@ calc_help
 
 Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
 
-## 
+

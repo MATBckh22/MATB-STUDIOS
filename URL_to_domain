@@ -1,0 +1,26 @@
+def domain_name(url):
+    new_domain = ""
+    domain = ""
+    if url[4] == 's':
+        domain = url.split("https://")
+        domain = domain[1]
+        for s in range(len(domain)):
+            while domain[s] != '.':
+                new_domain = new_domain + domain[s]
+    elif url[0] == 'w':
+        domain = url.split("www.")
+        domain = domain[1]
+        domain = domain.split('.com')
+        domain = domain[0]
+        print(domain)
+    elif url[4] == ':':
+        domain = url.split("http://")
+        domain = domain[1]
+        domain = domain.split('.com')
+        domain = domain[0]
+        print(domain)
+    else:
+        print("this is not an url!")
+    return domain
+
+domain_name("https://youtube.com.my")

@@ -99,7 +99,7 @@ def rgb(r, g, b):
             c = 0
             return c
         elif c > 255:
-            c = 255d
+            c = 255
             return c
         else:
             return(int(c%16))

@@ -144,7 +144,7 @@ Write a function that when given a URL as a string, parses out just the domain n
 
 ```python
 def domain_name(url):
-    #tried way too many times for this, can the author of this kata specify the more on the test cases in the instructions section, the required 'domain' is not even a domain to begin with.
+    #tried way too many times for this, can the author of this kata specify more on the test cases in the instructions section, the required 'domain' is not even a domain to begin with.
     #this is just a practice of trial and error tbh, it doesn't take subdomains into account, and i'm surprised the amount of test cases that are not included in instructions.
     print(url)
     domain = ""

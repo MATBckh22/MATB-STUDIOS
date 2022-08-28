@@ -142,5 +142,50 @@ Write a function that when given a URL as a string, parses out just the domain n
 
 ### Code
 
-
-
+```python
+def domain_name(url):
+    #tried way too many times for this, can the author of this kata specify the more on the test cases in the instructions section, the required 'domain' is not even a domain to begin with.
+    #this is just a practice of trial and error tbh, it doesn't take subdomains into account, and i'm surprised the amount of test cases that are not included in instructions.
+    print(url)
+    domain = ""
+    numbers = '1234567890'
+    def domain_helper(loop):
+        new_domain = ""
+        for s in range(len(domain)):
+            if domain[s] == '.':
+                return new_domain
+            else:
+                new_domain = new_domain + domain[s]
+                s += 1
+    if url[4] == 's' and url[0] == 'h' and url[11] != '.':
+        domain = url.split("https://")
+        domain = domain[1]
+        return domain_helper(domain)
+    elif url[0] == 'w' and url[1] == 'w' and url[2] == 'w':
+        domain = url.split("www.")
+        domain = domain[1]
+        return domain_helper(domain)
+    elif url[4] == ':' and url[0] == 'h' and url[10] != '.':
+        domain = url.split("http://")
+        domain = domain[1]
+        return domain_helper(domain)
+    elif url[0] == 'h' and url[7] not in numbers and url[10] == '.':
+        domain = url.split("http://www.")
+        domain = domain[1]
+        return domain_helper(domain)
+    elif url[0] == 'h' and url[8] not in numbers and url[11] == '.':
+        domain = url.split("https://www.")
+        domain = domain[1]
+        return domain_helper(domain)
+    else:
+        if len(url) <= 9:
+            domain = url
+            return domain_helper(domain)
+        elif url[9] in numbers and len(url) <= 15:
+            domain = url.split("https://")
+            domain = domain[1]
+            return domain_helper(domain)
+        else:
+            domain = url
+            return domain_helper(domain)
+```

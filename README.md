@@ -144,3 +144,41 @@ calc_help
 
 Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
 
+## Data Types
+
+Data types are indicators of what kind of data they represent when we program our code:
+
+### Basic Data Types
+
+| Type | Usage |
+| - | - |
+| `bool` | boolean values, `true` or `false` 
+| `char` | single character
+| `float` | real numbers
+| `int` | integers
+| `string` | string of characters
+
+[More references](https://www.tutorialspoint.com/cprogramming/c_data_types.htm)
+
+### Integer Types
+
+| Type | Value Range |
+| - | - |
+| `char` | -128 to 127 or 0 to 255
+| `unsigned char` | 0 to 255
+| `signed char` | -128 to 127
+| `int` | -32,768 to 32,767 or -2,147,483,648 to 2,147,483,647
+| `unsigned int` | 0 to 65,535 or 0 to 4,294,967,295
+| `short` | -32,768 to 32,767
+| `unsigned short` | 0 to 65,535
+| `long` | -9223372036854775808 to 9223372036854775807
+| `unsigned long` | 0 to 18446744073709551615
+
+- `unsigned` values start from 0
+- `signed` values start from 
+
+## Format Specifiers
+
+As previously discussed, `printf` is a method to print formatted strings. Format specifiers define what kind of data to be printed on output. It is **mandatory** to include this with `printf` or `scanf` inputs.
+
+

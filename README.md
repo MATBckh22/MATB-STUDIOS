@@ -177,6 +177,8 @@ Data types are indicators of what kind of data they represent when we program ou
 - `unsigned` values start from 0
 - `signed` values start from 
 
+### Floating-Point Types
+
 ## Format Specifiers
 
 As previously discussed, `printf` is a method to print formatted strings. Format specifiers define what kind of data to be printed on output. It is **mandatory** to include this with `printf` or `scanf` inputs.

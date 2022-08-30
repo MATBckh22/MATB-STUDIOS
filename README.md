@@ -179,8 +179,47 @@ Data types are indicators of what kind of data they represent when we program ou
 
 ### Floating-Point Types
 
+Different float values have different precisions, in which they have more decimal places:
+
+| Type | Percision | Value Range |
+| - | - | - |
+| `float` | 6 decimal places | 1.2E-38 to 3.4E+38
+| `double` | 15 decimal places | 2.3E-308 to 1.7E+308
+| `long double` | 19 decimal places | 3.4E-4932 to 1.1E+4932
+
+### Void Types
+
+Similar to `None` in python, `void` is a special value that represents the absence of a value. This is used in 3 different situations:
+
+- function returns as void
+   - no value is returned will return `void`
+- function arguments as void
+   - function with no parameters, exp: `int rand(void);`
+- pointers to void
+   - represents the address of an object but not it's type
+      - memory allocation function returns a pointer to void so it can be casted to any data type
+
 ## Format Specifiers
 
 As previously discussed, `printf` is a method to print formatted strings. Format specifiers define what kind of data to be printed on output. It is **mandatory** to include this with `printf` or `scanf` inputs.
 
+| Specifier | Data Type |
+| - | - |
+| `%c` | `char`
+| `%s` | `string`
+| `%f` | `float`
+| `%n` | prints nothing
+| `%i` | decimal integer (assumes base 10)
+| `%d` | decimal integer (auto-detects)
+| `%p` | pointer
+| `%u` | int unsigned decimal
+| `%e` or `%E` | float values with scientific notation
+| `%%` | % symbol
+| `%hi` | short (signed)
+| `%hu` | short (unsigned)
+| `%Lf` | `long double`
+
+[More specifiers](https://www.freecodecamp.org/news/format-specifiers-in-c/)
+
+## Binding Variables
 

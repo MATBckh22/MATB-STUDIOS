@@ -223,3 +223,36 @@ As previously discussed, `printf` is a method to print formatted strings. Format
 
 ## Binding Variables
 
+Unlike in python where data types are automatically detected when assigning values to variables like:
+
+```python
+counter = 5
+service_payment = 12.39
+service_type = 'a'
+service_code = 'A25MiR'
+service_name = 'John'
+```
+
+However, in C, u will need to tell the program which data type the variable ur going to assign the value.
+
+### Variable Definition
+
+
+
+### Declaration and Initialization 
+
+
+
+
+### Assigning Numbers 
+
+`int`, `float` and `double` are commonly used to assign numeric values to variables, they're tied to their precisions:
+
+```C
+int counter = 5;
+float service_payment = 12.39;
+```
+
+
+
+

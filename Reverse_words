@@ -1,0 +1,7 @@
+def reverse_words(s):
+    s = s.split()[::-1]
+    reverse = []
+    for counter in s:
+        reverse.append(counter)
+    return " ".join(reverse)
+    

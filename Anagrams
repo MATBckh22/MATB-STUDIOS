@@ -1,0 +1,12 @@
+def anagrams(word, words):
+    def anagrams_helper(words_searched):
+        split = words_search.split()
+        
+    words_same_length = []
+    for counter in words:
+        if len(words[counter]) == word:
+            words_same_length.append(words[counter])
+            return anagrams_helper(words_same_length)
+        else:
+            return words_same_length
+    

@@ -221,3 +221,30 @@ Notes:
 def quadratic(x1, x2):
     return(1, -(x1 + x2), (x1 * x2))
 ```
+
+## Factorial
+
+In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 
+
+$5! = 5 * 4 * 3 * 2 * 1 = 120$ 
+
+By convention, $0! = 1$
+
+Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type `ArgumentOutOfRangeException` (C#) or `IllegalArgumentException` (Java) or `RangeException` (PHP) or throw a `RangeError` (JavaScript) or `ValueError` (Python) or `return -1` (C).
+
+### Code
+
+```python
+def factorial(n):
+    def fact_helper(k):
+        if k == 1:
+            return k
+        else:
+            return k * factorial(k-1)
+    if n > 0 and n <= 12:
+        return fact_helper(n)
+    elif n == 0:
+        return 1
+    else:
+        raise ValueError
+```

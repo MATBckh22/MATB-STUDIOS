@@ -1,12 +1,20 @@
 def anagrams(word, words):
-    def anagrams_helper(words_searched):
-        split = words_search.split()
-        
-    words_same_length = []
-    for counter in words:
-        if len(words[counter]) == word:
-            words_same_length.append(words[counter])
-            return anagrams_helper(words_same_length)
+    def words_helper(y):
+        unique_chars_words = set[y]
+        unique_chars_words = list(unique_chars_words)
+        if unique_chars_words == unique_chars:
+            anagrams.append(y)
+            return anagrams
         else:
-            return words_same_length
-    
+            false_anagrams.append(y)
+            return false_anagrams
+    unique_chars = set(word)
+    unique_chars = list(unique_chars)
+    anagrams = []
+    false_anagrams = []
+    for i in range(len(words)):
+        words_helper(words[i])
+    print(anagrams, false_anagrams)
+    return (anagrams, false_anagrams)
+
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])

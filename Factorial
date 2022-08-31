@@ -1,0 +1,12 @@
+def factorial(n):
+    def fact_helper(k):
+        if k == 1:
+            return k
+        else:
+            return k * factorial(k-1)
+    if n > 0 and n <= 12:
+        return fact_helper(n)
+    elif n == 0:
+        return 1
+    else:
+        raise ValueError

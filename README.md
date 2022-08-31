@@ -248,3 +248,26 @@ def factorial(n):
     else:
         raise ValueError
 ```
+
+## Reverse Words
+
+Complete the solution so that it reverses all of the words within the string passed in.
+
+Example:
+
+```
+"The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+```
+
+### Code
+
+```python
+def reverse_words(s):
+    s = s.split()[::-1]
+    reverse = []
+    for counter in s:
+        reverse.append(counter)
+    return " ".join(reverse)
+```
+
+## Where My Anagrams at?

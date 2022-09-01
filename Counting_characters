@@ -1,11 +1,20 @@
 def count(string):
-    dict = {}
+    unique_chars = list(set(string))
+    values = []
+    test_dict = {}
     if len(string) == 0:
-        return dict
+        return test_dict
     else:
-        unique_chars = list(set(string))
         for counter in range(len(unique_chars)):
+            value_counter = 0
             for i in range(len(string)):
-                if string[i] == counter[i]:
-                    dict.append
-                    
+                if string[i] ==  unique_chars[counter]:
+                    value_counter = value_counter + 1
+                else:
+                    i += 1
+            values.append(value_counter)
+        test_dict = dict(zip(unique_chars, values))
+        print(test_dict)
+        return test_dict
+            
+count("asdnasbd")

@@ -296,3 +296,28 @@ anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 
 ### Code
 
+```python
+def anagrams(word, words): 
+    #random test cases are too little to judge the practicality of this code.
+    #if u find there's errors or cases that don't work, message me.
+    print(word, words)
+    def words_helper(y):    
+        unique_chars_words = set(y)
+        unique_chars_words = list(unique_chars_words)
+        if unique_chars_words == unique_chars and len(y) == len(word):
+            anagrams.append(y)
+            return anagrams
+        else:
+            false_anagrams.append(y)
+            return false_anagrams
+    unique_chars = set(word)
+    unique_chars = list(unique_chars)
+    anagrams = []
+    false_anagrams = []
+    for i in range(len(words)):
+        words_helper(words[i])
+    print(anagrams, false_anagrams)
+    return anagrams
+```
+
+##

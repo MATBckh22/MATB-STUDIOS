@@ -345,3 +345,23 @@ What if the string is empty? Then the result should be empty object literal, `{}
 
 ### Code
 
+```python
+def count(string):
+    unique_chars = list(set(string))
+    values = []
+    test_dict = {}
+    if len(string) == 0:
+        return test_dict
+    else:
+        for counter in range(len(unique_chars)):
+            value_counter = 0
+            for i in range(len(string)):
+                if string[i] ==  unique_chars[counter]:
+                    value_counter = value_counter + 1
+                else:
+                    i += 1
+            values.append(value_counter)
+        test_dict = dict(zip(unique_chars, values))
+        print(test_dict)
+        return test_dict
+```

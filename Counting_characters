@@ -1,0 +1,11 @@
+def count(string):
+    dict = {}
+    if len(string) == 0:
+        return dict
+    else:
+        unique_chars = list(set(string))
+        for counter in range(len(unique_chars)):
+            for i in range(len(string)):
+                if string[i] == counter[i]:
+                    dict.append
+                    

@@ -2,6 +2,9 @@
 
 Welcome to [Codewars](https://www.codewars.com/) Archive Katas! This is a section specifically for MATB members to post their own exercises (katas) of code, here we will be using mainly practices from codewars, though other platforms or homework are welcomed!
 
+### Made by:
+![Author](https://www.codewars.com/users/MATBckh22/badges/large)
+
 ## Duplicate Encoder
 
 The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.

@@ -8,5 +8,5 @@ def is_prime(num):
     else:
         if num/2 == int or num/3 == int or num/5 == int or num/7 == int or num/11 == int:
             return False
-        else:
+        else: 
             return True

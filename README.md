@@ -365,3 +365,24 @@ def count(string):
         print(test_dict)
         return test_dict
 ```
+
+## Permute a Palidrome
+
+Write a function that will check whether ANY permutation of the characters of the input string is a palindrome. Bonus points for a solution that is efficient and/or that uses only built-in language functions. Deem yourself **brilliant** if you can come up with a version that does not use any function whatsoever.
+
+```
+madam -> True
+adamm -> True
+junk -> False
+```
+
+### Code
+
+```python
+def permute_a_palindrome(input): #unfinished
+    print(input)
+    if input == input[::-1]:
+        return True
+    else:
+        return False
+```

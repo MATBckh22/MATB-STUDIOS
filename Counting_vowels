@@ -1,0 +1,10 @@
+def get_count(sentence):
+    vowels = 'aeiou'
+    counter = 0
+    if len(sentence) == 0:
+        return 0
+    else:
+        for i in range(len(sentence)):
+            if sentence[i] in vowels:
+                counter += 1
+        return counter

@@ -1,0 +1,8 @@
+def DNA_strand(dna):
+    dna_case = []
+    compliment = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    for i in dna:
+        dna_case.append(compliment.get(i,i))
+    return "".join(dna_case)
+
+

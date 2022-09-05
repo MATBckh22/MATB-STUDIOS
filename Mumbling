@@ -1,0 +1,5 @@
+def accum(s):
+    mumble = ""
+    for i in range(len(s)):
+        mumble = mumble + s[i].upper() + i * s[i].lower() + "-"
+    return mumble[:-1:]

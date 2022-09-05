@@ -519,3 +519,28 @@ Shortened:
 def is_triangle(a, b, c):
     return (a + b > c) and (b + c > a) and (a + c > b)
 ```
+
+## Mumbling
+
+This time no story, no theory. The examples below show you how to write function `accum`:
+
+Example:
+
+```
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+```
+
+Parameters: `a..z` and `A..Z`
+
+### Code
+
+```python
+def accum(s):
+    mumble = ""
+    for i in range(len(s)):
+        mumble = mumble + s[i].upper() + i * s[i].lower() + "-"
+    return mumble[:-1:]
+```
+    

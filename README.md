@@ -458,3 +458,40 @@ def open_or_senior(data):
     return list
 ```
 
+## Complimentary DNA
+
+Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+
+If you want to know more: http://en.wikipedia.org/wiki/DNA
+
+In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+
+More similar exercise are found here: http://rosalind.info/problems/list-view/ (source)
+
+Example:
+
+```
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA"
+```
+
+### Code
+
+```python
+def DNA_strand(dna):
+    dna_case = []
+    compliment = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    for i in dna:
+        dna_case.append(compliment.get(i,i))
+    return "".join(dna_case)
+```
+
+Shortened:
+
+```python
+def DNA_strand(dna):
+    compliment = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    return "".join(compliment.get(i,i) for i in dna)
+```
+
+

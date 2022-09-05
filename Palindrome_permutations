@@ -1,0 +1,7 @@
+def permute_a_palindrome(input):
+    print(input)
+    if input == input[::-1]:
+        return True
+    else:
+        
+        return False

@@ -2,6 +2,20 @@
 
 Welcome to [Codewars](https://www.codewars.com/) Archive Katas! This is a section specifically for MATB members to post their own exercises (katas) of code, here we will be using mainly practices from codewars, though other platforms or homework are welcomed!
 
+| Kata | Short Analysis |
+| - | - |
+| Duplicate Encoder | applying `casefold()`
+| Pyramid height | basic math and counter algorithms
+| RGB To Hex Conversion | nested functions and list maniuplations
+| URL Extraction | N/A
+| Coefficients of the Quadratic Equation | basic math algorithms
+| Factorial | nested functions
+| Reverse Words | string manipulations
+| Where My Anagrams at? | `set()` and nested functions
+| Counting Characters in a String | nested loops and dictionary manipulations
+| Counting Vowels | basic loop algorithms
+| Categorize New Member | manipulating tuples in lists
+
 ### Made by:
 ![Author](https://www.codewars.com/users/MATBckh22/badges/large)
 
@@ -408,8 +422,6 @@ def get_count(sentence):
         return counter
 ```
 
-### Code
-
 ## Categorize New Member
 
 The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
@@ -445,3 +457,4 @@ def open_or_senior(data):
         list.append(tuples_helper(data[i]))
     return list
 ```
+

@@ -5,12 +5,17 @@ def permute_a_palindrome(input):
     else:
         counter = 0
         permutations = {i : input.count(i) for i in set(input)}
-        for i in range(len(permutations)):
-            if permutations.get(i, i) > 3:
-                return False
-            elif permutations == 1:
-                counter += 1
-                if counter > 1:
+        print(permutations)
+        s = permutations.values()
+        if len(input)%2 == 0:
+            for i in s:
+                if i%2 != 0:
                     return False
-            else:
-                return True
+        else:
+            counter = 0
+            for i in s:
+                if i%2 != 0:
+                    counter += 1
+                    if counter > 1:
+                        return False
+            return True

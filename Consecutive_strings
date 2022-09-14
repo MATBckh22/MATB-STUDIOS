@@ -1,0 +1,11 @@
+def longest_consec(strarr, k):
+    if k <= 0 or k > len(strarr):
+        return ""
+    else:
+        consec = []
+        for i in range(len(strarr)):
+            if i+k > len(strarr):
+                break
+            else:
+                consec.append("".join(strarr[i:(i+k)]))
+        return max(consec, key=len)

@@ -393,12 +393,27 @@ junk -> False
 ### Code
 
 ```python
-def permute_a_palindrome(input): #unfinished
+def permute_a_palindrome(input):
     print(input)
     if input == input[::-1]:
         return True
     else:
-        return False
+        counter = 0
+        permutations = {i : input.count(i) for i in set(input)}
+        print(permutations)
+        s = permutations.values()
+        if len(input)%2 == 0:
+            for i in s:
+                if i%2 != 0:
+                    return False
+        else:
+            counter = 0
+            for i in s:
+                if i%2 != 0:
+                    counter += 1
+                    if counter > 1:
+                        return False
+            return True
 ```
 
 ## Counting Vowels

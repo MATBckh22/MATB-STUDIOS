@@ -1,18 +1,136 @@
-# MATB-STUDIOS 
+# Codewars Practices 3
 
-## MATB-Reset and Improve Program
------
-### Materials
+## Thinkful - Number Drills: Blue and Red Marbles
 
-Welcome to MATB's private library of the program! This library features a detailed walkthrough of self-study materials related to members' undergraduate major. Feel free to pick up one of the materials and start learning! All lecture notes are written by the members themselves with reference to said materials. Please contact the right author for any inquiry regarding them.
+You and a friend have decided to play a game to drill your statistical intuitions. The game works like this:
 
-- MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
-- CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-- MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md))
-- MIT6.042J: [MIT Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
-- MIT6.092: [MIT Introduction to Java](https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/lecture-notes/)
+You have a bunch of red and blue marbles. To start the game you grab a handful of marbles of each color and put them into the bag, keeping track of how many of each color go in. You take turns reaching into the bag, guessing a color, and then pulling one marble out. You get a point if you guessed correctly. The trick is you only have three seconds to make your guess, so you have to think quickly.
 
-## For Writers 
+You've decided to write a function, `guessBlue()` to help automatically calculate whether you should guess "blue" or "red". The function should take four arguments:
 
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to [here](https://github.com/MATBckh22/MATB-STUDIOS/blob/0adfa1dafeb0b6c8d013c515beae7a52ab102895/README.md)
+- the number of blue marbles you put in the bag to start
+- the number of red marbles you put in the bag to start
+- the number of blue marbles pulled out so far (always lower than - the starting number of blue marbles)
+- the number of red marbles pulled out so far (always lower than - the starting number of red marbles)
+
+`guessBlue()` should return the probability of drawing a blue marble, expressed as a float. For example, `guessBlue(5, 5, 2, 3)`should return `0.6`.
+
+### Code
+
+```python
+def guess_blue(blue_start, red_start, blue_pulled, red_pulled):
+    return (blue_start-blue_pulled)/(blue_start-blue_pulled+red_start-red_pulled)
+```
+
+## Square(n) Sum
+
+Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+For example, for `[1, 2, 2]` it should return `9` because `1^2 + 2^2 + 2^2 = 9`.
+
+### Code
+
+```python
+def square_sum(numbers):
+    s = 0
+    for i in numbers:
+        s = s + i**2
+    return s
+```
+
+## Merge Two Sorted Arrays Into One
+
+You are given two sorted arrays that both only contain integers. Your task is to find a way to merge them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
+
+You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
+
+Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
+
+Examples:
+
+```
+* [1, 2, 3, 4, 5], [6, 7, 8, 9, 10] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+* [1, 3, 5, 7, 9], [10, 8, 6, 4, 2] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+* [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] -> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
+```
+
+Happy coding!
+
+### Code
+
+```python
+def merge_arrays(arr1, arr2):
+    return sorted(set((arr1 + arr2)))
+```
+
+## Get Character From ASCII Value
+
+Write a function `get_char()` / `getChar()` which takes a number and returns the corresponding ASCII char for that value.
+
+Example:
+
+```
+get_char(65)
+```
+
+should return:
+
+```
+'A'
+```
+
+For ASCII table, you can refer to [here](http://www.asciitable.com/)
+
+### Code
+
+```python
+def get_char(c):
+    return chr(c)
+```
+
+## Volume of a Cuboid
+
+Bob needs a fast way to calculate the volume of a cuboid with three values: the `length`, `width` and `height` of the cuboid. Write a function to help Bob with this calculation.
+
+### Code
+
+```python
+def get_volume_of_cuboid(length, width, height):
+    return int(length*width*height)
+```
+
+## String Repeat
+
+Write a function that accepts an integer `n` and a string `s` as parameters, and returns a string of `s` repeated exactly `n` times.
+
+Examples:
+
+```
+6, "I"     -> "IIIIII"
+5, "Hello" -> "HelloHelloHelloHelloHello"
+```
+
+### Code
+
+```python
+def repeat_str(repeat, string):
+    return string*repeat
+```
+
+## Is This My Tail?
+
+Some new animals have arrived at the zoo. The zoo keeper is concerned that perhaps the animals do not have the right tails. To help her, you must correct the broken function to make sure that the second argument (tail), is the same as the last letter of the first argument (body) - otherwise the tail wouldn't fit!
+
+If the tail is right return true, else return false.
+
+The arguments will always be non empty strings, and normal letters.
+
+### Code
+
+```python
+def correct_tail(body, tail):
+    return tail == body[-1]
+```
+

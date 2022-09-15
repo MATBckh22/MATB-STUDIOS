@@ -1,0 +1,10 @@
+def to_alternating_case(string):
+    print(string)
+    s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    result = ''
+    for i in string:
+        if i in s:
+            result = result + i.lower()
+        else:
+            result = result + i.upper()
+    return result

@@ -1,0 +1,7 @@
+def human_years_cat_years_dog_years(human_years):
+    if human_years > 2:
+        return [human_years, 24+4*(human_years-2), 24+5*(human_years-2)]
+    elif human_years == 2:
+        return [2, 24, 24]
+    else:
+        return [1, 15, 15]

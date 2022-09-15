@@ -1,12 +1,13 @@
-def is_prime(num):
-    if num <= 0:
+def is_prime(n):
+    if n < 2:
         return False
-    elif num == 3 or num == 5 or num == 7 or num == 11:
+    elif n == 2:
         return True
-    elif num == 1:
-        return True
+    elif n % 2 == 0:
+        return False
     else:
-        if num/2 == int or num/3 == int or num/5 == int or num/7 == int or num/11 == int:
-            return False
-        else: 
+        for i in range(3, int(n**0.5) + 1, 2):
+            if n % i == 0:
+                return False
+        else:
             return True

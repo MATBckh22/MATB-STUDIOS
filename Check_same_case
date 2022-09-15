@@ -1,0 +1,10 @@
+def same_case(a, b): 
+    print(a,b)
+    upper_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lower_chars = 'abcdefghijklmnopqrstuvwxyz'
+    if (a in upper_chars and b in upper_chars) or (a in lower_chars and b in lower_chars):
+        return 1
+    elif a.lower() in lower_chars and b.lower() in lower_chars:
+        return 0
+    else:
+        return -1

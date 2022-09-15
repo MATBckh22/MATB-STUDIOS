@@ -351,6 +351,22 @@ is_prime(-1) /* false */
 
 ### Code
 
+```python
+def is_prime(n):
+    if n < 2:
+        return False
+    elif n == 2:
+        return True
+    elif n % 2 == 0:
+        return False
+    else:
+        for i in range(3, int(n**0.5) + 1, 2):
+            if n % i == 0:
+                return False
+        else:
+            return True
+```
+
 ## Counting Characters in a String
 
 The main idea is to count all the occurring characters in a string. If you have a string like `aba`, then the result should be `{'a': 2, 'b': 1}`.
@@ -618,4 +634,95 @@ def gps(s,x):
     else:
         max_distance = max(x[i+1]-x[i] for i in range(len(x)-1))
         return (3600 * max_distance)/s
+```
+
+## Check Same Case
+
+Write a function that will check if two given characters are the same case.
+
+- If either of the characters is not a letter, return `-1`
+- If both characters are the same case, return `1`
+- If both characters are letters, but not the same case, return `0`
+
+Examples:
+
+`'a'` and `'g'` returns `1`
+
+`'A'` and `'C'` returns `1`
+
+`'b'` and `'G'` returns `0`
+
+`'B'` and `'g'` returns `0`
+
+`'0'` and `'?'` returns `-1`
+
+```python
+def same_case(a, b): 
+    print(a,b)
+    upper_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lower_chars = 'abcdefghijklmnopqrstuvwxyz'
+    if (a in upper_chars and b in upper_chars) or (a in lower_chars and b in lower_chars):
+        return 1
+    elif a.lower() in lower_chars and b.lower() in lower_chars:
+        return 0
+    else:
+        return -1
+```
+
+## Cat years, Dog years
+
+I have a cat and a dog.
+
+I got them at the same time as kitten/puppy. That was `humanYears` years ago.
+
+Return their respective ages now as `[humanYears,catYears,dogYears]`
+
+**Notes:**
+
+`humanYears` >= 1
+`humanYears` are whole numbers only
+
+**Cat Years**
+
+- `15` cat years for first year
+- `+9` cat years for second year
+- `+4` cat years for each year after that
+
+**Dog Years**
+
+- `15` dog years for first year
+- `+9` dog years for second year
+- `+5` dog years for each year after that
+
+### Code
+
+```python
+def human_years_cat_years_dog_years(human_years):
+    if human_years > 2:
+        return [human_years, 24+4*(human_years-2), 24+5*(human_years-2)]
+    elif human_years == 2:
+        return [2, 24, 24]
+    else:
+        return [1, 15, 15]
+```
+
+## String Cleaning
+
+Your boss decided to save money by purchasing some cut-rate optical character recognition software for scanning in the text of old novels to your database. At first it seems to capture words okay, but you quickly notice that it throws in a lot of numbers at random places in the text.
+
+Examples:
+
+```
+'! !'                 -> '! !'
+'123456789'           -> ''
+'This looks5 grea8t!' -> 'This looks great!'
+```
+
+Your harried co-workers are looking to you for a solution to take this garbled text and remove all of the numbers. Your program will take in a string and clean out all numeric characters, and return a string with spacing and special characters `~#$%^&!@*():;"'.,?` all intact.
+
+### Code
+
+```python
+def string_clean(s):
+    return ''.join(i for i in s if not i.isdigit())
 ```

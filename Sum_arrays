@@ -1,0 +1,2 @@
+def sum_array(a):
+    return sum(a) if len(a) >= 1 else 0

@@ -62,3 +62,21 @@ printf("Hello")
 Here are some examples of escape sequences:
 
 ![escape sequence](https://cdn.educba.com/academy/wp-content/uploads/2020/01/Escape-Sequence-is-C.png)
+
+## Execution Flow
+
+![execution flow](https://i.imgur.com/Vu9w7d8.png)
+
+## Process of Computation
+
+Memory contains data and sequence of instructions, Control Unit will have a program counter stored.
+
+Loading said sequence starting with the first instruction in the program counter (stored in control unit) and sends it to the ALU.
+
+ALU comprehends and gets data from the memory, executes some operations and stores the data back to the memory.
+
+When it's done, ALU sends it back to Control Unit, program counter increases by 1. This process is repeated linearly, instruction by instruction in which between each instructions a test is carried out.
+
+When sequence of instructions is completed, it will show in output.
+
+*Note: whole process may not always be executed in one go, control flow might be involved to skip instructions or resetting it*

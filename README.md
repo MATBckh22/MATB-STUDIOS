@@ -309,3 +309,13 @@ int multiplication (int n);
 
 ## About `main`
 
+### `int main()` or `int main(void)`
+
+- simplest version
+    - no inputs, outputs `0` when successful
+    - non-zero to signal error
+
+ ### `int main(int argc, char **argv)`
+
+- two-argument form of `main()`
+

@@ -1,18 +1,311 @@
-# MATB-STUDIOS 
+# The C Programming Language
 
-## MATB-Reset and Improve Program
------
-### Materials
+### Author's Note: The notes on this page will not only include current lecture's, but also other resources to give a more comprehensive study on C. Some examples will be compared with similar code but written in Python as well.
 
-Welcome to MATB's private library of the program! This library features a detailed walkthrough of self-study materials related to members' undergraduate major. Feel free to pick up one of the materials and start learning! All lecture notes are written by the members themselves with reference to said materials. Please contact the right author for any inquiry regarding them.
+## Program Structure
 
-- MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
-- CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-- MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md))
-- MIT6.042J: [MIT Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
-- MIT6.092: [MIT Introduction to Java](https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/lecture-notes/)
+A C program consists of the following parts:
+- Preprocessor Commands
+- Functions
+- Variables
+- Statements & Expressions
+- Comments
 
-## For Writers 
+### Example
 
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to [here](https://github.com/MATBckh22/MATB-STUDIOS/blob/0adfa1dafeb0b6c8d013c515beae7a52ab102895/README.md)
+We will be using a `Hello World` example to explain the program structure written in C:
+
+```C
+#include <stdio.h>
+
+int main() {
+   /* my first program in C */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+```
+
+### Preprocessor Command
+
+`#include <stdio.h>` is a preprocessor command, also called as a **header file**, it tells the C compiler to include stdio.h libraries before going to the actual compilation.
+
+### Function
+
+Similar to python `def` functions, C uses the `int main` function where the program execution begins.
+
+### Comments
+
+`/*` and `*/` are used as additional comments to explain what the program does, similar to python's docstring. Whatever is in the comment lines will be ignored by the compiler.
+
+### Statements & Expressions
+
+`printf` is a method to print `Hello World!` in the terminal. **The** `/n` **at the end of the string tells the compiler to get a new line after printing.**
+
+Compared to python, semicolon `;` must be at **the end of every operation to indicate that this is the end of statement.**
+
+### Return Values
+
+`return 0` terminates the `main()` function and returns the value 0. This is useful to indicate that the program has executed successfully, it is good practice to include this at the end of the function.
+
+## Setting Up a C/C++ Compiler 
+
+Before going to the actual part of writing code, C is very different compared to Python, u cannot run programs as straight-forward as Python. Hence, take note on this section how to set up a compiler for C/C++.
+
+Here author will be using vscode to compile. The C/C++ extension doesn't include a compiler or debugger tool. Thus, u will have to install these tools to ur computer ([GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection) or [Clang](https://en.wikipedia.org/wiki/Clang) specifically).
+
+There may already be a C/C++ compiler and debugger provided by ur academic instructor. Check with ur instructors for guidance on how to install and use those compilers instead.
+
+Otherwise, refer to [this complete guide on how to install and use C/C++ compiler on vscode](https://code.visualstudio.com/docs/languages/cpp) instead.
+
+## Compiling and Executing C Programs
+
+To make sure u have installed the compiler, execute this command line in the terminal:
+
+- GCC:
+
+```
+g++ --version
+```
+
+- Clang:
+
+```
+clang --version
+```
+
+Follow these steps to know how to compile, we will be using the `Hello World` example mentioned above:
+
+- open a text editor like vscode and add the example code
+- save the file as `hello.c`
+- open the terminal and type `gcc hello.c` and enter to compile the code
+- if there are no errors in the output, terminal will generate an `a.out` executable file
+- type `a.out` to execute the program
+- `Hello, World!` expected to be in output
+
+[Reference](https://www.tutorialspoint.com/cprogramming/c_program_structure.htm)
+
+There are more commands to control workflow and file directories, see [here](https://ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-doslinux.htm#:~:text=Many%20Linux%20commands%20you%20type,fact%2C%20some%20commands%20are%20identical.)
+
+## Commands 
+
+Commands are used in terminal, powershell or command prompt to configure file directories and edit files in your computer:
+| Commands | Usage |
+| - | - |
+| `dir` | Directory listing
+| `ren` | Rename a file
+| `copy` | Copying a file 
+| `move` | Moving a file
+| `cls` | Clear screen
+| `del` | Delete file
+| `find` | Search for a string in file
+| `time` | Displays time
+| `cd` | Change the current directory
+| `md` | Create a new directory/folder 
+| `echo` | Print 
+| `rmdir` | Delete a directory
+
+For more commands, see this [reference](https://www.geeksforgeeks.org/linux-vs-windows-commands/)
+
+## Basic Syntax
+
+### `printf`
+
+Printing a string in C will look like this:
+
+```C
+printf("hello world");
+```
+
+The `f` in `printf` refers to a formatted string. 
+
+### Identifiers
+
+C identifier is a name to identify a variable, function, or any other user-defined item. Note that a C identifier:
+- doesn't allow punctuation characters (@,$,etc)
+- is **case-sensitive**
+- can include underscores
+
+This is why it's good programming practice to name human-readable variables and functions to briefly specify the purpose of the indentifiers.
+
+A readable variable looks like this:
+
+```
+Calculator_helper
+```
+
+Do not take shortcuts like this:
+
+```
+calc_help
+```
+
+### Keywords
+
+Keywords are reserved words in C, these special words must not be used as constants or variables or any other identifier names. Refer to [here](https://www.ibm.com/docs/en/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
+
+## Data Types
+
+Data types are indicators of what kind of data they represent when we program our code:
+
+### Basic Data Types
+
+| Type | Usage |
+| - | - |
+| `bool` | boolean values, `true` or `false` 
+| `char` | single character
+| `float` | real numbers
+| `int` | integers
+| `string` | string of characters
+
+[More references](https://www.tutorialspoint.com/cprogramming/c_data_types.htm)
+
+### Integer Types
+
+| Type | Value Range |
+| - | - |
+| `char` | -128 to 127 or 0 to 255
+| `unsigned char` | 0 to 255
+| `signed char` | -128 to 127
+| `int` | -32,768 to 32,767 or -2,147,483,648 to 2,147,483,647
+| `unsigned int` | 0 to 65,535 or 0 to 4,294,967,295
+| `short` | -32,768 to 32,767
+| `unsigned short` | 0 to 65,535
+| `long` | -9223372036854775808 to 9223372036854775807
+| `unsigned long` | 0 to 18446744073709551615
+
+- `unsigned` values start from 0
+- `signed` values start from 
+
+### Floating-Point Types
+
+Different float values have different precisions, in which they have more decimal places:
+
+| Type | Percision | Value Range |
+| - | - | - |
+| `float` | 6 decimal places | 1.2E-38 to 3.4E+38
+| `double` | 15 decimal places | 2.3E-308 to 1.7E+308
+| `long double` | 19 decimal places | 3.4E-4932 to 1.1E+4932
+
+### Void Types
+
+Similar to `None` in python, `void` is a special value that represents the absence of a value. This is used in 3 different situations:
+
+- function returns as void
+   - no value is returned will return `void`
+- function arguments as void
+   - function with no parameters, exp: `int rand(void);`
+- pointers to void
+   - represents the address of an object but not it's type
+      - memory allocation function returns a pointer to void so it can be casted to any data type
+
+## Format Specifiers
+
+As previously discussed, `printf` is a method to print formatted strings. Format specifiers define what kind of data to be printed on output. It is **mandatory** to include this with `printf` or `scanf` inputs.
+
+| Specifier | Data Type |
+| - | - |
+| `%c` | `char`
+| `%s` | `string`
+| `%f` | `float`
+| `%n` | prints nothing
+| `%i` | decimal integer (assumes base 10)
+| `%d` | decimal integer (auto-detects)
+| `%p` | pointer
+| `%u` | int unsigned decimal
+| `%e` or `%E` | float values with scientific notation
+| `%%` | % symbol
+| `%hi` | short (signed)
+| `%hu` | short (unsigned)
+| `%Lf` | `long double`
+
+[More specifiers](https://www.freecodecamp.org/news/format-specifiers-in-c/)
+
+## Binding Variables
+
+Unlike in python where data types are automatically detected when assigning values to variables like:
+
+```python
+counter = 5
+service_payment = 12.39
+service_type = 'a'
+service_code = 'A25MiR'
+service_name = 'John'
+```
+
+However, in C, u will need to tell the program which data type the variable ur going to assign the value.
+
+## Variable Definition and Declaration
+
+### Declaration and Initialization 
+
+Variable declaring takes more steps than the conventional approach used in python. If u want to use variables u will have to define them first:
+
+```C
+int n;
+float phi;
+```
+
+Ensure that the variables defined are linked correctly to their respective data types.
+
+However, u may also initialize a variable declaration like:
+
+```C
+float phi = 1.6180339887; 
+int a = 0;
+```
+
+For handling multiple declarations u can do:
+
+```C
+int a, b, c = 2, d = 5;
+```
+
+This is to say that `a` and `b` are declared as integer variables, while `c` and `d` are declared with **integer values assigned.** 
+
+## Arithmetic Expressions
+
+Binary arithmetics using the four basic principles of calculations are allowed in C:
+
+```C
+x+y //x += y
+x-y //x -= y
+x*y // x *= y
+x/y // x %= y
+```
+
+U could do simple expressions and statements using this example:
+
+```C
+y = (x+3)/2;
+```
+
+### Example
+
+Assume that $x = 2.0$ and $y = 3.0$, evaluate the statement:
+
+$$m = \frac {x+2y} {2x+3 \frac{3x}{5y}}$$
+
+```C
+float m = (x+2*y)/(2*x+3*((3*x)/(5*y)))
+```
+
+## Function prototypes
+
+Declarations are also called function prototypes, it is a must to declare functions first before using:
+
+```C
+int multiplication (int);
+```
+
+or 
+
+```C
+int multiplication (int n);
+```
+
+- `<stblib.h>` has many common functions for prototypes as well
+    - [Library for functions in C](https://www.ibm.com/docs/en/i/7.3?topic=extensions-standard-c-library-functions-table-by-name)
+
+## About `main`
+

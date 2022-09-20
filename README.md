@@ -315,7 +315,16 @@ int multiplication (int n);
     - no inputs, outputs `0` when successful
     - non-zero to signal error
 
+```
+Function declaration
+{
+declare variables;
+program statements;
+}
+```
+
  ### `int main(int argc, char **argv)`
 
 - two-argument form of `main()`
 
+##  `main()`

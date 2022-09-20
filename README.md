@@ -2,52 +2,6 @@
 
 ### Author's Note: The notes on this page will not only include current lecture's, but also other resources to give a more comprehensive study on C. Some examples will be compared with similar code but written in Python as well.
 
-## Program Structure
-
-A C program consists of the following parts:
-- Preprocessor Commands
-- Functions
-- Variables
-- Statements & Expressions
-- Comments
-
-### Example
-
-We will be using a `Hello World` example to explain the program structure written in C:
-
-```C
-#include <stdio.h>
-
-int main() {
-   /* my first program in C */
-   printf("Hello, World! \n");
-   
-   return 0;
-}
-```
-
-### Preprocessor Command
-
-`#include <stdio.h>` is a preprocessor command, also called as a **header file**, it tells the C compiler to include stdio.h libraries before going to the actual compilation.
-
-### Function
-
-Similar to python `def` functions, C uses the `int main` function where the program execution begins.
-
-### Comments
-
-`/*` and `*/` are used as additional comments to explain what the program does, similar to python's docstring. Whatever is in the comment lines will be ignored by the compiler.
-
-### Statements & Expressions
-
-`printf` is a method to print `Hello World!` in the terminal. **The** `/n` **at the end of the string tells the compiler to get a new line after printing.**
-
-Compared to python, semicolon `;` must be at **the end of every operation to indicate that this is the end of statement.**
-
-### Return Values
-
-`return 0` terminates the `main()` function and returns the value 0. This is useful to indicate that the program has executed successfully, it is good practice to include this at the end of the function.
-
 ## Setting Up a C/C++ Compiler 
 
 Before going to the actual part of writing code, C is very different compared to Python, u cannot run programs as straight-forward as Python. Hence, take note on this section how to set up a compiler for C/C++.
@@ -199,6 +153,79 @@ Similar to `None` in python, `void` is a special value that represents the absen
    - represents the address of an object but not it's type
       - memory allocation function returns a pointer to void so it can be casted to any data type
 
+## Program Structure
+
+A C program consists of the following parts:
+- Preprocessor Commands
+- Functions
+- Variables
+- Statements & Expressions
+- Comments
+
+### Example
+
+We will be using a `Hello World` example to explain the program structure written in C:
+
+```C
+#include <stdio.h>
+
+int main() {
+   /* my first program in C */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+```
+
+### Preprocessor Command
+
+`#include <stdio.h>` is a preprocessor command, also called as a **header file**, it tells the C compiler to include stdio.h libraries before going to the actual compilation.
+
+- `#define`
+   - definition of a constant (can be strings or ints)
+   - can take arguments and be treated like a function
+   - **parentheses ensure order of operations**
+   - **not suitable for recursion**
+
+```C
+#define msgs "test"
+
+int main(){
+   printf(msgs)
+}
+```
+
+- `#if`, `#ifdef`, `#ifndef`, `#else`, `#elif` , `#endif`
+   - control which lines are compiled 
+
+- `#pragma`
+   - preprocessor directive
+
+- `#error`, `#warning`
+   - trigger a custom compiler error warning
+   - exception handling
+
+- `#undef`
+   - remove definition of a variable at compile time
+
+### Function
+
+Similar to python `def` functions, C uses the `int main` function where the program execution begins.
+
+### Comments
+
+`/*` and `*/` are used as additional comments to explain what the program does, similar to python's docstring. Whatever is in the comment lines will be ignored by the compiler.
+
+### Statements & Expressions
+
+`printf` is a method to print `Hello World!` in the terminal. **The** `/n` **at the end of the string tells the compiler to get a new line after printing.**
+
+Compared to python, semicolon `;` must be at **the end of every operation to indicate that this is the end of statement.**
+
+### Return Values
+
+`return 0` terminates the `main()` function and returns the value 0. This is useful to indicate that the program has executed successfully, it is good practice to include this at the end of the function.
+
 ## Format Specifiers
 
 As previously discussed, `printf` is a method to print formatted strings. Format specifiers define what kind of data to be printed on output. It is **mandatory** to include this with `printf` or `scanf` inputs.
@@ -327,4 +354,35 @@ program statements;
 
 - two-argument form of `main()`
 
-##  `main()`
+##  Printing
+
+### Printing with `puts()`
+
+```C
+int main(){
+   puts("hello!");
+   return 0;
+}
+```
+
+The difference between `printf()` and `puts()` is that `puts()` output text to console and **ends the line. This is done without** `\n`**.**
+
+### Printing String Variables
+
+Alternatively, string variables can be assigned using `const char`. 
+
+- `const`: qualifies variable as constant
+- `char`: data type representing a single character
+
+Together, `const char msg[]` will be a constant array of characters.
+
+## Console I/O
+
+`stdout` and `stdin` are streams for console input and output.
+
+- `puts(string)`: prints string 
+- `putchar(char)`: print character
+- `char = getchar()`: return character input from `stdin`
+- `string = gets(string)`: return string input from `stdin`
+
+

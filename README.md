@@ -71,3 +71,61 @@ else{
 s=x>=0?1:-1
 ```
 
+## Blocks and Compound Statements
+
+## Simple Blocks
+
+- simple statement ends with semicolon `;`:
+    - `z = foo(x+y);`
+- multiple statements using `foo`:
+
+```C
+temp = x+y;
+z = foo(temp);
+```
+
+`foo()` provides ease of use to replace expressions with variables without reassigning.
+
+- block can substitute for simple statement
+    - compiled as a single unit
+    - variables can be declared inside
+    - semicolons not needed
+
+```C
+{
+    int temp = x+y;
+    z = foo(temp);
+}
+```
+
+Block can be empty too: `{}`
+
+### Nested Blocks 
+
+```C
+{
+    int temp1 = x-y;
+    z = foo(temp);
+    {
+        float temp2 = x*y;
+        z += bar(temp2);
+    }
+}
+```
+
+`bar()` is used to create bar tables.
+
+## Control Flow
+
+Unlike C++, Java, Python etc that has `boolean` values (can include `<stdbool.h>`). **In C, condition is an expression or a series of expressions.**
+
+- if expression is non-zero - **Condition is true**
+- expression must be numeric (or a pointer)
+
+```C
+const char str[] = "this is a series of characters";
+if (str) /* string is not null */
+    return 0;
+```
+
+### Conditional Statements

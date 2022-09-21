@@ -62,7 +62,7 @@ printf("Hello")
 Here are some examples of escape sequences:
 
 ![escape sequence](https://cdn.educba.com/academy/wp-content/uploads/2020/01/Escape-Sequence-is-C.png)
-
+a
 ## Execution Flow
 
 ![execution flow](https://i.imgur.com/Vu9w7d8.png)
@@ -80,3 +80,29 @@ When it's done, ALU sends it back to Control Unit, program counter increases by 
 When sequence of instructions is completed, it will show in output.
 
 *Note: whole process may not always be executed in one go, control flow might be involved to skip instructions or resetting it*
+
+## Printing and Prompting an Input
+
+### Python Prompt
+
+```python
+integer1 = int(input("type a number!\n"))
+```
+
+### C Equivalent
+
+```C
+int integer1;
+printf("type a number!\n");
+scanf(%d, &integer1);
+```
+
+In C, handling integer inputs takes more lines than python:
+
+- `int integer1;` declares an `integer1` variable
+- `printf("type a number!\n");` outputs the user prompt
+- `scanf(%d, &integer1);` reads the next user input
+   - note that u must use the correct format specifier to prompt user inputs
+
+### Addition Program
+

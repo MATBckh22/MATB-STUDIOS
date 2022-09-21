@@ -106,3 +106,31 @@ In C, handling integer inputs takes more lines than python:
 
 ### Addition Program
 
+This is an example of writing an addition program in C:
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    int integer1;
+    int integer2;
+
+    printf("Type a number!\n");
+    scanf("%d", &integer1);
+
+    printf("Type a number!\n");
+    scanf("%d", &integer2);
+
+    int sum;
+    sum = integer1 + integer2;
+    printf("The sum for integer1 and integer2 is %d\n", sum);
+    return 0;
+}
+```
+
+**Notice:**
+
+- `scanf` reads the user input, it expects a type `int` which is it's respective format specifier `%d`, it reads the input and assigns it with `integer1` using `&` operator
+- however, `printf` doesn't use the `&` operator to print `sum`
+

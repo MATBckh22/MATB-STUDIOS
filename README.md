@@ -119,7 +119,7 @@ Block can be empty too: `{}`
 
 Unlike C++, Java, Python etc that has `boolean` values (can include `<stdbool.h>`). **In C, condition is an expression or a series of expressions.**
 
-- if expression is non-zero - **Condition is true**
+- if expression is non-zero - **Condition is true**x
 - expression must be numeric (or a pointer)
 
 ```C

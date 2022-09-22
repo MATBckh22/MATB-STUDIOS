@@ -128,4 +128,31 @@ if (str) /* string is not null */
     return 0;
 ```
 
-### Conditional Statements
+## Conditional Statements
+
+### C's Equivalent of `elif` 
+
+`Else if` is C's equivalent to python's `elif` function, it adds alternative control paths so in order, the program will look into else if blocks before going to the else statement when the previous if condition is not met.
+
+```C
+if (a>0)
+    x++;
+else if (a==0)
+    x--;
+else
+    x = 1
+```
+
+This can be written with nested if blocks too:
+
+```C
+if (a>0)
+    x++;
+    if (a==0)
+        x--;
+else
+    x = 1;
+```
+
+### `switch` Statement
+

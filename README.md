@@ -189,3 +189,56 @@ switch (s){
 
 ### Multiply Case
 
+- compare variable to each case in order
+- inner code starts to execute when match found until `break;`
+- execution "falls through" if `break;` not included (not recommended)
+
+```C
+switch (s){
+    case 'a':
+    case 'b':
+    /* expression starts when either case 'a' or case 'b' is met */
+        break;
+}
+```
+
+`break` vs no `break`:
+
+With `break` every case can be treated individually:
+
+```C
+switch (s){
+    case 'a':
+        printf("U typed a"); /* do print method when case 'a' is reached until break; */
+        break;
+    case 'b':
+        printf("U typed b"); /* do print method when case 'b' is reached and case 'a' is not met, until break */
+        break;
+```
+
+Without `break`, cases are joined similarly to `or` statements:
+
+```C
+switch (s){
+    case 'a':
+        printf("U typed a"); /* do print method when case 'a' is reached */
+    case 'b':
+        printf("U typed b"); /* do print method when either case 'a' or case 'b' is met */
+        break;
+}
+```
+
+## Loop Statements
+
+### `while` Loops
+
+Similar to python, `while` loop in C is written with almost the same syntax:
+
+```C
+while (/* condition */)
+    /* expressions */
+```
+
+### `for` Loops
+
+The loop with a counter, or called *counting* loops, 

@@ -156,3 +156,36 @@ else
 
 ### `switch` Statement
 
+`switch` is used to iterate an alternative conditional statements. It can be used for `int` and `char` input. 
+
+- consider cases for value of variable:
+
+```C
+char s;
+
+printf("Type a character from a-d:\n")
+scanf("%c", &s);
+
+switch (s){
+    case 'a':
+        printf("U typed a");
+        break;
+    case 'b':
+        printf("U typed b");
+        break;
+    case 'c':
+        printf("U typed c");
+        break;
+    case 'd':
+        printf("U typed d");
+        break;
+    default: /*otherwise or else*/
+        printf("error");
+        break
+}
+```
+
+`switch` is a more tidy approach to store multiple test cases in a block. **It is a must to include** `break` **statement to conclude a case.**
+
+### Multiply Case
+

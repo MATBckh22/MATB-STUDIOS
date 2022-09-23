@@ -374,4 +374,23 @@ Extended Euclidean algorithm can be implemented as `ext_euclid()`, also in `eucl
 `extern` is used to inform other source files about functions/global variables in `euclid.c`.
 
 - for functions: put function prototypes in header file
-- for variables: redeclare
+- for variables: redeclare global variables `extern` in header file
+
+`extern` also informs compiler that variable defined somewhere else and enables access to modify a global variable from other source files.
+
+### `euclid.h` Header 
+
+Header contains prototypes for `gcd()` and `ext_euclid()`:
+
+```C
+#ifndef __EUCLID_H__
+#define __EUCLID_H__
+
+extern int x, y;
+
+int gcd(int a, int b);
+
+int ext_euclid(int a, int b);
+
+#endif
+```

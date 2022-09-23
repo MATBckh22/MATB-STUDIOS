@@ -2,7 +2,7 @@
 
 ## Operators
 
-## Logical Operators
+### Logical Operators
 
 | Operator | Meaning | Examples |
 | - | - | - |
@@ -241,4 +241,132 @@ while (/* condition */)
 
 ### `for` Loops
 
-The loop with a counter, or called *counting* loops, 
+The loop with a counter, or called *counting* loops, can be written in this syntax:
+
+- Python
+
+```python
+for i in range(5):
+    print("hi!\n")
+```
+
+- C
+
+```C
+n = 5;
+for (i = 0, i <= n, i++){
+    printf("hi!\n");
+}
+```
+
+### Factorial Example
+
+```C
+int factorial (int n){
+    n = 5;
+    int i, j;
+    for (i = 1, j = 1; i <= n; i++){
+        j *= i;
+    }
+    return j;
+}
+```
+
+- simplified version
+
+```C
+int factorial (int n){
+    int i, j;
+    for (i = 1, j = 1; i <= n; j *= i, i++)
+    ;
+    return j;
+}
+```
+
+### `do-while` Loop
+
+`do-while` differs from the conventional `while` loop statement:
+
+```C
+char c;
+do {
+    puts("Hi!\nY/N\n");
+    c = getchar();
+} while (c == 'Y');
+```
+
+Notice how the expressions are executed before the loop condition is met. This is to say each loop is iterated first before evaluating the condition so that the iterations are prioritized.
+
+**Note that for this statement,** `while` **needs a semicolon to end.**
+
+### `break` Keyword
+
+`break` is used to exit an iteration or terminate a loop early, it's usage is also similar to python.
+
+### `continue` Keyword
+
+`continue` is used to skip an iteration, or skips the rest of the innermost loop body and jumps to the next loop condition. This could be understood by calling it an *ignore* expression.
+
+## Functions
+
+C programs are built on functions like `main()`, functions like this are pre-built on the ide unlike python where u have to define it using `def`.
+
+However, in C u can also create new functions and use them in programs.
+
+### Euclidean Algorithm Example
+
+Find integers using [Euclidean Algorithm](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm#:~:text=The%20Algorithm,%3D%20B%E2%8B%85Q%20%2B%20R) in
+$$ax+by = gcd(a,b)$$
+
+```C
+int gcd(int a, int b){
+    while (b){
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+```
+
+### Pseudocode Explanation
+
+```
+Initialize state variables (x,y)
+if (a < b)
+swap(a,b)
+while (b > 0) {
+compute quotient, remainder
+update state variables (x,y)
+}
+return gcd and state variables (x,y)
+```
+
+**Unlike python, it is important to know that functions in C only return up to one value! U can do a workaround by implementing global variables.**
+
+## Modular Programming
+
+- C programs don't need to be monolithic
+- **Module: interface and implementation**
+    - **interface: header files**
+    - **implementation: auxiliary source/object files**
+- Same concept carries over to external libraries
+
+## The Euclid Module
+
+Euclid algorithms are useful in many implementations and can be included in many programs. Euclid modules contain header (`.h`) and source files (`.c`):
+
+```C
+int gcd(int a, int b){
+    while (b){
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+```
+
+Extended Euclidean algorithm can be implemented as `ext_euclid()`, also in `euclid.c`.
+
+### `extern` Keyword

@@ -394,3 +394,26 @@ int ext_euclid(int a, int b);
 
 #endif
 ```
+
+### Using the `euclid.h` Module
+
+- calling `gcd()` or `ext.euclid()` from the main file `diophant.c`
+- include header file `euclid.h`
+- can call as any other function:
+
+```C
+g = gcd(a, b); /* compute g = gcd(a, b); */
+
+g = ext_euclid(a, b); /* compute a and b using pre-defined Extended Euclidean Algorithm ext_euclid(a, b); */
+```
+
+- results in global variables `x` and `y`:
+
+```C
+grow = c/g
+x *= grow;
+y *= grow;
+```
+
+### Compiling With The Euclid Module
+

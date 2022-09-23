@@ -370,3 +370,8 @@ int gcd(int a, int b){
 Extended Euclidean algorithm can be implemented as `ext_euclid()`, also in `euclid.c`.
 
 ### `extern` Keyword
+
+`extern` is used to inform other source files about functions/global variables in `euclid.c`.
+
+- for functions: put function prototypes in header file
+- for variables: redeclare

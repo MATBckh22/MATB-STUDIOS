@@ -470,6 +470,66 @@ Output:
 
 ### Scope and Nested Declarations
 
+Global variables can be reassigned to a different value in a function:
 
+```C
+int nmax = 20;
+
+int main ( int argc , char ∗∗ argv )
+{
+    int a = 0 , b = 1 , c , n, nmax = 15;
+    printf( "%3d: %d\n" ,1 ,a );
+    printf( "%3d: %d\n" ,2 ,b );
+    for ( n = 3; n <= nmax ; n++) {
+        c = a + b ; a = b ; b = c ;
+        printf( "%3d: %d\n" ,n , c ) ;
+    }
+    return 0;
+}
+```
+
+Output:
+```
+  1: 0
+  2: 1
+  3: 1
+  4: 2
+  5: 3
+  6: 5
+  7: 8
+  8: 13
+  9: 21
+ 10: 34
+ 11: 55
+ 12: 89
+ 13: 144
+ 14: 233
+ 15: 377
+```
 
 ## `static` and `register`
+
+### Static Variables
+
+Static variables have a special property of preserving their value even after they are out of scope. They preserve their previous values and are not initialized again in the new scope.
+
+Static variables have two meanings depending on the location they're declared:
+
+### Outside Function
+
+Static variables/functions are only visible within that file, not globally (cannot be `extern`-ed)
+
+### Inside Function
+
+Static variables:
+- still local to that function
+- are initialized only during program initialization
+- do not get reinitialized with each function call
+
+```C
+static int random_static_var = 0;
+```
+
+### Register Variables
+
+

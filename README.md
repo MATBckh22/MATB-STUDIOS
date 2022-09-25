@@ -417,3 +417,59 @@ y *= grow;
 
 ### Compiling With The Euclid Module
 
+- just compiling `diophant.c` is insufficient
+- `gcd()` and `ext_euclid()` are defined in `euclid.c`; this source file needs to be compiled too
+- when compiling in source files, the outputs need to be linked together into a single output
+
+## Variable Scope 
+
+### Example of Different Scopes in C
+
+```C
+int nmax = 20;
+
+int main ( int argc , char ∗∗ argv )
+{
+    int a = 0 , b = 1 , c , n ;
+    printf( "%3d: %d\n" ,1 ,a );
+    printf( "%3d: %d\n" ,2 ,b );
+    for ( n = 3; n <= nmax ; n++) {
+        c = a + b ; a = b ; b = c ;
+        printf( "%3d: %d\n" ,n , c ) ;
+    }
+    return 0;
+}
+```
+
+`nmax` here is a global variable that can be used in all functions that are declared, in this case it's `main()`. Inside main we have `a`, `b`, `c` and `n`, these are variables declared and used **only** in `main()` function.
+
+Output:
+
+```
+  1: 0
+  2: 1
+  3: 1
+  4: 2
+  5: 3
+  6: 5
+  7: 8
+  8: 13
+  9: 21
+ 10: 34
+ 11: 55
+ 12: 89
+ 13: 144
+ 14: 233
+ 15: 377
+ 16: 610
+ 17: 987
+ 18: 1597
+ 19: 2584
+ 20: 4181
+```
+
+### Scope and Nested Declarations
+
+
+
+## `static` and `register`

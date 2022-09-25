@@ -532,4 +532,35 @@ static int random_static_var = 0;
 
 ### Register Variables
 
+`register` **provides a more useful and faster approach to access commonly used data and minimize load/store overhead.** Registers are faster than memory to access, it hints to compiler that a given variable can be put in a register. It's the compiler choice to put it in or not but generally they do optimizations themselves and put variables in registers.
 
+- during execution, data processed in registers
+- can explicitly declare certain variables as registers using `register`
+
+### What Can Be Registered?
+
+- simple types (implementation-dependant)
+- **only local variables and function arguments**
+- excess/unallowed register declarations ignored, compiled as regular variables
+- **Registers do not reside in addressed memory; pointer of a
+register variable is illegal**
+
+Variable scope examples with `register` implementation:
+
+```C
+#include <stdio.h>
+
+int nmax = 20;
+
+int main ( register int argc , register char ** argv )
+{
+    register int a = 0 , b = 1 , c , n, nmax = 15;
+    printf( "%3d: %d\n" ,1 ,a );
+    printf( "%3d: %d\n" ,2 ,b );
+    for ( n = 3; n <= nmax ; n++) {
+        c = a + b ; a = b ; b = c ;
+        printf( "%3d: %d\n" ,n , c ) ;
+    }
+    return 0;
+}
+```

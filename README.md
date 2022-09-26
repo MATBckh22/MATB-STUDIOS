@@ -1,4 +1,4 @@
-# Control Follow
+# Control Flow
 
 ## `goto` - Unconditional Code Jumping
 

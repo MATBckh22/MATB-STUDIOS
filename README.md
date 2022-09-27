@@ -61,4 +61,44 @@ error:
 
 ## Digression: Character Arrays
 
-### C doesn't have data type string, strings are represented as **character arrays. C doesn't restrict the length of the string, end of the string is specified using 0**
+### C doesn't have data type string, strings are represented as **character arrays.** C doesn't restrict the length of the string, end of the string is specified using 0.
+
+### Example
+
+`'Hello'` can be represented using an array: `{'h','e','l','l','\0'}`
+
+Hence, there are several declarations to declare a string:
+
+```C
+char str[] = "hello";
+char str[10] = "hello"; /* 10 is the size of the array, when using this make sure the array size is enough for the input */
+char str[] = {'h','e','l','l','o',0};
+```
+
+### Comparing Strings
+
+`<string.h>` provides function `int strcmp(char s[], char t[])` to compare two strings in dictionary order:
+
+- **lower cases come after capitals**
+- returns `<0` if s comes before t
+- returns 0 is same
+- returns `>0` if s comes after t
+- **case sensitive**
+
+```C
+strcmp("a", "A"); /* returns <0 */
+strcmp("SUPERMAN", "BATMAN"); /* returns >0 */
+strcmp("a", "a"); /* returns ==0 */
+```
+
+### Formatted Input 
+
+- `scanf()`: formatted input function to take analog inputs of `printf`
+    - takes variable number of inputs
+    - separated by white space when multiple items are to be read
+    - returns number of items read or EOF
+
+**Note that** `scanf` **ignores white spaces. Arguments have to be pointers (address of variables).**
+
+- `int sprintf(char str[], char format[], arg1, arg2);`
+    - 

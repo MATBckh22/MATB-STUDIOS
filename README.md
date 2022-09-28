@@ -73,7 +73,7 @@ s=x>=0?1:-1
 
 ## Blocks and Compound Statements
 
-## Simple Blocks
+### Simple Blocks
 
 - simple statement ends with semicolon `;`:
     - `z = foo(x+y);`

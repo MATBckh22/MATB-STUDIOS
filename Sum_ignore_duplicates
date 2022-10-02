@@ -1,0 +1,6 @@
+def sum_no_duplicates(l):
+    unique_nums = []
+    for i in l:
+        if l.count(i) == 1:
+            unique_nums.append(i)
+    return sum(unique_nums)

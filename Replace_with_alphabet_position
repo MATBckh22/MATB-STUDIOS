@@ -1,0 +1,8 @@
+def alphabet_position(text):
+    text = text.lower()
+    alphabets_to_numbers =  ''
+    alphabets = 'abcdefghijklmnopqrstuvwxyz'
+    for i in text:
+        if i in alphabets:
+            alphabets_to_numbers = alphabets_to_numbers + f'{str(ord(i)-96)} '
+    return alphabets_to_numbers[:-1]

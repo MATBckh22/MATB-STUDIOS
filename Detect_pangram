@@ -1,0 +1,8 @@
+def is_pangram(s):
+    s = s.lower()
+    alphabets = []
+    for i in s:
+        if i in 'abcdefghijklmnopqrstuvwxyz':
+            alphabets.append(i)
+    alphabets = list(set(alphabets))
+    return len(alphabets) == 26

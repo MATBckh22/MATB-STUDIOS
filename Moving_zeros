@@ -1,0 +1,9 @@
+def move_zeros(lst):
+    new_lst = []
+    zero_count = lst.count(0)
+    for i in lst:
+        if i != 0:
+            new_lst.append(i)
+    for counter in range(zero_count):
+        new_lst.append(0)
+    return new_lst

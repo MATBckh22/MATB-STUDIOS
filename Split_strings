@@ -1,0 +1,8 @@
+def solution(s):
+    str_split = []
+    for i in range(0, len(s), 2):
+        if i+2 > len(s):
+            str_split.append(''.join(s[i]+'_'))
+            return str_split
+        str_split.append(''.join(s[i]+s[i+1]))
+    return str_split

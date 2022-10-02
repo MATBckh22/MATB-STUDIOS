@@ -1,0 +1,11 @@
+def count_bits(n):
+    s = ''
+    while n != 0:
+        if n%2 == 0:
+            n = n/2
+            s = s + '0'
+        else:
+            n = (n-1)/2
+            s = s + '1'
+    s = s[::-1]
+    return s.count('1')

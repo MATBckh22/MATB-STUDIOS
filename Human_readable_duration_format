@@ -1,0 +1,54 @@
+def format_duration(seconds):
+    print(seconds)
+    sentence = ''
+    if seconds == 1:
+        return '1 second'
+    elif seconds == 60:
+        return '1 minute'
+    elif seconds == 3600:
+        return '1 hour'
+    elif seconds == 6400:
+        return '1 day'
+    elif seconds == 31536000:
+        return '1 year'
+    elif seconds == 0:
+        return 'now'
+    else:
+        if 120 <= seconds < 3600 and seconds%60 == 0:
+            return f'{seconds//60} minutes'
+        if seconds > 31536000:
+            if 31536001 <= seconds < 31536000*2:
+                sentence = '1 year, '
+                seconds = seconds%31536000
+            else:
+                sentence = f'{seconds//31536000} years, '
+                seconds = seconds%31536000
+        if seconds > 86400:
+            if 86401 <= seconds < 86400*2:
+                sentence = sentence + '1 day, '
+                seconds = seconds%86400
+            else:
+                sentence = sentence + f'{seconds//86400} days, '
+                seconds = seconds%86400
+        if seconds > 3600:
+            if 3601 <= seconds < 3600*2:
+                sentence = sentence + '1 hour, '
+                seconds = seconds%3600
+            else:
+                sentence = sentence + f'{seconds//3600} hours, '
+                seconds = seconds%3600
+        if seconds > 60:
+            if 61 <= seconds < 120:
+                sentence = sentence + '1 minute and '
+                seconds = seconds%60
+            else:
+                if seconds%60 == 0:
+                    return sentence[:-2] + f' and {seconds//60} minutes'
+                sentence = sentence + f'{seconds//60} minutes and '
+                seconds = seconds%60
+        if seconds < 60:
+            if seconds == 1:
+                sentence = sentence + '1 second'
+            else:
+                sentence = sentence + f'{seconds} seconds'
+        return sentence

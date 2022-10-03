@@ -117,6 +117,23 @@ Bitwise operators manipulate bits of the integral operands (unsigned and signed 
 
 ### Bitwise AND, OR
 
+## Associativity - Priority of Operators
+
+| Operators | Operator Type |
+| - | - |
+| `*` `/` `%` | multiplicative
+| `+` `-` | additive and subtractive
+| `<<` `>>` | shifting
+| `<` `<=` `>` `>=` | relational
+| `==` `!=` | equality
+| `&` | bitwise AND
+| `^` | bitwise XOR
+| `\|` | bitwise OR
+| `&&` | AND
+| \|\| | OR
+| ?: | conditional
+| `+=` `-=` `*=` `/=` `%=`
+ 
 ## Enumeration Constants
 
 - `enum`

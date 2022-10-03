@@ -10,6 +10,29 @@
 | \|\| | or | 2 == 3 \|\| 'A' == 'a'; evaluates to 1
 | `!` | not | `!(3 == 3);` evaluates to 0
 
+Example:
+
+```C
+#include <stdio.h>
+
+int main(){
+    int a = 2, b = 3, c = 10;
+
+    printf("a=%d, b=%d, c=%d\n\n", a, b, c); 
+
+    printf("(a==b)&&(b<c) evaluates to %d\n", (a==b)&&(b<c)); /* evaluates to 1 */
+    printf("(a==b)&&(b>c) evaluates to %d\n\n", (a==b)&&(b>c)); /*evaluates to 0 */
+
+    printf("(a==b)||(b>c) evaluates to %d\n", (a==b)||(b>c)); /* evaluates to 1 */
+    printf("(a==c)||(b>c) evaluates to %d\n\n", (a==c)||(b>c)); /* evaluates to 0 */
+
+    printf("!(a==c) evaluates to %d\n", !(a==c)); /* evaluates to 1*/
+    printf("!(a==b) evaluates to %d\n", !(a==b)); /* evaluates to 0 */
+
+    return 0;
+}
+```
+
 ### Increment and Decrement Operators
 
 | Normal Arithmetic Expressions | Shortcut |
@@ -21,6 +44,21 @@
 
 **Note for 3rd and 4th expressions, `x` is evaluated before it is decremented. Switching the positions will also switch their order of evaluation.**
 
+### Preincrement and Predecrement vs Postincrement and Postdecrement
+
+Prefix operators increases or decreases before execution, postfix does it the other way round:
+
+```C
+int a = 2, b = 3;
+printf("%d", a); /* prints 2 */
+printf("%d", a++); /* prints 2 then adds 1 so a = 3 */
+printf("%d", a); /* prints 3 */
+
+printf("%d", b); /* prints 3 */
+printf("%d", ++b); /* adds 1 to b first then prints 4 */
+printf("%d", b); /* prints 4 */
+```
+
 ### Assignment Operators 
 
 Common expressions that can be found while programming is of the type:
@@ -31,7 +69,7 @@ variable = variable (operator) expression
 
 C provides compact assignment operators that can be used instead, this is also known as **syntatic sugar**:
 
-```
+```C
 x += 1 --> x = x + 1
 x -= 1 --> x = x - 1
 x *= 5 --> x = x * 5

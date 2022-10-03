@@ -458,6 +458,24 @@ result = 6
 
 Notes:
 
-- The list of ranges will never be empty;
-- This is a challenge version, you should implement an efficient algorithm to avoid timing out;
+- The list of ranges will never be empty
+- This is a challenge version, you should implement an efficient algorithm to avoid timing out
 
+**About random testcases:**
+
+- Small tests: 100 testcases
+    - each integers-list : 5-20 elements
+    - each ranges-list : 1-6 elements
+- Big tests: 50 testcases
+    - each integers-list : 100000 elements
+    - each ranges-list : 10000 elements
+
+### Code
+
+```python
+from itertools import accumulate
+
+def max_sum(a, ranges):
+    new = list(accumulate(a)) + [0]
+    return max(new[j] - new[i-1] for i, j in ranges)
+```

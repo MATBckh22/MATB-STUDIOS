@@ -117,7 +117,28 @@ Bitwise operators manipulate bits of the integral operands (unsigned and signed 
 
 ### Bitwise AND, OR
 
+## Enumeration Constants
 
+- `enum`
+- set of integer enumeration constants represented by identifiers:
+
+```C
+enum months {
+    JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
+};
+```
+
+This creates a new type `months` in which the index in the enumeration array are set to integers 0-11, respectively.
+
+Enumeration ranges can be manipulated by placing an integer as the starting point of the enumeration:
+
+```C
+enum months{
+    1, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
+};
+```
+
+The range of `months` is now **1-12.**
 
 ## Conditional Expressions
 

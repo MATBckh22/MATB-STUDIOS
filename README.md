@@ -382,3 +382,82 @@ def snail(snail_map):
     return sorted_list
 ```
 
+## Thinkful - Logic Drills: Traffic light
+
+You're writing code to control your town's traffic lights. You need a function to handle each change from green, to `yellow`, to `red`, and then to `green` again.
+
+Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+
+For example, when the input is `green`, output should be `yellow`.
+
+### Code
+
+```python
+def update_light(current):
+    if current == 'green':
+        return 'yellow'
+    elif current == 'yellow':
+        return 'red'
+    else:
+        return 'green'
+```
+
+## The Maximum Sum Value of Ranges - Simple Version
+
+```python
+Given arr = [1,-2,3,4,-5,-4,3,2,1], 
+       range = [[1,3],[0,4],[6,8]]
+ should return 6
+ 
+ calculation process:
+ range[1,3] = arr[1]+arr[2]+arr[3] = 5
+ range[0,4] = arr[0]+arr[1]+arr[2]+arr[3]+arr[4] = 1
+ range[6,8] = arr[6]+arr[7]+arr[8] = 6
+ So the maximum sum value is 6
+```
+
+- `arr` always has at least 5 elements
+- `range` always has at least 1 element
+- All inputs are valid
+
+Example:
+
+```python
+ maxSum([1,-2,3,4,-5,-4,3,2,1],[[1,3],[0,4],[6,8]]) === 6
+ maxSum([1,-2,3,4,-5,-4,3,2,1],[[1,3]]) === 5
+ maxSum([1,-2,3,4,-5,-4,3,2,1],[[1,4],[2,5]]) === 0
+```
+
+### Code
+
+```python
+def max_sum(arr,ranges): 
+    sums = []
+    for i in ranges:
+        range_sum = 0
+        for s in range(i[0],i[1]+1):
+            if i[1]+1 > len(arr):
+                continue
+            range_sum = range_sum + arr[s]
+        sums.append(range_sum)
+    return max(sums)
+```
+
+## The Maximum Sum Value of Ranges - Challenge Version
+
+>When no more interesting kata can be resolved, I just choose to create the new kata, to solve their own, to enjoy the process -myjinxin2015
+
+Given a list of integers `A`, for each pair of integers `(first, last)` in list `ranges`, calculate the sum of the values in `A` between indices `first` and `last` (both inclusive), and return the greatest resulting sum.
+
+```
+A = [1, -2, 3, 4, -5, -4, 3, 2, 1]
+ranges = [(1, 3), (0, 4), (6, 8)]
+
+result = 6
+```
+
+Notes:
+
+- The list of ranges will never be empty;
+- This is a challenge version, you should implement an efficient algorithm to avoid timing out;
+

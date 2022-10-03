@@ -77,7 +77,49 @@ x %= 10 --> x = x % 10
 x /= 2 --> x = x / 2
 ```
 
-### Conditional Expressions
+## Type Casting
+
+Converting data types can be expressed as:
+
+```
+(data_type) expresssion
+```
+
+Example:
+
+```C
+#include <stdio.h>
+
+int main(void){
+    int a = 11, b = 5;
+    float result;
+
+    result = (float) a/b;
+    printf("\n");
+    printf("\n");
+    printf("%f\n", result);
+    return 0;
+}
+```
+
+## Bitwise Operators
+
+Bitwise operators manipulate bits of the integral operands (unsigned and signed `char`, `short`, `int`, `long` ):
+
+| Operator | Expression | Explanation |
+| - | - | - |
+| `&` | bitwise AND | bits in the result are set to 1 if **both operands are 1**
+| `|` | bitwise inclusive OR | bits in the result are set to 1 if **at least one operand is 1**
+| `^` | bitwise exclusive OR | bits in the result are set to 1 if **only one operand is 1**
+| `<<` | left shift | **shift the bits of the first operand to the left by a value set by the second operand**
+| `>>` | right shift | **shift the bits of the first operand to the right by a value set by the second operand**
+| `~` | one's complement | **all 0 bits are set to 1 and vice-versa**
+
+### Bitwise AND, OR
+
+
+
+## Conditional Expressions
 
 If else blocks can be declared similarly to python:
 

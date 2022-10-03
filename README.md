@@ -7,7 +7,7 @@
 | Operator | Meaning | Examples |
 | - | - | - |
 | `&&` | and | `('A' == 'a') && (3 == 3);` evaluates to 0
-| `||` | or | `2 == 3 || 'A' == 'a';` evaluates to 1
+| \|\| | or | 2 == 3 \|\| 'A' == 'a'; evaluates to 1
 | `!` | not | `!(3 == 3);` evaluates to 0
 
 ### Increment and Decrement Operators

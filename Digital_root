@@ -1,0 +1,10 @@
+def digital_root(n):
+    if n < 10: return n
+    n_str = str(n)
+    while int(n_str) >= 10:
+        sum = 0
+        for i in str(n_str):
+            sum += int(i)
+        n_str = sum
+    else:
+        return sum

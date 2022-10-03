@@ -1,0 +1,5 @@
+from itertools import accumulate
+
+def max_sum(a, ranges):
+    new = list(accumulate(a)) + [0]
+    return max(new[j] - new[i-1] for i, j in ranges)

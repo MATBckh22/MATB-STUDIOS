@@ -1,0 +1,13 @@
+def parse(data):
+    result = []
+    counter = 0
+    for i in data:
+        if i == 'i':
+            counter += 1
+        elif i == 'd':
+            counter -= 1
+        elif i == 's':
+            counter = counter**2
+        elif i == 'o':
+            result.append(counter)
+    return result

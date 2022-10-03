@@ -1,0 +1,7 @@
+def in_array(array1, array2):
+    substrings = []
+    for i in array2:
+        for counter in array1:
+            if counter in i:
+                substrings.append(counter)
+    return sorted(set(substrings))

@@ -1,0 +1,4 @@
+def find_it(seq):
+    for i in set(seq):
+        if seq.count(i) == 1 or (seq.count(i)-1)%2 == 0:
+            return i

@@ -1,5 +1,7 @@
 # Codewars Practices 4
 
+### Author's Note: This section of the practices might be harder than it's counterparts due to having more `6kyu` exercises and a `4kyu` exercise. 
+
 ## Playing With Digits
 
 Some numbers have funny properties. For example:
@@ -478,4 +480,155 @@ from itertools import accumulate
 def max_sum(a, ranges):
     new = list(accumulate(a)) + [0]
     return max(new[j] - new[i-1] for i, j in ranges)
+```
+
+## Find The Missing Letter
+
+Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+
+You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+The array will always contain letters in only one case.
+
+Example:
+
+```
+['a','b','c','d','f'] -> 'e'
+['O','Q','R','S'] -> 'P'
+```
+
+(Use the English alphabet with 26 letters!)
+
+Have fun coding it and please don't forget to vote and rank this kata! :-)
+
+I have also created other katas. Take a look if you enjoyed this kata!
+
+### Code
+
+```python
+def find_missing_letter(chars):
+    for i in range(len(chars)):
+        s = ord(chars[i])
+        if s+1 != ord(chars[i+1]):
+            return chr(s+1)
+```
+
+## Make The Deadfish Swim
+
+Write a simple parser that will parse and run Deadfish.
+
+Deadfish has 4 commands, each 1 character long:
+
+- `i` increments the value (initially `0`)
+- `d` decrements the value
+- `s` squares the value
+- `o` outputs the value into the return array
+
+Invalid characters should be ignored.
+
+```python
+parse("iiisdoso")  ==>  [8, 64]
+```
+
+### Code
+
+```python
+def parse(data):
+    result = []
+    counter = 0
+    for i in data:
+        if i == 'i':
+            counter += 1
+        elif i == 'd':
+            counter -= 1
+        elif i == 's':
+            counter = counter**2
+        elif i == 'o':
+            result.append(counter)
+    return result
+```
+
+## Which Are In?
+
+Given two arrays of strings `a1` and `a2` return a sorted array `r` in lexicographical order of the strings of `a1` which are substrings of strings of `a2`.
+
+Example 1:
+
+```
+a1 = ["arp", "live", "strong"]
+
+a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+```
+
+returns `["arp", "live", "strong"]`
+
+Example 2:
+
+```
+a1 = ["tarp", "mice", "bull"]
+
+a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+```
+
+returns `[]`
+
+Notes:
+
+- Arrays are written in "general" notation. See "Your Test Cases" for examples in your language.
+Beware: In some languages `r` must be without duplicates.
+
+### Code
+
+```python
+def in_array(array1, array2):
+    substrings = []
+    for i in array2:
+        for counter in array1:
+            if counter in i:
+                substrings.append(counter)
+    return sorted(set(substrings))
+```
+
+## Reverse Every Other Word in The String
+
+Reverse every other word in a given string, then return the string. Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word. Punctuation marks should be treated as if they are a part of the word in this kata.
+
+Example:
+
+```
+I really hope it works this time...
+--> I yllaer hope ti works siht time...
+```
+
+### Code
+
+```python
+def reverse_alternate(string):
+    string = " ".join(string.split())
+    if len(string) == 0:
+        return string
+    words = string.split(" ")
+    for i in range(1, len(words), 2):
+        words[i] = words[i][::-1]
+    return " ".join(words)
+```
+
+## Multiples of 3 and 5
+
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).
+
+Note: If the number is a multiple of both 3 and 5, only count it once.
+
+*Courtesy of projecteuler.net ([Problem 1](https://projecteuler.net/problem=1))*
+
+### Code
+
+```python
+def solution(number):
+    multiples = []
+    for i in range(number):
+        if i%3 == 0 or i%5 == 0:
+            multiples.append(i)
+    return sum(multiples)
 ```

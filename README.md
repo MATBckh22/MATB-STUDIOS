@@ -232,3 +232,55 @@ def sum_dig_pow(a, b): # range(a, b + 1) will be studied by the function
     return results
 ```
 
+## A Needle in The Haystack
+
+Can you find the needle in the haystack?
+
+Write a function `findNeedle()` that takes an `array` full of junk but containing one `"needle"`
+
+After your function finds the needle it should return a message (as a string) that says:
+
+`"found the needle at position "` plus the index it found the needle, so:
+
+Example:
+
+```
+["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+```
+
+### Code
+
+```python
+def find_needle(haystack):
+    return f'found the needle at position {haystack.index("needle")}'
+```
+## WeIrD StRiNg CaSe
+
+Write a function `toWeirdCase` that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
+
+The passed in string will only consist of alphabetical characters and spaces(`' '`). Spaces will only be present if there are multiple words. Words will be separated by a single space(`' '`).
+
+Example:
+
+```python
+to_weird_case('String'); # => returns 'StRiNg'
+to_weird_case('Weird string case') # => returns 'WeIrD StRiNg CaSe'
+```
+
+### Code
+
+```python
+def to_weird_case(words):
+    words = words.split(" ")
+    new_str = ''
+    for i in words:
+        for counter in range(len(i)):
+            if counter == 0:
+                new_str = new_str + i[0].upper()
+            elif counter%2 == 0:
+                new_str = new_str + i[counter].upper()
+            else:
+                new_str = new_str + i[counter].lower()
+        new_str += " "
+    return new_str[:-1]
+```

@@ -1,0 +1,5 @@
+def double_char(s):
+    double = ''
+    for i in range(len(s)):
+        double = double + s[i]*2
+    return double

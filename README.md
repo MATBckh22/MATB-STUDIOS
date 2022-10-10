@@ -284,3 +284,252 @@ def to_weird_case(words):
         new_str += " "
     return new_str[:-1]
 ```
+
+## Will You Make It?
+
+You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is `50` miles away! You know that on average, your car runs on about `25` miles per gallon. There are `2` gallons left.
+
+Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+
+Function should return `true` if it is possible and `false` if not.
+
+### Code
+
+```python
+def zero_fuel(distance_to_pump, mpg, fuel_left):
+    return mpg*fuel_left >= distance_to_pump
+```
+
+## Chicken Sexing
+
+Bob is a chicken sexer. His job is to sort baby chicks into a Male(M) and Female(F) piles. When bob can't guess can throw his hands up and declare it with a '?'.
+
+Bob's bosses don't trust Bob's ability just yet, so they have paired him with an expert sexer. All of Bob's decisions will be checked against the expert's choices to generate a correctness score.
+
+**Scoring Rules**
+
+- When they agree, he gets 1 point.
+- When they disagree but one has said '?', he gets 0.5 points.
+- When they disagree completely, he gets 0 points.
+
+### Code
+
+```python
+def correctness(bobs_decisions, expert_decisions): 
+    points = 0
+    for i in range(len(bobs_decisions)):
+        if bobs_decisions[i] == expert_decisions[i]:
+            points += 1
+        elif bobs_decisions[i] == "?" or expert_decisions[i] == "?":
+            points += 0.5
+    return points
+```
+
+## Are You Playing Banjo
+
+Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+The function takes a name as its only argument, and returns one of the following strings:
+
+```
+name + " plays banjo" 
+name + " does not play banjo"
+```
+
+Names given are always valid strings.
+
+### Code
+
+```python
+def are_you_playing_banjo(name):
+    return f'{name} plays banjo' if name.lower()[0] == 'r' else f'{name} does not play banjo'
+```
+
+## Sum Of Intervals
+
+Write a function called `sumIntervals`/`sum_intervals()` that accepts an array of intervals, and returns the sum of all the interval lengths. Overlapping intervals should only be counted once.
+
+**Intervals**
+
+Intervals are represented by a pair of integers in the form of an array. The first value of the interval will always be less than the second value. Interval example: `[1, 5]` is an interval from 1 to 5. The length of this interval is 4.
+
+**Overlapping Intervals**
+
+List containing overlapping intervals:
+
+```
+[
+   [1,4],
+   [7, 10],
+   [3, 5]
+]
+```
+
+The sum of the lengths of these intervals is 7. Since [1, 4] and [3, 5] overlap, we can treat the interval as [1, 5], which has a length of 4.
+
+Examples:
+
+```
+sumIntervals( [
+   [1,2],
+   [6, 10],
+   [11, 15]
+] ) => 9
+
+sumIntervals( [
+   [1,4],
+   [7, 10],
+   [3, 5]
+] ) => 7
+
+sumIntervals( [
+   [1,5],
+   [10, 20],
+   [1, 6],
+   [16, 19],
+   [5, 11]
+] ) => 19
+
+sumIntervals( [
+   [0, 20],
+   [-100000000, 10],
+   [30, 40]
+] ) => 100000030
+```
+
+```
+sum_of_intervals([(1, 4), (7, 10), (3, 5)]) should get [2, 3, 4, 5, 8, 9, 10] and returns the length of it which is 7
+```
+
+**Test With Large Intervals**
+
+Your algorithm should be able to handle large intervals. All tested intervals are subsets of the range `[-1000000000, 1000000000]`.
+
+### Code
+
+**Note that this is not the final solution due to performance issues:**
+
+$O(n^2)$ Solution:
+
+```python
+def sum_of_intervals(intervals): 
+    list_result = [] #empty list
+    def interval_helper(tuple_test): 
+        interval = []
+        for i in range(tuple_test[0]+1, tuple_test[1]+1):
+            if i not in list_result: #adds the intervals that doesn't overlap with existing ones in list
+                interval.append(i)
+        return interval
+    for i in range(len(intervals)):
+        list_result = list_result + interval_helper(intervals[i]) #calls the function and inputs a tuple in
+    return len(list_result)
+```
+
+This kata only accepts $O(n \log n)$, $O(n)$ or below solutions.
+
+## Pythagorean Triple
+
+Given an array of 3 non-negative integers `a`, `b` and `c`, determine if they form a pythagorean triple.
+
+A pythagorean triple is formed when:
+
+$$c^2 = a^2 + b^2$$
+
+where `c` is the largest value of `a`, `b`, `c`.
+
+For example: `a = 3`, `b = 4`, `c = 5` forms a pythagorean triple, because $5^2 = 3^2 + 4^2$
+
+**Return Values**
+
+- `1` if `a`, `b` and `c` form a pythagorean triple
+- `0` if `a`, `b` and `c` do not form a pythagorean triple
+- For Python: return `True` or `False`
+
+### Code
+
+```python
+def pythagorean_triple(integers):
+    integers = sorted(integers)
+    return int((integers[0])**2) + int((integers[1])**2) == int((integers[2]**2)) if integers[0] > 0 and integers[1] > 0 and integers[2] > 0 else 0
+```
+
+## Reversed Sequence
+
+Build a function that returns an array of integers from n to 1 where `n>0`.
+
+Example : `n=5` --> `[5,4,3,2,1]`
+
+### Code
+
+```python
+def reverse_seq(n):
+    return list(i for i in range(1, n+1))[::-1]
+```
+
+Shortened:
+
+```python
+def reverseseq(n):
+    return list(range(n, 0, -1))
+```
+
+## Name Shuffler
+
+Write a function that returns a string in which firstname is swapped with last name.
+
+Example:
+
+```
+"john McClane" --> "McClane john"
+```
+
+### Code
+
+```python
+def name_shuffler(str_):
+    return ' '.join(str_.split(" ")[::-1])
+```
+
+## Double Char
+
+Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+
+Example:
+
+```
+* "String"      -> "SSttrriinngg"
+* "Hello World" -> "HHeelllloo  WWoorrlldd"
+* "1234!_ "     -> "11223344!!__  "
+```
+
+Good luck!
+
+### Code
+
+```python
+def double_char(s):
+    double = ''
+    for i in range(len(s)):
+        double = double + s[i]*2
+    return double
+```
+
+## Invert Values
+
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+```
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+invert([]) == []
+```
+
+You can assume that all values are integers. Do not mutate the input array/list.
+
+### Code
+
+```python
+def invert(lst):
+    return list(-lst[i] for i in range(len(lst)))
+```

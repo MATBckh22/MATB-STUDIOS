@@ -1,0 +1,13 @@
+def to_weird_case(words):
+    words = words.split(" ")
+    new_str = ''
+    for i in words:
+        for counter in range(len(i)):
+            if counter == 0:
+                new_str = new_str + i[0].upper()
+            elif counter%2 == 0:
+                new_str = new_str + i[counter].upper()
+            else:
+                new_str = new_str + i[counter].lower()
+        new_str += " "
+    return new_str[:-1]

@@ -1,0 +1,11 @@
+def sum_of_intervals(intervals): 
+    list_result = [] #empty list
+    def interval_helper(tuple_test): 
+        interval = []
+        for i in range(tuple_test[0]+1, tuple_test[1]+1):
+            if i not in list_result: #adds the intervals that doesn't overlap with existing ones in list
+                interval.append(i)
+        return interval
+    for i in range(len(intervals)):
+        list_result = list_result + interval_helper(intervals[i]) #calls the function and inputs a tuple in
+    return len(list_result)

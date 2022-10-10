@@ -1,0 +1,8 @@
+def wave(people):
+    waves = []
+    for i in range(len(people)):
+        if people[i] == " ":
+            pass
+        else:
+            waves.append(people[:i] + people[i].upper() + people[i+1:])
+    return waves

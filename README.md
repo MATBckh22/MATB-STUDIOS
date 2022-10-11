@@ -172,3 +172,63 @@ Pointers are a memory address of a variable, address can be used to access or mo
 
 ### Physical Memory Considerations
 
+Since programs have different sizes and access speeds, memory management is a major function of the OS:
+
+- optimization: ensure code makes best use of physical memory available
+- OS moves around data in physical memory during execution
+- Embedded processors: may be very limited
+
+### Virtual Memory
+
+Virtual memory maps to different parts of physical memory. Usable parts of virtual memory are called **stack and heap:**
+
+- stack: where declared variables go
+- heap: where dynamic memory goes
+
+## Addressing Variables
+
+We know that every variable in memory has an address/pointer, **only register variables, constants/literals/preprocessor definitions and expressions don't have an address.** Finding the address of a variable uses `&`, type of address can be declared using `*`:
+
+```C
+int n = 4;
+double pi = 3.14159;
+int *pn = &n; //declaring a pointer integer variable pn using *, while & is the pointer of n
+double *ppi = &pi; //declaration a pointer double variable ppi
+```
+
+Here is another example of declaring, initializing and using pointers:
+
+```C
+#include <stdio.h>
+
+int main () {
+
+   int  var = 20;   /* actual variable declaration */
+   int  *ip;        /* pointer variable declaration */
+
+   ip = &var;  /* store address of var in pointer variable*/
+
+   printf("Address of var variable: %x\n", &var  );
+
+   /* address stored in pointer variable */
+   printf("Address stored in ip variable: %x\n", ip );
+
+   /* access the value using the pointer */
+   printf("Value of *ip variable: %d\n", *ip );
+
+   return 0;
+}
+```
+
+Output:
+
+```
+Address of var variable: bffd8b3c
+Address stored in ip variable: bffd8b3c
+Value of *ip variable: 20
+```
+
+Format specifiers are extremely useful to call pointers or values associated with their variables. That being said, be careful when using formatted strings.
+
+### Dereferencing Pointers
+

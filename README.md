@@ -632,7 +632,17 @@ y *= grow;
 
 ## Variable Scope 
 
+Declaring and calling functions are similar to python, a function contains:
+
+- **Return Type: data type of the value returned**
+    - `void` is similar to `None`, it's returned when nothing returns from the function when called
+- **Function Name: name of the function**
+- **Parameters: placeholder, value passed from the caller to function**
+- **Function Body: expressions in the function block**
+
 ### Example of Different Scopes in C
+
+**Local vs Global:**
 
 ```C
 int nmax = 20;
@@ -650,7 +660,7 @@ int main ( int argc , char ∗∗ argv )
 }
 ```
 
-`nmax` here is a global variable that can be used in all functions that are declared, in this case it's `main()`. Inside main we have `a`, `b`, `c` and `n`, these are variables declared and used **only** in `main()` function.
+`nmax` here is a **global variable** that can be used in all functions that are declared, in this case it's `main()`. Inside main we have `a`, `b`, `c` and `n`, these are **local variables** declared and used **only** in `main()` function, or so called *local to* `main()`.
 
 Output:
 

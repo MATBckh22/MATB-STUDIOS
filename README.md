@@ -131,8 +131,10 @@ Bitwise operators manipulate bits of the integral operands (unsigned and signed 
 | `\|` | bitwise OR
 | `&&` | AND
 | \|\| | OR
-| ?: | conditional
-| `+=` `-=` `*=` `/=` `%=`
+| `?:` | conditional
+| `==` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `^=` `\|=` `&=` | assignment
+| `,` | comma
+
  
 ## Enumeration Constants
 

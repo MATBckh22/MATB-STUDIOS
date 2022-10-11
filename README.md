@@ -263,3 +263,44 @@ Casting pointers uses a similar approach:
 
 ```C
 ppi = (double *)pn;
+```
+
+### Function with Multiple Outputs
+
+Consider the previous `ext_euclid(a, b)` function returns $gcd(a, b)$ for $ax+by=gcd(a,b)$
+
+Since global variables `a` and `b` are used, we can create their associated pointers.
+
+```C
+int ext_euclid(int a, int b, int *x, int *y);
+```
+
+When the function is called, it passes pointers to variables to receive `x` and `y`:
+
+```C
+g = ext_euclid(a,b,&x,&y); //assume a and b are declared previously
+```
+
+### Accessing Caller's Variables
+
+Here we will be writing a function to swap two integers, we need to modify variables from the caller to swap them, **pointers to variables** are used as arguments:
+
+```C
+void swap(int *x, int){
+    int temp = *x;
+    *y = *x;
+    *x = temp;
+}
+```
+
+Calling to `swap` function:
+
+```C
+int a = 5, b = 7;
+printf("a is %d while b is %d\n", a, b);
+swap(&a,&b); //calling of function swap() with two arguments a and b
+printf("a is now %d while b is %d\n", a, b);
+```
+
+### Variables Passing Out of Scope
+

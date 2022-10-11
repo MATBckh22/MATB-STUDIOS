@@ -185,7 +185,7 @@ Virtual memory maps to different parts of physical memory. Usable parts of virtu
 - stack: where declared variables go
 - heap: where dynamic memory goes
 
-## Addressing Variables
+## Addressing Variables/Pointers
 
 We know that every variable in memory has an address/pointer, **only register variables, constants/literals/preprocessor definitions and expressions don't have an address.** Finding the address of a variable uses `&`, type of address can be declared using `*`:
 
@@ -232,3 +232,34 @@ Format specifiers are extremely useful to call pointers or values associated wit
 
 ### Dereferencing Pointers
 
+Accessing/modifying addressed variables can be seen as deferencing pointers:
+
+```C
+printf("pi = %g\n", ∗ppi); // prints 3.14159\n
+*ppi = *ppi + *pn; //pi now equals to 7.14159
+```
+
+Note that null pointer `NULL` doesn't reference anything.
+
+### Casting Pointers
+
+Let's look at an example of casting **basic variables:**
+
+```C
+int n = 10, m = 21;
+double mean;
+
+mean = (double) n/m;
+printf("Value of mean: %f\n", mean);
+```
+
+Based on the example given, casting of datatypes is also known as **conversion of datatypes.** Converting variables to a specific datatypes uses the cast operator:
+
+```
+(typename) variable
+```
+
+Casting pointers uses a similar approach:
+
+```C
+ppi = (double *)pn;

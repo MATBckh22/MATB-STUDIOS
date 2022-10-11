@@ -104,7 +104,7 @@ int main(void){
 
 ## Bitwise Operators
 
-Bitwise operators manipulate bits of the integral operands (unsigned and signed `char`, `short`, `int`, `long` ):
+**Bitwise operators manipulate bits of the integral operands** (unsigned and signed `char`, `short`, `int`, `long` ):
 
 | Operator | Expression | Explanation |
 | - | - | - |
@@ -115,7 +115,96 @@ Bitwise operators manipulate bits of the integral operands (unsigned and signed 
 | `>>` | right shift | **shift the bits of the first operand to the right by a value set by the second operand**
 | `~` | one's complement | **all 0 bits are set to 1 and vice-versa**
 
-### Bitwise AND, OR
+### Bitwise AND
+
+Bitwise AND `&` sets each bit to 1 **if the corresponding bit in both operands is 1:**
+
+| Bit 1 | Bit 2 | Bit 1 & Bit 2 |
+| - | - | - |
+| 0 | 0 | 0
+| 1 | 0 | 0
+| 0 | 1 | 0
+| 1 | 1 | 1
+
+### Bitwise OR and XOR
+
+**Inclusive vs Exclusive:**
+
+- Inclusive OR `|`: each bit to 1 if either (or both bits) is 1
+- Exclusive OR `^`: each bit to 1 **if and only if either bits is 1**
+
+| Bit 1 | Bit 2 | Bit 1 `\|` Bit 2 | Bit 1 `^` Bit 2 |
+| - | - | - | - |
+| 0 | 0 | 0 | 0
+| 1 | 0 | 1 | 1
+| 0 | 1 | 1 | 1
+| 1 | 1 | 1 | 0
+
+### Bitwise Complement (One's Complement)
+
+- turn all 0 bits to 1 and vice-versa:
+
+```C
+#include <stdio.h>
+int main(void){
+    unsigned short int a = 65535, b = 13, complement_a, complement_b;
+    complement_a = ~a;
+    complement_b = ~b;
+    printf("Bitwise Complement: %d\n", complement_a);
+    printf("Bitwise Complement: %d\n", complement_b);
+    return 0;
+}
+```
+
+Largest `unsigned int` for a 16bit CPU is `65535`, this means that the complement of 0 is `65535` since $65535-0=65535$
+
+Complement of 13 will be $65535-13=65522$
+
+### Left And Right Shift
+
+`<<` and `>>` shifts the bits by a value to the left or right:
+
+```C
+#include <stdio.h>
+int main(void){
+    unsigned short int a = 13, b = 6;
+    printf("Shift Left: %d\n", a<<1);
+    printf("Shift Left: %d\n", b<<2);
+    printf("Shift Right: %d\n", a>>1);
+    printf("Shift Right: %d\n", b>>2);
+    return 0;
+}
+```
+
+We shift the variables' binary values with this example:
+
+**Left Shift:**
+
+```
+decimal a = 13
+binary a = 1101
+shifting a to the left by 1: (a<<1): 1101 --> 11010
+decimal a = 13*2 = 26
+
+decimal b = 6
+binary b = 0110
+shifting b to the left by 2: (b<<2): 0110 --> 011000
+decimal b = 6*4 = 24
+```
+
+**Right Shift:**
+
+```
+decimal a = 13
+binary a = 11010
+shifting a to the right by 1: (a>>1): 1101 --> 0110
+decimal a = 13//2 = 6
+
+decimal b = 6
+binary b = 0110
+shifting b to the left by 2: (b<<2): 0110 --> 0001
+decimal b = 6/4 = 1
+```
 
 ## Associativity - Priority of Operators
 
@@ -684,3 +773,4 @@ int main ( register int argc , register char ** argv )
     return 0;
 }
 ```
+

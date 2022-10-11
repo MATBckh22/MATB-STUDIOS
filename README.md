@@ -304,3 +304,26 @@ printf("a is now %d while b is %d\n", a, b);
 
 ### Variables Passing Out of Scope
 
+Note that pointers are invalid after variable passes out of scope:
+
+```C
+#include <stdio.h>
+
+char *get_message(){
+    char msg[] = "Aren't pointers fun?";
+    return msg;
+}
+
+int main(void){
+    char *string = get_message();
+    puts(string);
+    return 0;
+}
+```
+
+## Arrays and Pointer Arithmetic
+
+### Arrays and Pointers
+
+Primitive arrays implemented in C use **pointers to block of contiguous memory.**
+

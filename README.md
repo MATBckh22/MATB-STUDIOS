@@ -129,7 +129,7 @@ Data types are indicators of what kind of data they represent when we program ou
 | `unsigned long` | 0 to 18446744073709551615
 
 - `unsigned` values start from 0
-- `signed` values start from 
+- `signed` values (`signed char`) start from -128
 
 ### Floating-Point Types
 

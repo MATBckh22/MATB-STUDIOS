@@ -246,6 +246,88 @@ As previously discussed, `printf` is a method to print formatted strings. Format
 | `%hu` | short (unsigned)
 | `%Lf` | `long double`
 
+## About Data Size (Practices)
+
+### Manipulating Out of Range Data Sizes
+
+```C
+#include <stdio.h>
+
+int main(){
+   char c = 125;
+   c = c+10; //notice for data type signed char the range is 0-127
+   printf("%d", c);
+} 
+```
+
+Since by default, declared `char` variables are `signed char`. The range for `signed char` is -128 to 127, `c` for `135` here is out of this range:
+
+- `125`'s binary counterpart is `01111101`
+- `10`'s binary counterpart is `1010`
+- adding `125` and `10` together we get `10000111`
+- get the most significant bit of `10000111` which is `1`, **this represents a negative number**
+- finding 2's complement of `10000111`: `01111000` + `1` = `01111001`: `121` in decimal system
+- considering the most significant bit, `-121` is returned
+
+### `sizeof()` and Unsigned Values
+
+`sizeof()` is a function that computes the size of the operand:
+
+```C
+printf("%d\n",sizeof(char)); //prints 1
+printf("%d\n",sizeof(int)); //prints 4
+
+int a = 20;
+char b = 'b';
+printf("%d\n%d\n",sizeof(a),sizeof(b)); //prints 4 and 1
+```
+
+Comparing `sizeof()` values with unsigned values and prioritizing the order of evaluations:
+
+```C
+#include <stdio.h>
+
+int main(){
+   if (sizeof(int) > -1)
+      printf("Yes");
+   else
+      printf("No"); //desired output
+   return 0;
+} 
+```
+
+- `sizeof(int)` is 4 which is a `signed int`
+- `-1` here is an `unsigned int`
+
+From the order of evaluations in C, **when integer values are compared with unsigned values, the int is promoted to unsigned.** In this case, **negative numbers are stored in 2's complement form,** so the unsigned value of `-1` is significantly higher than `sizeof(int)`, which in result prints `No`.
+
+### Dividing between Ints
+
+```C
+#include <stdio.h>
+
+int main(){
+   float c = 5.0;
+   printf ("Temperature in Fahrenheit is %.2f", (9/5)*c + 32);
+   return 0;
+}
+```
+
+Since `9/5` is expressed as int divided by int, it will be expressed as `9//5`. A fix for this can be expressed as `9.0/5.0`.
+
+### Using *Inaccurate* Format Specifiers
+
+Be careful when printing formatted strings, using `printf` with incorrect specifiers will return incorrect values:
+
+```C
+#include <stdio.h>
+int main(){
+   char a = '1';
+   printf("%d", a); //prints 49
+   return 0;
+}
+```
+
 [More specifiers](https://www.freecodecamp.org/news/format-specifiers-in-c/)
 
 ## Binding Variables
@@ -384,5 +466,3 @@ Together, `const char msg[]` will be a constant array of characters.
 - `putchar(char)`: print character
 - `char = getchar()`: return character input from `stdin`
 - `string = gets(string)`: return string input from `stdin`
-
-

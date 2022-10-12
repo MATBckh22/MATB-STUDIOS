@@ -206,7 +206,7 @@ shifting b to the left by 2: (b<<2): 0110 --> 0001
 decimal b = 6/4 = 1
 ```
 
-## Associativity - Priority of Operators
+## Associativity - Priority of Operators - Order of Evaluation
 
 | Operators | Operator Type |
 | - | - |
@@ -224,7 +224,81 @@ decimal b = 6/4 = 1
 | `==` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `^=` `\|=` `&=` | assignment
 | `,` | comma
 
- 
+## Precedence and Order of Evaluation
+
+**Order of Assignments**
+```C
+int a = 2;
+a=a+(a=a-(a*a));
+printf("%d", a);
+```
+
+- `a*a`: 4
+- assignment of `a`: `(a=a-(a*a))`
+    - `(a=2-4)`: `a = -2`
+- since `a` is now `-2`, another assignment of `a`: `a=-2+(-2)`
+    - `a = -4`
+
+**Relational Operators**
+
+```C
+int a = 0;
+int b;
+a = (a == (a == 1));
+printf("%d", a); //prints 1
+```
+
+- inner parentheses: `(a == 1)` evaluated to `0`
+- outer paratheses: `(a == 0)` evaluated to `1`
+- assignment of `a`: `a = 1`
+
+```C
+int x, y = 5, z = 5;
+x = y == z;
+printf("%d", x);
+```
+
+- `(y == z)` evaluated to `1`
+- assignment of `x`: `x = 1`
+
+### Increment and Decrement Operators (Prefix vs Postfix)
+
+```C
+int p, i = 2, j = 3;
+p = -i++; 
+p = i+++j;
+p = i+--j;
+p = i+++--j;
+p = i+++i++;
+p = ++i+(++i);
+```
+
+- `p = -i++`
+    - `-i++` evaluated to `3` but not assigned to `p` yet
+    - `p = -2`
+- `p = i+++j`
+    - `i++` is considered first because it carries a higher precedence, therefore it evaluates to `3` but not assigned to `p` yet
+    - `2+j` where `j = 3`
+    - `p = 5`
+- `p = i+--j`
+    - `--j` **instantly** evaluates to `2`
+    - `i+2` where `i = 2`
+    - `p = 4`
+- `p = i+++--j`
+    - `--j` **instantly** evaluates to `2`
+    - `i++` evaluated to `3` but not assigned to `p` yet
+    - `p = 2+2`: `p = 4`
+- `p = i+++i++`
+    - 1st occurence of `i++` is evaluated to `3` but not assigned yet
+    - consider 2nd occurence of `i++` is already `3++` since the 1st occurence of `i++` **is called to execute**
+    - `p = 2+3`: `p = 5`
+- `p = ++i+(++i)`
+    - **parentheses has the highest precedence:** `(++i)` **instantly** evaluates to `3`, note that **all** `i` **are also instantly evaluated to** `3`**, postfix operators call and update values to every occurence of the desired variable that has not yet been executed**
+    - since `i` is now `3`, the other `++i` is now `++3`:
+        - `++i` gets evaluated to `4`: `++4`
+        - `(++i)`, was previously `(++3)`, **is now** `(++4)` due to another call by postfix `++i`
+    - `p = 4+4`: `p = 8`
+
 ## Enumeration Constants
 
 - `enum`

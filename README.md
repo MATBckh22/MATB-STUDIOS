@@ -1,5 +1,7 @@
 # C Notes 2
 
+### Author's Note: Practices shown in **Precedence - Order of Evaluation** are extremely important, it's best to revise them through to understand how operator priority is evaluated in C.
+
 ## Operators
 
 ### Logical Operators
@@ -224,7 +226,7 @@ decimal b = 6/4 = 1
 | `==` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `^=` `\|=` `&=` | assignment
 | `,` | comma
 
-## Precedence and Order of Evaluation
+## Precedence and Order of Evaluation (Practices)
 
 **Order of Assignments**
 ```C
@@ -298,6 +300,52 @@ p = ++i+(++i);
         - `++i` gets evaluated to `4`: `++4`
         - `(++i)`, was previously `(++3)`, **is now** `(++4)` due to another call by postfix `++i`
     - `p = 4+4`: `p = 8`
+
+### Arithmetic Vs Assignment Operators
+
+```C
+int a=12;
+a+=a-=a*a;
+```
+
+- `a*a` evaluated to `12*12 = 144`
+- `a-=144` where `a` is still `12`:
+    - `a = 12 - 144`: `a = -132`
+- `a+= -132` where a is `-132`:
+    - `a = -132 + (-132)`
+- `a = -264`
+
+```C
+int a=2;
+a%=4-1;
+a+=a*=a-=a*=3;
+```
+
+- `a*=3` evaluated to `2*6 = 12`
+- `a-=12` where `a` is `12:
+    - `a = 12 - 12`: `a = 0`
+- `a*=0` evaluated `0`
+- `a+=0` evaluated to `0`
+- `a = 0`
+
+```C
+#include <stdio.h>
+void main ( ){
+    int x, y = 7;
+    float z = 4;
+    x = (y = y + 6, y / z);
+    printf ("x = %d\n", x);
+}
+```
+
+- parentheses evaluated from left to right separated by comma: `y += 6`
+    - `y = 13`
+- `y/z` is evaluated as `y//z`: `13//4 = 3` 
+- `x = 3`
+
+### Order of Evaluation on `int` and `float` Types
+
+Precedences are prioritized from highest precision point to lowest:
 
 ## Enumeration Constants
 

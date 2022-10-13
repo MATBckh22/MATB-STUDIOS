@@ -347,6 +347,12 @@ void main ( ){
 
 Precedences are prioritized from highest precision point to lowest:
 
+```mermaid
+flowchart TD;
+id1(a)-->id2(b)
+id2(b)-->id3(c)
+```
+
 ## Enumeration Constants
 
 - `enum`

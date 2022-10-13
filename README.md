@@ -347,7 +347,7 @@ void main ( ){
 
 Precedences are prioritized from highest precision point to lowest:
 
-**Left to Right**
+**Left (Highest) to Right (Lowest)**
 
 ```mermaid
 flowchart LR;
@@ -358,6 +358,24 @@ id4(long)-->id5(unsigned)
 id5(unsigned)-->id6(int)
 id6(int)-->id7(char, short)
 ```
+
+```C
+#include <stdio.h>
+void main ( ){
+    float a, b, c;
+    a = 7 / 2;
+    b = 7 / 2 * 1.0;
+    c = 1.0 * 7 / 2;
+    printf ("a = %f, b = %f, c = %f", a, b, c);
+}
+```
+
+- `a`: division of int between int then change to float `3.000000`
+- `b`: division of int between int then a multiplication of int and float: `3.000000`
+- `c`: multiplication of float and int, **int is converted to float first then multiply:** `1.0*7.0 = 7.000000`
+    - division of float between int, int is also converted to float first before being divided: `7.000000/2.000000 = 3.500000`
+
+### **Note that** `float` **always outputs 6-7 precision digits, in this context it's 6.**
 
 ## Enumeration Constants
 

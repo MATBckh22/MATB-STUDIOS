@@ -325,5 +325,62 @@ int main(void){
 
 ### Arrays and Pointers
 
-Primitive arrays implemented in C use **pointers to block of contiguous memory.**
+Primitive arrays implemented in C use **pointers to block of contiguous memory. They are immutable.**
 
+Initializing the array can be done with this example:
+
+```C
+double prices[5] = {100.0, 2.5, 5.5, 6.0, 50.5};
+```
+
+Note that the number of values in `{}` **cannot be larger than the values in** `[]`. An alternative way to initialize an array without knowing how many values are there beforehand:
+
+```C
+double prices[] = {100.0, 2.5, 5.5, 6.0, 50.5};
+```
+
+Accessing arrays have the same syntax as python:
+
+```C
+prices[2]; //5.5
+printf("%lf",prices[2]);
+```
+
+Assigning array indexes to a variable:
+
+```C
+double shirt_price = prices[2];
+```
+
+**Assigning array indexes to a pointer:**
+
+```C
+double *pr = prices; //assignment of the entire array to a pointer
+double *pr = &prices[0] //assignment of an element in array to a pointer
+```
+
+### Example of Declaration, Assignment and Array Access
+
+[Visualization](https://pythontutor.com/render.html#code=%23include%20%3Cstdio.h%3E%0A%20%0Aint%20main%20%28%29%20%7B%0A%0A%20%20%20int%20n%5B10%5D%3B%20/*%20n%20is%20an%20array%20of%2010%20integers%20*/%0A%20%20%20int%20i,j%3B%0A%20%0A%20%20%20/*%20initialize%20elements%20of%20array%20n%20to%200%20*/%20%20%20%20%20%20%20%20%20%0A%20%20%20for%20%28%20i%20%3D%200%3B%20i%20%3C%2010%3B%20i%2B%2B%20%29%20%7B%0A%20%20%20%20%20%20n%5B%20i%20%5D%20%3D%20i%20%2B%20100%3B%20/*%20set%20element%20at%20location%20i%20to%20i%20%2B%20100%20*/%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20/*%20output%20each%20array%20element's%20value%20*/%0A%20%20%20for%20%28j%20%3D%200%3B%20j%20%3C%2010%3B%20j%2B%2B%20%29%20%7B%0A%20%20%20%20%20%20printf%28%22Element%5B%25d%5D%20%3D%20%25d%5Cn%22,%20j,%20n%5Bj%5D%20%29%3B%0A%20%20%20%7D%0A%20%0A%20%20%20return%200%3B%0A%7D&cumulative=false&curInstr=44&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=c_gcc9.3.0&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```C
+#include <stdio.h>
+ 
+int main () {
+
+   int n[10]; /* n is an array of 10 integers */
+   int i,j;
+ 
+   /* initialize elements of array n to 0 */         
+   for ( i = 0; i < 10; i++ ) {
+      n[ i ] = i + 100; /* set element at location i to i + 100 */
+   }
+   
+   /* output each array element's value */
+   for (j = 0; j < 10; j++ ) {
+      printf("Element[%d] = %d\n", j, n[j] );
+   }
+ 
+   return 0;
+}
+```

@@ -253,7 +253,7 @@ mean = (double) n/m;
 printf("Value of mean: %f\n", mean);
 ```
 
-Based on the example given, casting of datatypes is also known as **conversion of datatypes.** Converting variables to a specific datatypes uses the cast operator:
+Based on the example given, casting of datatypes is also known as **conversion of data types.** Converting variables to a specific data types uses the cast operator:
 
 ```
 (typename) variable

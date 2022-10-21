@@ -37,7 +37,7 @@ to_binary(101011)
 
 - binary to decimal
 
-```python=
+```python
 def to_decimal(x):
     binary = ''
     while x != 0:

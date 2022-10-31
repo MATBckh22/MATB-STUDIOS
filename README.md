@@ -1,18 +1,111 @@
-# MATB-STUDIOS 
+# Lab Practice 2
 
-## MATB-Reset and Improve Program
------
-### Materials
+## Sums of Integers to 10
 
-Welcome to MATB's private library of the program! This library features a detailed walkthrough of self-study materials related to members' undergraduate major. Feel free to pick up one of the materials and start learning! All lecture notes are written by the members themselves with reference to said materials. Please contact the right author for any inquiry regarding them.
+```C
+#include <stdio.h>
 
-- MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
-- CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-- MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md))
-- MIT6.042J: [MIT Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
-- MIT6.092: [MIT Introduction to Java](https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/lecture-notes/)
+int main(){
+    int sum = 0;
+    for (int i = 0; i < 11; i++){
+        printf("%d\n",sum);
+        sum += i;
+    }
+    printf("%d\n",sum);
+    return 0;
+}
+```
 
-## For Writers 
+## Sums and Average
 
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to [here](https://github.com/MATBckh22/MATB-STUDIOS/blob/0adfa1dafeb0b6c8d013c515beae7a52ab102895/README.md)
+```C
+#include <stdio.h>
+
+int main(){
+    int sum = 0, number;
+    float average;
+    for (int i = 0; i < 11; i++){
+        scanf("%d",&number);
+        sum += number;
+    }
+    average = sum/10;
+    printf("The sum is %d and the average is %.2f", sum, average);
+}
+```
+
+## Multiplication Table
+
+```C
+#include <stdio.h>
+
+int main(){
+    int number;
+    scanf("%d", &number);
+    for (int i = 1; i <= 20; i++){
+        printf("%d x %d = %d\n", number, i, i*number);
+    }
+    return 0;
+}
+```
+
+## Sum and Average of n Terms
+
+```C
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int sum = 0, n, count = 0;
+    float average;
+    scanf("%d", &n);
+    printf("The odd numbers until %d are\n", n);
+    for (int i = 0; i <= n; i++){
+        if (i % 2 != 0){
+            count += 1;
+            sum += i;
+            printf("%d\n", i);
+        }
+    }
+    average = sum/count;
+    printf("The sum is %d and the average is %.2f", sum, average);
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+## Right angle Triangle of Numbers
+
+```C
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= i; j++){
+            printf("%d",j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+## Factorial 
+
+```C
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int n, fact = 1;
+    scanf("%d",&n);
+    for (int i = 1; i <= n; i++){
+        fact *= i;
+    }
+    printf("The factorial for %d is %d", n, fact);
+    return 0;
+}
+```
+

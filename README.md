@@ -12,6 +12,15 @@ for (int i = 0; i < SIZE; i++){
 }
 ```
 
+### Alternate Approach
+
+```C
+char s[5] = {'a','b','c','d','e'};
+for (int i = 0; s[i] != '\0'; i++){
+    printf("%c\n",s[i]);
+}
+```
+
 ## Absolute Values
 
 `abs` can be used in C too, just like python:
@@ -29,5 +38,3 @@ char *s;
 asprintf(&s, "%d", number);
 return s;
 ```
-
-##

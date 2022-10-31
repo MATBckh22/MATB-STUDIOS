@@ -73,7 +73,7 @@ int main(){
 }
 ```
 
-## Right angle Triangle of Numbers
+## Right Angle Triangle of Numbers
 
 ```C
 #include <stdio.h>
@@ -109,3 +109,44 @@ int main(){
 }
 ```
 
+## Harmonic Sum
+
+```C
+#include <stdio.h>
+
+int main(){
+    int n;
+    float sum = 0;
+    scanf("%d",&n);
+    for (float i = 1; i <= n; i++){
+        sum += 1/i;
+    }
+    printf("The harmonic sum for %d is %f", n, sum);
+    return 0;
+}
+```
+
+## Perfect Numbers
+
+```C
+#include <stdio.h>
+
+int main(){
+    int n;
+    int sum = 0;
+    scanf("%d",&n);
+    for (int i = 1; i < n; i++){
+        if (n%i == 0){
+            sum += i;
+            printf("%d\n",i);
+        }
+    }
+    if (sum == n)
+        printf("The number %d is a perfect number!\n", n);
+    else
+        printf ("The number %d is not a perfect number!\n",n);
+    return 0;
+}
+```
+
+## Prime Numbers

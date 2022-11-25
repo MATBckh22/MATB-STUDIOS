@@ -9,7 +9,7 @@
 | Operator | Meaning | Examples |
 | - | - | - |
 | `&&` | and | `('A' == 'a') && (3 == 3);` evaluates to 0
-| \|\| | or | 2 == 3 \|\| 'A' == 'a'; evaluates to 1
+| `\|\|` | or | `2 == 3 \|\| 'A' == 'a';` evaluates to 1
 | `!` | not | `!(3 == 3);` evaluates to 0
 
 Example:
@@ -210,23 +210,36 @@ decimal b = 6/4 = 1
 
 ## Associativity - Priority of Operators - Order of Evaluation
 
-| Operators | Operator Type |
-| - | - |
-| `*` `/` `%` | multiplicative
-| `+` `-` | additive and subtractive
-| `<<` `>>` | shifting
-| `<` `<=` `>` `>=` | relational
-| `==` `!=` | equality
-| `&` | bitwise AND
-| `^` | bitwise XOR
-| `\|` | bitwise OR
-| `&&` | AND
-| \|\| | OR
-| `?:` | conditional
-| `==` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `^=` `\|=` `&=` | assignment
-| `,` | comma
+| Operators | Operator Type | Associativity (LR/RL) |
+| - | - | - |
+| `()` | parentheses | LR
+| `[]` | brackets (array subscript) | LR
+| `.` | member selection via object name | LR
+| `->` | member selection via pointer | LR
+| `++` `--` | postfix increment/decrement | LR
+| `++` `--` | prefix increment/decrement | ==RL==
+| `!` `~` | logical negation / bitwise complement | ==RL==
+| `(type)` | type casting | ==RL==
+| `sizeof` | byte size check | ==RL==
+| `*` `/` `%` | multiplicative | LR
+| `+` `-` | additive and subtractive | LR
+| `<<` `>>` | shifting | LR
+| `<` `<=` `>` `>=` | relational | LR
+| `==` `!=` | equality | LR
+| `&` | bitwise AND | LR
+| `^` | bitwise XOR | LR
+| `\|` | bitwise OR | LR
+| `&&` | logical AND | LR
+| \|\| | logical OR | LR
+| `?:` | conditional | LR
+| `==` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `^=` `\|=` `&=` | assignment | ==RL==
+| `,` | comma | LR
 
 ## Precedence and Order of Evaluation (Practices)
+
+![Precedence and Associativity](https://media.geeksforgeeks.org/wp-content/uploads/20190708173715/Operator-Precedence-and-Associativity-2.jpg)
+
+[Reference](https://www.geeksforgeeks.org/operator-precedence-and-associativity-in-c/)
 
 **Order of Assignments**
 ```C
@@ -480,7 +493,7 @@ Block can be empty too: `{}`
 
 Unlike C++, Java, Python etc that has `boolean` values (can include `<stdbool.h>`). **In C, condition is an expression or a series of expressions.**
 
-- if expression is non-zero - **Condition is true**x
+- if expression is non-zero - **Condition is true**
 - expression must be numeric (or a pointer)
 
 ```C
@@ -619,6 +632,17 @@ for (i = 0, i <= n, i++){
     printf("hi!\n");
 }
 ```
+
+**Syntax:**
+
+```
+for (initial value; condition; increment or decrement;){
+expressions;
+}
+```
+
+**Note that missing any one of the statements in** `for` **loops will result in an infinite loop.**
+
 
 ### Factorial Example
 
@@ -935,4 +959,3 @@ int main ( register int argc , register char ** argv )
     return 0;
 }
 ```
-

@@ -246,6 +246,8 @@ As previously discussed, `printf` is a method to print formatted strings. Format
 | `%hu` | short (unsigned)
 | `%Lf` | `long double`
 
+[More specifiers](https://www.freecodecamp.org/news/format-specifiers-in-c/)
+
 ## About Data Size (Practices)
 
 ### Manipulating Out of Range Data Sizes
@@ -269,7 +271,7 @@ Since by default, declared `char` variables are `signed char`. The range for `si
 - finding 2's complement of `10000111`: `01111000` + `1` = `01111001`: `121` in decimal system
 - considering the most significant bit, `-121` is returned
 
-### `sizeof()` and Unsigned Values
+### `sizeof()` and Signed Values
 
 `sizeof()` is a function that computes the size of the operand:
 
@@ -296,10 +298,10 @@ int main(){
 } 
 ```
 
-- `sizeof(int)` is 4 which is a `signed int`
-- `-1` here is an `unsigned int`
+- `sizeof(int)` is 4 which is an `unsigned int`
+- `-1` here is an `signed int`
 
-From the order of evaluations in C, **when integer values are compared with unsigned values, the int is promoted to unsigned.** In this case, **negative numbers are stored in 2's complement form,** so the unsigned value of `-1` is significantly higher than `sizeof(int)`, which in result prints `No`.
+From the order of evaluations in C, **when integer values are compared with unsigned values, the int is promoted to unsigned.** In this case, when `-1` is promoting to `unsigned`, **negative numbers are stored in 2's complement form,** so the unsigned value of `-1` is significantly higher than `sizeof(int)`, which in result prints `No`.
 
 ### Dividing between Ints
 
@@ -313,7 +315,7 @@ int main(){
 }
 ```
 
-Since `9/5` is expressed as int divided by int, it will be expressed as `9//5`. A fix for this can be expressed as `9.0/5.0`.
+Since `9/5` is expressed as int divided by int, it will be expressed as `9//5`. A fix for this can be expressed as `9.0/5.0` or `1.0*9/5` (floating point precedence).
 
 ### Using *Inaccurate* Format Specifiers
 
@@ -327,8 +329,6 @@ int main(){
    return 0;
 }
 ```
-
-[More specifiers](https://www.freecodecamp.org/news/format-specifiers-in-c/)
 
 ## Binding Variables
 

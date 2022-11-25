@@ -63,9 +63,41 @@ error:
 
 ### C doesn't have data type string, strings are represented as **character arrays.** C doesn't restrict the length of the string, end of the string is specified using 0.
 
+### Initialization and Declaration
+
+**Assign Value to Each Element**
+
+```c
+int mark[6];
+mark[0] = 12;
+mark[1] = 15;
+mark[2] = 25;
+mark[3] = 30;
+mark[4] = 20;
+mark[5] = 50;
+```
+
+**Assign Values During Declaration**
+
+```C
+int mark[6] = {12,15,25,30,20,50};
+```
+
+Size of declaration is not necessary:
+
+```C
+int mark[] = {12,15,25,30,20,50};
+```
+
+**Initialize all elements to 0**
+
+```C
+int mark[6] = 0;
+```
+
 ### Example
 
-`'Hello'` can be represented using an array: `{'h','e','l','l','\0'}`
+`'Hello'` can be represented using an array: `{'h','e','l','l','o','\0'}`
 
 Hence, there are several declarations to declare a string:
 
@@ -253,7 +285,7 @@ mean = (double) n/m;
 printf("Value of mean: %f\n", mean);
 ```
 
-Based on the example given, casting of datatypes is also known as **conversion of data types.** Converting variables to a specific data types uses the cast operator:
+Based on the example given, casting of datatypes is also known as **conversion of datatypes.** Converting variables to a specific datatypes uses the cast operator:
 
 ```
 (typename) variable

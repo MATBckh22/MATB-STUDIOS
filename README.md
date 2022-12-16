@@ -1,5 +1,3 @@
-{%hackmd @themes/orangeheart %}
-
 # Control Flow, Pointers, Memory Addressing, Arrays, Pointer Arithmetic, Strings and Sorting Algorithms
 
 ## `goto` - Unconditional Code Jumping
@@ -10,7 +8,7 @@
 - label is the named location in the code
     - same form as a variable followed by `:`
 
-```C
+```c
 start:
 {
     if (cond)
@@ -85,10 +83,13 @@ mark[5] = 50;
 int mark[6] = {12,15,25,30,20,50};
 ```
 
-Size of declaration is not necessary:
+Note that the number of values in `{}` **cannot be larger than the values in** `[]`. An alternative way to initialize an array without knowing how many values are there beforehand:
+
+**Size of declaration is not necessary**
 
 ```C
 int mark[] = {12,15,25,30,20,50};
+double prices[] = {100.0, 2.5, 5.5, 6.0, 50.5};
 ```
 
 **Initialize all elements to 0**
@@ -104,12 +105,6 @@ Initializing the array can be done with this example:
 
 ```C
 double prices[5] = {100.0, 2.5, 5.5, 6.0, 50.5};
-```
-
-Note that the number of values in `{}` **cannot be larger than the values in** `[]`. An alternative way to initialize an array without knowing how many values are there beforehand:
-
-```C
-double prices[] = {100.0, 2.5, 5.5, 6.0, 50.5};
 ```
 
 Accessing arrays have the same syntax as python:
@@ -160,7 +155,7 @@ int main () {
 
 ### *Digression: Character Arrays*
 
-> **C doesn't have data type string, strings are represented as character arrays. C doesn't restrict the length of the string, end of the string is specified using 0.**
+> **C doesn't have data type string, strings are represented as character arrays. C doesn't restrict the length of the string, end of the string is specified using `\0`.**
 
 ### Example
 
@@ -173,6 +168,15 @@ char str[] = "hello";
 char str[10] = "hello"; /* 10 is the size of the array, when using this make sure the array size is enough for the input */
 char str[] = {'h','e','l','l','o',0};
 ```
+
+### `size_t` or Any Unsigned Type
+
+- might be seen as loop variables
+    - typically $>=0$
+- only non-negative values
+- 32 bit: `typedef` - `unsigned int`
+- 64 bit: `typedef` - `unsigned long long`
+- used for array indexing and looping
 
 ### Comparing Strings
 
@@ -209,52 +213,6 @@ strcmp("a", "a"); /* returns ==0 */
     - input is read from `str` variable
     - returns the number of items read or negative value on error
 
-## File I/O
-
-C allows us to read data from text/binary files using `fopen()`:
-
-```C
-FILE*fopen(char name[], char mode[])
-```
-
-- mode can be:
-    - `"r"`: read only
-    - `"w"`: write only
-    - `"a"`: append
-    - `"b"`: appended for binary files
-- `fopen` returns a pointer to file stream if it exists or `null` otherwise
-- `<stdin.h>` and `<stdout.h>` are also **FILE** datatypes
-- `stderr` corresponds to standard error output (different from `stdout`)
-
-- `int fclose(FILE*fp)`
-    - closes stream
-    - `fclose()` is automatically called on all open files when program terminates
-
-### File Input
-
-- `getc(FILE*fp)`
-    - reads a single character from stream
-    - returns character read or EOF
-
-- `char[] fgets(char line[], int maxlen, FILE*fp)`
-    - reads a single line up to maxlen characters from input stream
-    - returns a pointer in character array that stores the line
-    - return `null` if end of stream
-
-### File Output
-
-- `putc(int c, FILE*fp)`
-    - writes a single character c to output
-    - returns character returned or EOF
-
-- `int fputs(char line[], FILE*fp)`
-    - writes single line to output
-    - returns 0 on success, otherwise EOF
-
-- `int fscanf(FILE*fp, char format[], arg1, arg2)`
-    - similar to `scanf`, `sscanf`
-    - reads items from input
-
 ## Pointers and Addresses
 
 Pointers are a memory address of a variable, address can be used to access or modify a variable from anywhere. This is extremely useful for data structures and [obfuscating](https://en.wikipedia.org/wiki/Obfuscation_(software)) code.
@@ -286,7 +244,9 @@ Virtual memory maps to different parts of physical memory. Usable parts of virtu
 
 ## Addressing Variables/Pointers
 
-We know that every variable in memory has an address/pointer, **only register variables, constants/literals/preprocessor definitions and expressions don't have an address.** Finding the address of a variable uses `&`, type of address can be declared using `*`:
+### Basic Syntax
+
+We know that every variable in memory has an address/pointer, **only register variables, constants/literals/preprocessor definitions and expressions don't have an address.** Finding the address of a variable (accessing address) uses `&`, type of address can be declared using `*`:
 
 ```C
 int n = 4;
@@ -295,7 +255,9 @@ int *pn = &n; //declaring a pointer integer variable pn using *, while & is the 
 double *ppi = &pi; //declaration a pointer double variable ppi
 ```
 
-Here is another example of declaring, initializing and using pointers:
+### Using Pointers
+
+Here is an example of declaring, initializing and using pointers:
 
 ```C
 #include <stdio.h>
@@ -328,6 +290,34 @@ Value of *ip variable: 20
 ```
 
 Format specifiers are extremely useful to call pointers or values associated with their variables. That being said, be careful when using formatted strings.
+
+### Pointers - Function Arguments
+
+**Pass-by Reference**
+
+Pass-by Reference refers to passing the address of an argument to a function as the parameter. **This allows value modification outside the function:**
+
+```C
+#include <stdio.h>
+
+void swapnum(int *i, int *j) {
+  int temp = *i;
+  *i = *j;
+  *j = temp;
+}
+
+int main(void) {
+  int a = 10;
+  int b = 20;
+
+  swapnum(&a, &b);
+  printf("A is %d and B is %d\n", a, b);
+  return 0;
+}
+```
+
+- `swapnum` call uses `&` to pass address of the value
+- parameters `*i` and `*j` are pointers
 
 ### Dereferencing Pointers
 
@@ -420,7 +410,55 @@ int main(void){
 }
 ```
 
-## Arrays and Pointers
+## File I/O
 
-### Pointers
+All input and output are performed with streams:
+- sequences of bytes
+- input: bytes flow device --> memory
+- output: bytes flow memory --> device
 
+### File Open / Close
+
+C allows us to read data from text/binary files using `fopen()`:
+
+```C
+FILE pointer_name = fopen(char name[], char mode[])
+```
+
+- mode can be:
+    - `"r"`: read only
+    - `"w"`: write only
+    - `"a"`: append
+    - `"b"`: appended for binary files
+- `fopen` returns a pointer to file stream if it exists or `null` otherwise
+- `<stdin.h>` and `<stdout.h>` are also **FILE** datatypes
+- `stderr` corresponds to standard error output (different from `stdout`)
+
+- `int fclose(FILE*fp)`
+    - closes stream
+    - `fclose()` is automatically called on all open files when program terminates
+
+### File Input
+
+- `getc(FILE*fp)`
+    - reads a single character from stream
+    - returns character read or EOF
+
+- `char[] fgets(char line[], int maxlen, FILE*fp)`
+    - reads a single line up to maxlen characters from input stream
+    - returns a pointer in character array that stores the line
+    - return `null` if end of stream
+
+### File Output
+
+- `putc(int c, FILE*fp)`
+    - writes a single character c to output
+    - returns character returned or EOF
+
+- `int fputs(char line[], FILE*fp)`
+    - writes single line to output
+    - returns 0 on success, otherwise EOF
+
+- `int fscanf(FILE*fp, char format[], arg1, arg2)`
+    - similar to `scanf`, `sscanf`
+    - reads items from input

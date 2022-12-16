@@ -1,18 +1,53 @@
-# MATB-STUDIOS 
+# Structures, Unions and Bit Manipulation
 
-## MATB-Reset and Improve Program
------
-### Materials
+## Concept of Structures
 
-Welcome to MATB's private library of the program! This library features a detailed walkthrough of self-study materials related to members' undergraduate major. Feel free to pick up one of the materials and start learning! All lecture notes are written by the members themselves with reference to said materials. Please contact the right author for any inquiry regarding them.
+Structures are derived from different data types, **they're a collection of related variables under one name.**
 
-- MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
-- CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-- MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md))
-- MIT6.042J: [MIT Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
-- MIT6.092: [MIT Introduction to Java](https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/lecture-notes/)
+- used to define records stored in files
+- formation of complex data structures
+    - linked lists
+    - queues
+    - stacks
+    - trees
 
-## For Writers 
+## Syntax
 
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to [here](https://github.com/MATBckh22/MATB-STUDIOS/blob/0adfa1dafeb0b6c8d013c515beae7a52ab102895/README.md)
+```C
+struct structure_name{
+data_type member1
+data_type member2
+}; //remember the semicolon!
+```
+
+Example:
+
+```C
+struct Person {
+    char gender;
+    unsigned int age;
+    char name[50];
+    int citNo;
+    float salary;
+};
+```
+
+## Self-Referential Structure
+
+Structures cannot contain an instance of itself, **however pointers of the structure can be included:**
+
+```C
+struct employee2 {
+    char firstName[20];
+    char lastName[20];
+    unsigned int age;
+    char gender;
+    float hourlySalary;
+    struct employee2 person; // ERROR
+    struct employee2 *ePtr; // pointer
+};
+```
+
+Pointers to reference the address of `struct employee2` can be accepted.
+
+## Definition  

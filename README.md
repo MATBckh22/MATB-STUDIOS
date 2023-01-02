@@ -1,3 +1,5 @@
+{%hackmd @themes/orangeheart %}
+
 # The C Programming Language
 
 ### Author's Note: The notes on this page will not only include current lecture's, but also other resources to give a more comprehensive study on C. Some examples will be compared with similar code but written in Python as well.
@@ -466,3 +468,259 @@ Together, `const char msg[]` will be a constant array of characters.
 - `putchar(char)`: print character
 - `char = getchar()`: return character input from `stdin`
 - `string = gets(string)`: return string input from `stdin`
+
+## C Preprocessor
+
+Preprocessors are not included in the compiler, they're used solely for a text substitution tool to reduce repetitive code. It instructs the compiler pre-process before compilation.
+
+![c preprocessors](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Preprocessor-In-C.png)
+
+### Types of Preprocessors
+
+| Preprocessor | Description |
+| - | - |
+| `#define` | substitutes macro
+| `#include` | inserts header files
+| `#undef` | undefines macro
+| `#ifdef` | returns true if macro is **defined**
+| `#ifndef` | return true if macro is **not defined**
+| `#if` | tests if compile time condition is true
+| `#else` | alternative for `#if`
+| `#elif` | `#if` and `#else` in one statement
+| `#endif` | ends conditional macro
+| `#error` | prints error message on stderr
+| `#pragma` | standardized method to issue special commands to compiler
+
+### Macros for `#define`, `#undef` and `#include`
+
+`#define` **can replace certain variables that are used often:**
+
+```C
+#include <stdio.h>
+
+// macro definition
+#define LIMIT 5
+int main()
+{
+	for (int i = 0; i < LIMIT; i++) {
+		printf("%d \n",i);
+	}
+
+	return 0;
+}
+```
+
+Output:
+
+```
+0
+1
+2
+3
+4
+```
+
+You could use `#undef` to undefine the macro.
+
+**Macro for simple function:**
+
+```C
+#include <stdio.h>
+
+// macro with parameter
+#define AREA(l, b) (l * b)
+int main()
+{
+	int l1 = 10, l2 = 5, area;
+
+	area = AREA(l1, l2);
+
+	printf("Area of rectangle is: %d", area);
+
+	return 0;
+}
+```
+
+Similar to functions, the macro find for `AREA(l, b)` and passes `l` and `b` values to the macro and replace with `(l * b)`.
+
+**Include either header files or files from system libraries:**
+
+- program to calculate factorial:
+
+```C
+#include <stdio.h>
+
+int fact(int a){
+    double mult = 1;
+    for (int i = 1; i <= a; i++){
+        mult *= i;
+    }
+    return mult;
+}
+
+int fact_without_value(){
+    int a;
+    scanf("%d",&a);
+    double mult = 1;
+    for (int i = 1; i <= a; i++){
+        mult *= i;
+    }
+    return mult;
+}
+    
+```
+
+- program to calculate basic arithmetic operations:
+
+```C
+#include <stdio.h>
+
+int addition(int a, int b){
+    return a+b;
+}
+
+int subtraction(int a, int b){
+    return a-b;
+}
+
+int multiplication(int a, int b){
+    return a*b;
+}
+
+float division(int a, int b){
+    if (b == 0){
+        return 0;
+    }
+    float c = a/(b*1.0);
+    return c;
+}
+
+int remainders(int a, int b){
+    if (b == 0){
+        return 0;
+    }
+    int c = a % b;
+    return c;
+}
+
+int arithmetics(int a){
+    for (int i = 0; i <= a; i++){
+        printf("sum: %d subtract: %d multiplication: %d division: %f remainder: %d\n",addition(a,i), subtraction(a,i), multiplication(a,i), division(a,i), remainders(a,i));
+    }
+}
+```
+
+- using `#include` to include the previous two files from system:
+
+```C
+#include <stdio.h>
+#include "factorial.c"
+#include "arithmetic.c"
+
+int main(){
+    int n1;
+    scanf("%d",&n1);
+    printf("arithmetics of %d\n", arithmetics(n1));
+    arithmetics(n1);
+    printf("Factorial of %d is %d\n", n1, fact(n1));
+    return 0;
+}
+```
+
+Output:
+
+```
+5
+sum: 5 subtract: 5 multiplication: 0 division: 0.000000 remainder: 0
+sum: 6 subtract: 4 multiplication: 5 division: 5.000000 remainder: 0
+sum: 7 subtract: 3 multiplication: 10 division: 2.500000 remainder: 1
+sum: 8 subtract: 2 multiplication: 15 division: 1.666667 remainder: 2
+sum: 9 subtract: 1 multiplication: 20 division: 1.250000 remainder: 1
+sum: 10 subtract: 0 multiplication: 25 division: 1.000000 remainder: 0
+arithmetics of 6
+sum: 5 subtract: 5 multiplication: 0 division: 0.000000 remainder: 0
+sum: 6 subtract: 4 multiplication: 5 division: 5.000000 remainder: 0
+sum: 7 subtract: 3 multiplication: 10 division: 2.500000 remainder: 1
+sum: 8 subtract: 2 multiplication: 15 division: 1.666667 remainder: 2
+sum: 9 subtract: 1 multiplication: 20 division: 1.250000 remainder: 1
+sum: 10 subtract: 0 multiplication: 25 division: 1.000000 remainder: 0
+Factorial of 5 is 120
+```
+
+### Conditional Directives
+
+Conditional directives are a type of macros that helps to compile specific portions of the program based on some conditions:
+
+```c
+#ifdef macro_name
+    statement1;
+    statement2;
+    statement3;
+    .
+    .
+    .
+    statementN;
+#endif
+```
+
+**Using** `#if` and `#endif`:
+
+```C
+#include <stdio.h>
+#if !defined (MESSAGE)
+    #define MESSAGE "You wish!"
+#endif
+
+int main(){
+    printf("Here is the message: %s\n", MESSAGE);
+    return 0;
+}
+```
+
+`!defined (MESSAGE)` here means that when `MESSAGE` is not defined, `#define MESSAGE "You wish!"` will be executed.
+
+### Macro Continuation `\` and Stringize `#` Operator
+
+```C
+#include <stdio.h>
+
+#define message_for(a, b) \
+    printf(#a " and " #b ": We love you!\n")
+    
+int main(){
+    message_for(Alpha, Delta);
+    return 0;
+}
+```
+
+Output:
+
+```
+Alpha and Delta: We love you!
+```
+
+`\` operator is used as an indicator that the macro is continued. This is done so to provide better readability for long macros.
+
+`#` operator replaces `a` and `b` with the strings `Alpha` and `Delta` to the `printf` macro ***enclosed with double quotes.* Note that all other strings have to be enclosed with double quotes when using this type of macro.**
+
+### Token Pasting `##`
+
+`##` allows two separate tokens in the macro definition to be joined (concatenated) into a single token:
+
+```C
+#include <stdio.h>
+
+#define tokenpaster(n) printf("token" #n " = %d", token##n)
+
+int main(){
+    int token34 = 40;
+    tokenpaster(34);
+    return 0;
+}
+```
+
+`##n` substitutes 34 to `token` as `token34` which is the same as the variable initialized in `main` function. **Since they're the same variables, the output can be printed out correctly:**
+
+```
+token34 = 40
+```

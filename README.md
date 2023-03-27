@@ -217,10 +217,10 @@ decimal b = 6/4 = 1
 | `.` | member selection via object name | LR
 | `->` | member selection via pointer | LR
 | `++` `--` | postfix increment/decrement | LR
-| `++` `--` | prefix increment/decrement | ==RL==
-| `!` `~` | logical negation / bitwise complement | ==RL==
-| `(type)` | type casting | ==RL==
-| `sizeof` | byte size check | ==RL==
+| `++` `--` | prefix increment/decrement | RL
+| `!` `~` | logical negation / bitwise complement | RL
+| `(type)` | type casting | RL
+| `sizeof` | byte size check | RL
 | `*` `/` `%` | multiplicative | LR
 | `+` `-` | additive and subtractive | LR
 | `<<` `>>` | shifting | LR

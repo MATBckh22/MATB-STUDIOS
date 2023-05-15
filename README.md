@@ -2,6 +2,13 @@
 
 ## MATB-Reset and Improve Program
 -----
+### What We've Done
+
+[MIT 6.0001 Introduction to Programming Using Phyton - Lecture Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/d868c24226ffea27bbe3cc0f7250d70be3d729a5)
+
+[The C/C++ Programming Language Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/004ca778cd36dffa43261557062432029e25ac6a)
+
+[Codewars Practices - Example Code Included](https://github.com/MATBckh22/MATB-STUDIOS/tree/bbc068ea2d8bce68d629e4bcc76e39903f12433a)
 
 ### Materials
 

@@ -94,8 +94,8 @@ Here are text styles that Github supports:
 | - | - | - | - | - |
 | Bold | `**` `**` or `__ __` | `**Bold text**` | **Bold text** | Highlight and `Ctrl+B`
 | Italic | `*` `*` or `_` `_` | `*Italicized test*` | *Italicized test* | Highlight and `Ctrl+I`
-| Strikethroughs | `~~` `~~` | `~~Strikethrough/Mistaken text~~` | Strikethrough/Mistaken text~~
-| Bold and nested italic | `**` `**` and `_` `_` | `**This text is _extremely_ important**`| *This text is _extremely_ important**
+| Strikethroughs | `~~` `~~` | `~~Strikethrough/Mistaken text~~` | ~~Strikethrough/Mistaken text~~
+| Bold and nested italic | `**` `**` and `_` `_` | `**This text is __extremely__ important**`| *This text is __extremely__ important**
 | Subscript | `<sub>` `</sub>` | `<sub>Subscript text</sub>` | <sub>Subscript text</sub>
 | Superscript | `<sup>` `</sup>` | `<sup>Superscript text</sup>` | <sup>Superscript text</sup>
 

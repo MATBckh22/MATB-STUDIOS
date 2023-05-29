@@ -80,18 +80,19 @@ C identifier is a name to identify a variable, function, or any other user-defin
 - is **case-sensitive**
 - can include underscores
 
-This is why it's good programming practice to name human-readable variables and functions to briefly specify the purpose of the indentifiers.
+This is why it's good programming practice to name human-readable variables and functions to briefly specify the purpose of the identifiers.
 
 A readable variable looks like this:
 
 ```
 Calculator_helper
+Calc_help
 ```
 
 Do not take shortcuts like this:
 
 ```
-calc_help
+c_help
 ```
 
 ### Keywords

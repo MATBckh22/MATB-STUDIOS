@@ -18,6 +18,8 @@
 
 Smol Crafts (Arts & Crafts Business)
 
+Python Programming in Business
+
 ### Currently Planned
 
 3d Printing Projects

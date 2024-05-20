@@ -13,6 +13,7 @@
 ### Collaborations
 
 [COMAP MCM/ICM 2024 (Problem C Attempted)](https://github.com/baibairui/MCM)
+Meritorious Winner
 
 ### In Progress
 

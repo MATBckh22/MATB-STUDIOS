@@ -1,46 +1,39 @@
 # Algorithms
 
-## 
+## Evaluating Efficiency
+
+We say that an efficient algorithm consumes acceptable amount of resources in terms of:
+
+- time
+- space (memory)
+
+### This part we will be focusing on time efficiency
+
+Challenges in understanding efficiency of a solution to a computational problem:
+- a program can be implemented in many different ways
+- problem can be solved using only some algorithms 
+- separating choices of implementation from choices of more abstract algorithm
+
+## Orders of Growth
+
+We want to achieve these:
+- evaluate program efficiency with **very large inputs**
+- express **growth of program's run time**
+- putting **upper bound** of growth
+- emphasizing **order** and **not exact**
+- tighting upper bound on growth as function of size of input in worst case
+
+## Asymptotic Analysis
 
 
-\usepackage{amsmath}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 
-\begin{algorithm}
-\caption{5-Fold Cross-Validation for XGBoost Model Accuracy}
-\begin{algorithmic}[1]
-\Require Dataset $D$, Xgboost algorithm Model $Xgb$
-\Ensure Accuracy per fold $Acc_i$
-\State Split $D$ into 5 equal parts: $D_1, D_2, D_3, D_4, D_5$
-\For{$i \gets 1$ to $5$}
-    \State $D_{\text{train}} \gets D \setminus D_i$
-    \State $D_{\text{test}} \gets D_i$
-    \State $M \gets Xgb(D_{\text{train}})$
-    \State $Acc_i \gets \text{Accuracy}(M, D_{\text{test}})$
-\EndFor
-\State \Return $Acc_i$
-\end{algorithmic}
-\end{algorithm}
+### Measuring Worst Case: Big "Oh" Notation: $O()$
 
-```latex
-\documentclass{article}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\begin{document}
+- used to describe worst case:
+    - worst case occurs often and is the bottleneck when a program runs
+    - express rate of growth of program relative to input size
+    - **evaluate algorithm only**
 
-\begin{algorithm}
-\caption{Euclid’s algorithm}\label{euclid}
-\begin{algorithmic}[1]
-\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
-\While{$b\neq0$}\Comment{We have the answer if b is 0}
-\State $t \gets b$
-\State $b \gets a\bmod b$
-\State $a \gets t$
-\EndWhile
-\State \textbf{return} $a$\Comment{The gcd is a}
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+### Measuring Average Case
 
-\end{document}
+### Measuring Best Case

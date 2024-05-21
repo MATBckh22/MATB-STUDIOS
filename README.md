@@ -1,43 +1,46 @@
-# MATB-STUDIOS 
+# Algorithms
 
-## MATB-Reset and Improve Program
+## 
 
-### What We've Done
 
-[MIT 6.0001 Introduction to Programming Using Python - Lecture Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/d868c24226ffea27bbe3cc0f7250d70be3d729a5)
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
-[The C/C++ Programming Language Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/004ca778cd36dffa43261557062432029e25ac6a)
+\begin{algorithm}
+\caption{5-Fold Cross-Validation for XGBoost Model Accuracy}
+\begin{algorithmic}[1]
+\Require Dataset $D$, Xgboost algorithm Model $Xgb$
+\Ensure Accuracy per fold $Acc_i$
+\State Split $D$ into 5 equal parts: $D_1, D_2, D_3, D_4, D_5$
+\For{$i \gets 1$ to $5$}
+    \State $D_{\text{train}} \gets D \setminus D_i$
+    \State $D_{\text{test}} \gets D_i$
+    \State $M \gets Xgb(D_{\text{train}})$
+    \State $Acc_i \gets \text{Accuracy}(M, D_{\text{test}})$
+\EndFor
+\State \Return $Acc_i$
+\end{algorithmic}
+\end{algorithm}
 
-[Codewars Practices - Example Code Included](https://github.com/MATBckh22/MATB-STUDIOS/tree/bbc068ea2d8bce68d629e4bcc76e39903f12433a)
+```latex
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\begin{document}
 
-### Collaborations
+\begin{algorithm}
+\caption{Euclid’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+\While{$b\neq0$}\Comment{We have the answer if b is 0}
+\State $t \gets b$
+\State $b \gets a\bmod b$
+\State $a \gets t$
+\EndWhile
+\State \textbf{return} $a$\Comment{The gcd is a}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
-[COMAP MCM/ICM 2024 (Problem C Attempted)](https://github.com/baibairui/MCM)
-Meritorious Winner
-
-### In Progress
-
-Smol Crafts (Arts & Crafts Business)
-
-Python Programming in Business
-
-### Currently Planned
-
-3d Printing Projects
-
-Web Development/Design Projects
-
-### Materials
-
-Welcome to MATB's private library of the program! This library features a detailed walkthrough of self-study materials related to members' undergraduate major. Feel free to pick up one of the materials and start learning! All lecture notes are written by the members themselves with reference to said materials. Please contact the right author for any inquiry regarding them.
-
-- MIT6.004: [MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/?fbclid=IwAR2b0KMkEORoTm2Q8SHp7aEGHeGX8aStS71GI2QzuNGLQ3-4QFvwC3UyBR8) 
-- CS50x: [Harvard CS50x Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-- MIT6.189: [MIT 6.189 Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/?fbclid=IwAR277lFfD68Y5AqsI0KZANBTWgwfA5pCOWs9haO_NRYLkOryhSq9pTJmCE4)
-- MIT6: [MIT 6.0001 Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/) ([**Content Page**](https://github.com/MATBckh22/MATB-STUDIOS/blob/96be127275287197a730c534b301fe6daf3fe120/README.md))
-- MIT6.042J: [MIT Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
-- MIT6.092: [MIT Introduction to Java](https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/lecture-notes/)
-
-## For Writers 
-
-To all authors that are interested in writing their own lecture notes, study notes, guides, projects, etc can refer to [here](https://github.com/MATBckh22/MATB-STUDIOS/blob/0adfa1dafeb0b6c8d013c515beae7a52ab102895/README.md)
+\end{document}

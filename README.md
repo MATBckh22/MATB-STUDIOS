@@ -109,6 +109,6 @@ for i in range(n):
 
 Outer loop goes n times, and the inner loop goes every n times as well for every outer loop iterated: $O(n) \times O(n) = O(n \times n) = O(n^2)$
 
-### Measuring Average Case
+### Measuring Average Case: Theta Notation $\theta()$
 
-### Measuring Best Case
+### Measuring Best Case: Omega Notation $\Omega()$

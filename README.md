@@ -21,6 +21,8 @@ Smol Crafts (Arts & Crafts Business)
 
 Python Programming in Business
 
+MIDDAY (3d Printing Studio/Shop)
+
 ### Currently Planned
 
 3d Printing Projects

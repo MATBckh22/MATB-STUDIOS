@@ -12,6 +12,8 @@
 
 [Python Programming in Business Project](https://www.kaggle.com/code/smolfish/interactive-visualization-of-us-stocks-eda)
 
+["Pursue Excellence" 自强不息 Text Stand Decoration](https://makerworld.com/en/models/491954#profileId-405557)
+
 ### Collaborations
 
 [COMAP MCM/ICM 2024 (Problem C Attempted)](https://github.com/baibairui/MCM)

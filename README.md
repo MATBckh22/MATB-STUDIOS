@@ -10,6 +10,8 @@
 
 [Codewars Practices - Example Code Included](https://github.com/MATBckh22/MATB-STUDIOS/tree/bbc068ea2d8bce68d629e4bcc76e39903f12433a)
 
+[Python Programming in Business Project](https://www.kaggle.com/code/smolfish/interactive-visualization-of-us-stocks-eda)
+
 ### Collaborations
 
 [COMAP MCM/ICM 2024 (Problem C Attempted)](https://github.com/baibairui/MCM)
@@ -18,8 +20,6 @@ Meritorious Winner
 ### In Progress
 
 Smol Crafts (Arts & Crafts Business)
-
-Python Programming in Business
 
 MIDDAY (3d Printing Studio/Shop)
 

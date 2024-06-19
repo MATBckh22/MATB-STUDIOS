@@ -25,6 +25,8 @@ Smol Crafts (Arts & Crafts Business)
 
 MIDDAY (3d Printing Studio/Shop)
 
+JavaFX Enhanced Chrome Dino Game
+
 ### Currently Planned
 
 3d Printing Projects

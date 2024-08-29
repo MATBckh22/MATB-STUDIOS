@@ -4,6 +4,8 @@
 
 ### What We've Done
 
+[JavaFX Enhanced Chrome Dino Game](https://github.com/MATBckh22/ChromeDinoJavaFX)
+
 [MIT 6.0001 Introduction to Programming Using Python - Lecture Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/d868c24226ffea27bbe3cc0f7250d70be3d729a5)
 
 [The C/C++ Programming Language Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/004ca778cd36dffa43261557062432029e25ac6a)
@@ -24,8 +26,6 @@ Meritorious Winner
 Smol Crafts (Arts & Crafts Business)
 
 MIDDAY (3d Printing Studio/Shop)
-
-JavaFX Enhanced Chrome Dino Game
 
 ### Currently Planned
 

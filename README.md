@@ -6,6 +6,8 @@
 
 [JavaFX Enhanced Chrome Dino Game](https://github.com/MATBckh22/ChromeDinoJavaFX)
 
+[GooseMate - OpenGL Goose Phone Stand](https://github.com/MATBckh22/Computer-Graphics---Goose)
+
 [MIT 6.0001 Introduction to Programming Using Python - Lecture Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/d868c24226ffea27bbe3cc0f7250d70be3d729a5)
 
 [The C/C++ Programming Language Notes](https://github.com/MATBckh22/MATB-STUDIOS/tree/004ca778cd36dffa43261557062432029e25ac6a)
@@ -21,17 +23,23 @@
 [COMAP MCM/ICM 2024 (Problem C Attempted)](https://github.com/baibairui/MCM)
 Meritorious Winner
 
+[Forecasting Tennis Players Based on Machine Learning - indexed in EI Compendex](https://proceedings.mlr.press/v245/rui24b.html)
+
 ### In Progress
 
 Smol Crafts (Arts & Crafts Business)
 
 MIDDAY (3d Printing Studio/Shop)
 
+Frontend Web Development
+
+Arctos Robotic Arm
+
+Light Backend Development
+
 ### Currently Planned
 
-3d Printing Projects
-
-Web Development/Design Projects
+Everything planned in the short future is in progress.
 
 ### Materials
 
